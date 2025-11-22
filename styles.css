@@ -1,42 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --tech-blue: #00f0ff;
+    --tech-purple: #7000ff;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+    background-color: #0a0a0a;
+    color: #e5e7eb;
 }
-header {
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
     background: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+    border-radius: 5px;
 }
-nav {
-    background: #444;
-    color: #fff;
-    text-align: center;
-    padding: 0.5rem 0;
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
-nav ul {
-    list-style: none;
-    padding: 0;
+
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
 }
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 240, 255, 0.3);
+    box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.1);
 }
-section {
-    padding: 2rem;
+
+.animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.1;
+    }
+}
+
+.nav-scrolled {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
 }
