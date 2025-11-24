@@ -2,264 +2,344 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naren Subburaj | Embedded Systems Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'tech-blue': '#00f0ff',
-                        'tech-purple': '#7000ff',
-                        'dark-bg': '#0a0a0a',
-                        'card-bg': 'rgba(255, 255, 255, 0.05)',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Naren Subburaj | Embedded Systems, IoT & Automation Engineer
+  </title>
+
+  <!-- Basic SEO -->
+  <meta name="description"
+    content="Embedded Systems Engineer specializing in IoT, automation, FreeRTOS, ESP32, STM32, RS-485, Modbus, and real-time control systems. Based in Canada & India." />
+  <meta name="keywords"
+    content="Naren Subburaj, Embedded Systems Engineer, Firmware, IoT, FreeRTOS, ESP32, STM32, Automation, RS-485, Modbus" />
+  <meta name="author" content="Naren Subburaj" />
+
+  <!-- Open Graph -->
+  <meta property="og:title"
+    content="Naren Subburaj | Embedded Systems, IoT & Automation Engineer" />
+  <meta property="og:description"
+    content="I build production-grade embedded systems for automation, agriculture, and IoT." />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "tech-blue": "#00f0ff",
+            "tech-purple": "#7000ff",
+            "dark-bg": "#0a0a0a",
+            "card-bg": "rgba(255, 255, 255, 0.05)",
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body class="bg-dark-bg text-white overflow-x-hidden">
+<body class="bg-dark-bg text-white overflow-x-hidden font-sans">
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <a href="#home"
+        class="text-2xl font-bold bg-gradient-to-r from-tech-blue to-tech-purple bg-clip-text text-transparent">
+        NS
+      </a>
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <a href="#"
-                class="text-2xl font-bold bg-gradient-to-r from-tech-blue to-tech-purple bg-clip-text text-transparent">NS</a>
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <a href="#about" class="nav-link text-gray-300 hover:text-tech-blue transition-colors">About</a>
+        <a href="#skills" class="nav-link text-gray-300 hover:text-tech-blue transition-colors">Skills</a>
+        <a href="#experience" class="nav-link text-gray-300 hover:text-tech-blue transition-colors">Experience</a>
+        <a href="#projects" class="nav-link text-gray-300 hover:text-tech-blue transition-colors">Projects</a>
+        <a href="#contact" class="nav-link text-gray-300 hover:text-tech-blue transition-colors">Contact</a>
 
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#about"
-                    class="nav-link text-gray-300 hover:text-tech-blue transition-colors text-sm font-medium">About</a>
-                <a href="#skills"
-                    class="nav-link text-gray-300 hover:text-tech-blue transition-colors text-sm font-medium">Skills</a>
-                <a href="#experience"
-                    class="nav-link text-gray-300 hover:text-tech-blue transition-colors text-sm font-medium">Experience</a>
-                <a href="#projects"
-                    class="nav-link text-gray-300 hover:text-tech-blue transition-colors text-sm font-medium">Projects</a>
-                <a href="#contact"
-                    class="nav-link text-gray-300 hover:text-tech-blue transition-colors text-sm font-medium">Contact</a>
+        <div class="flex items-center space-x-4 ml-4 border-l border-white/10 pl-4">
+          <a href="https://github.com/Narensraj" target="_blank"
+            class="text-gray-400 hover:text-white transition-colors">
+            <i data-lucide="github" class="w-5 h-5"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/narensraj/" target="_blank"
+            class="text-gray-400 hover:text-white transition-colors">
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </a>
+          <a href="https://narensraj21.wixsite.com/myself" target="_blank"
+            class="text-gray-400 hover:text-white transition-colors">
+            <i data-lucide="globe" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
 
-                <div class="flex items-center space-x-4 ml-4 border-l border-white/10 pl-4">
-                    <a href="https://github.com/Narensraj" target="_blank"
-                        class="text-gray-400 hover:text-white transition-colors">
-                        <i data-lucide="github" class="w-5 h-5"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/narensraj/" target="_blank"
-                        class="text-gray-400 hover:text-white transition-colors">
-                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    </a>
-                </div>
-            </div>
+      <button class="md:hidden text-white" id="mobile-menu-btn" aria-label="Toggle menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
 
-            <button class="md:hidden text-white" id="mobile-menu-btn">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="hidden md:hidden bg-dark-bg/95 backdrop-blur-xl border-b border-white/10 absolute w-full">
+      <div class="px-6 py-8 space-y-4 flex flex-col text-lg">
+        <a href="#about" class="mobile-link text-gray-300 hover:text-tech-blue">About</a>
+        <a href="#skills" class="mobile-link text-gray-300 hover:text-tech-blue">Skills</a>
+        <a href="#experience" class="mobile-link text-gray-300 hover:text-tech-blue">Experience</a>
+        <a href="#projects" class="mobile-link text-gray-300 hover:text-tech-blue">Projects</a>
+        <a href="#contact" class="mobile-link text-gray-300 hover:text-tech-blue">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-dark-bg">
+      <div
+        class="absolute top-0 left-0 w-96 h-96 bg-tech-blue/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 animate-pulse-slow">
+      </div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-tech-purple/20 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2 animate-pulse-slow"
+        style="animation-delay: 2s">
+      </div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center hero-content">
+      <div class="mb-8 relative inline-block">
+        <div class="absolute inset-0 bg-tech-blue/20 rounded-full blur-xl animate-pulse-slow"></div>
+        <img src="assets/profile.png" alt="Naren Subburaj"
+          class="w-40 h-40 md:w-48 md:h-48 rounded-full border-2 border-white/10 object-cover relative z-10 shadow-2xl" />
+      </div>
+
+      <p
+        class="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-white/10 bg-white/5 text-xs md:text-sm text-gray-300 mb-4">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Embedded Systems · IoT · Automation
+      </p>
+
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
+        Naren Subburaj
+      </h1>
+
+      <h2 class="text-xl md:text-2xl text-gray-300 mb-6">
+        Embedded Systems & Firmware Engineer | Real-Time Control, IoT & Industrial Automation
+      </h2>
+
+      <p class="max-w-3xl mx-auto text-gray-400 text-base md:text-lg mb-10 leading-relaxed">
+        I design and build production-grade embedded systems for agriculture, water treatment, and industrial
+        automation. My work combines
+        <span class="text-white font-medium">real-time firmware</span>, robust
+        <span class="text-white font-medium">field hardware</span>, and secure
+        <span class="text-white font-medium">IoT connectivity</span> to keep devices running 24/7 in demanding
+        environments.
+      </p>
+
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+        <a href="#projects"
+          class="px-8 py-3 bg-tech-blue text-dark-bg font-semibold rounded-full hover:bg-tech-blue/90 transition-colors w-full md:w-auto">
+          View Projects
+        </a>
+        <a href="https://github.com/Narensraj" target="_blank"
+          class="px-8 py-3 border border-white/20 text-white font-semibold rounded-full hover:bg-white/10 transition-colors w-full md:w-auto flex items-center justify-center gap-2">
+          <i data-lucide="github" class="w-5 h-5"></i>
+          View GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/narensraj/" target="_blank"
+          class="px-8 py-3 border border-tech-blue text-tech-blue font-semibold rounded-full hover:bg-tech-blue/10 transition-colors w-full md:w-auto flex items-center justify-center gap-2">
+          <i data-lucide="file-text" class="w-5 h-5"></i>
+          View Resume
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <i data-lucide="chevron-down" class="text-gray-500 w-8 h-8"></i>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="text-tech-blue">01.</span> About Me
+        </h2>
+        <div class="h-1 w-20 bg-tech-purple rounded"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="about-text space-y-4 text-gray-400 text-base md:text-lg leading-relaxed">
+          <p>
+            I am an <span class="text-white font-medium">Embedded Systems Engineer</span> with hands-on experience
+            building controllers and IoT devices for
+            <span class="text-white font-medium">greenhouses, livestock barns, water-treatment plants, and industrial
+              automation</span>.
+          </p>
+          <p>
+            My work spans the full stack of embedded development — from hardware bring-up, board-level debugging, and
+            RTOS-based firmware to connectivity, data logging, and integration with dashboards and cloud platforms.
+          </p>
+          <p>
+            I’ve deployed systems across <span class="text-white font-medium">India, Canada, and the United States</span>
+            and collaborated closely with
+            cross-functional teams (controls, software, and operations) to ship reliable, field-tested solutions.
+          </p>
+          <p class="pt-2">
+            I enjoy working on:
+          </p>
+          <ul class="list-none space-y-2 text-sm md:text-base">
+            <li class="flex items-start">
+              <span class="text-tech-blue mr-2 mt-1">▹</span>
+              <span>Real-time control firmware using FreeRTOS and bare-metal C/C++.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-tech-blue mr-2 mt-1">▹</span>
+              <span>Industrial communication using RS-485, Modbus, CAN, and custom protocols.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-tech-blue mr-2 mt-1">▹</span>
+              <span>Secure OTA update pipelines and long-uptime systems for remote sites.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-tech-blue mr-2 mt-1">▹</span>
+              <span>Embedded web dashboards, Node-RED flows, and field diagnostics tools.</span>
+            </li>
+          </ul>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="hidden md:hidden bg-dark-bg/95 backdrop-blur-xl border-b border-white/10 absolute w-full">
-            <div class="px-6 py-8 space-y-4 flex flex-col">
-                <a href="#about" class="mobile-link text-lg text-gray-300 hover:text-tech-blue">About</a>
-                <a href="#skills" class="mobile-link text-lg text-gray-300 hover:text-tech-blue">Skills</a>
-                <a href="#experience" class="mobile-link text-lg text-gray-300 hover:text-tech-blue">Experience</a>
-                <a href="#projects" class="mobile-link text-lg text-gray-300 hover:text-tech-blue">Projects</a>
-                <a href="#contact" class="mobile-link text-lg text-gray-300 hover:text-tech-blue">Contact</a>
-            </div>
+        <div class="about-stats grid grid-cols-2 gap-6">
+          <div
+            class="glass p-6 rounded-2xl text-center hover:border-tech-blue/50 transition-colors flex flex-col justify-center">
+            <h3 class="text-4xl font-bold text-white mb-1">4+</h3>
+            <p class="text-gray-400 text-sm">Years in Embedded & Automation</p>
+          </div>
+          <div
+            class="glass p-6 rounded-2xl text-center hover:border-tech-purple/50 transition-colors flex flex-col justify-center">
+            <h3 class="text-4xl font-bold text-white mb-1">3+</h3>
+            <p class="text-gray-400 text-sm">Countries Deployed</p>
+          </div>
+          <div
+            class="glass p-6 rounded-2xl text-center hover:border-tech-blue/50 transition-colors flex flex-col justify-center">
+            <h3 class="text-4xl font-bold text-white mb-1">20+</h3>
+            <p class="text-gray-400 text-sm">Systems & Projects Shipped</p>
+          </div>
+          <div
+            class="glass p-6 rounded-2xl text-center hover:border-tech-purple/50 transition-colors flex flex-col justify-center">
+            <h3 class="text-4xl font-bold text-white mb-1">24/7</h3>
+            <p class="text-gray-400 text-sm">Uptime Targets in Production</p>
+          </div>
         </div>
-    </nav>
+      </div>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-dark-bg">
-            <div
-                class="absolute top-0 left-0 w-96 h-96 bg-tech-blue/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 animate-pulse-slow">
-            </div>
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-tech-purple/20 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2 animate-pulse-slow"
-                style="animation-delay: 2s;"></div>
-        </div>
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="text-tech-blue">02.</span> Skills & Expertise
+        </h2>
+        <div class="h-1 w-20 bg-tech-purple rounded"></div>
+      </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center hero-content">
-            <div class="mb-8 relative inline-block">
-                <div class="absolute inset-0 bg-tech-blue/20 rounded-full blur-xl animate-pulse-slow"></div>
-                <img src="assets/profile.png" alt="Naren Subburaj"
-                    class="w-40 h-40 md:w-48 md:h-48 rounded-full border-2 border-white/10 object-cover relative z-10 shadow-2xl">
-            </div>
-            <h2 class="text-tech-blue font-medium tracking-wider mb-4">HELLO, I'M</h2>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-                Naren Subburaj
-            </h1>
-            <h3 class="text-2xl md:text-3xl text-gray-400 mb-8">
-                Embedded Systems Engineer
-            </h3>
-            <p class="max-w-2xl mx-auto text-gray-400 text-lg mb-10 leading-relaxed">
-                Designing and developing hardware-software solutions for real-time and resource-constrained
-                environments.
-                Building scalable, efficient, and secure embedded systems.
-            </p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="skills-grid">
+        <!-- JS injects cards -->
+      </div>
+    </div>
+  </section>
 
-            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-                <a href="#projects"
-                    class="px-8 py-3 bg-tech-blue text-dark-bg font-semibold rounded-full hover:bg-tech-blue/90 transition-colors w-full md:w-auto">
-                    View Projects
-                </a>
-                <a href="#contact"
-                    class="px-8 py-3 border border-white/20 text-white font-semibold rounded-full hover:bg-white/10 transition-colors w-full md:w-auto">
-                    Contact Me
-                </a>
-            </div>
-        </div>
+  <!-- Experience Section -->
+  <section id="experience" class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="text-tech-blue">03.</span> Experience
+        </h2>
+        <div class="h-1 w-20 bg-tech-purple rounded"></div>
+      </div>
 
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-            <i data-lucide="chevron-down" class="text-gray-500 w-8 h-8"></i>
-        </div>
-    </section>
+      <div class="space-y-12" id="experience-container">
+        <!-- JS injects experience timeline -->
+      </div>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="section-header mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span class="text-tech-blue">01.</span> About Me</h2>
-                <div class="h-1 w-20 bg-tech-purple rounded"></div>
-            </div>
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="text-tech-blue">04.</span> Featured Projects
+        </h2>
+        <div class="h-1 w-20 bg-tech-purple rounded"></div>
+      </div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="about-text">
-                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                        I am a passionate <span class="text-white font-medium">Embedded Systems Engineer</span>
-                        specializing in designing and developing hardware-software solutions for real-time and
-                        resource-constrained environments.
-                    </p>
-                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                        With experience spanning embedded firmware development, control software, and the full <span
-                            class="text-white font-medium">Software Development Life Cycle (SDLC)</span>, I focus on
-                        building scalable, efficient, and secure embedded systems.
-                    </p>
-                    <p class="text-gray-400 text-lg leading-relaxed">
-                        I have deployed systems across India, Canada, and the United States, collaborating with
-                        industrial automation firms on proprietary control systems.
-                    </p>
-                </div>
-                <div class="about-stats grid grid-cols-2 gap-6">
-                    <div class="glass p-6 rounded-2xl text-center hover:border-tech-blue/50 transition-colors">
-                        <h3 class="text-4xl font-bold text-white mb-2">3+</h3>
-                        <p class="text-gray-400 text-sm">Countries Deployed</p>
-                    </div>
-                    <div class="glass p-6 rounded-2xl text-center hover:border-tech-purple/50 transition-colors">
-                        <h3 class="text-4xl font-bold text-white mb-2">20+</h3>
-                        <p class="text-gray-400 text-sm">Projects Completed</p>
-                    </div>
-                    <div class="glass p-6 rounded-2xl text-center hover:border-tech-blue/50 transition-colors">
-                        <h3 class="text-4xl font-bold text-white mb-2">100%</h3>
-                        <p class="text-gray-400 text-sm">Commitment</p>
-                    </div>
-                    <div class="glass p-6 rounded-2xl text-center hover:border-tech-purple/50 transition-colors">
-                        <h3 class="text-4xl font-bold text-white mb-2">24/7</h3>
-                        <p class="text-gray-400 text-sm">System Uptime</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="space-y-20" id="projects-container">
+        <!-- JS injects projects -->
+      </div>
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="section-header mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span class="text-tech-blue">02.</span> Skills &
-                    Expertise</h2>
-                <div class="h-1 w-20 bg-tech-purple rounded"></div>
-            </div>
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 relative overflow-hidden">
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-tech-blue/10 rounded-full blur-[100px]">
+    </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="skills-grid">
-                <!-- Skills will be injected by JS -->
-            </div>
-        </div>
-    </section>
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <div class="contact-content">
+        <h2 class="text-tech-blue font-medium tracking-wider mb-4">
+          05. WHAT'S NEXT?
+        </h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Let’s Build Something Reliable
+        </h2>
+        <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+          I’m open to roles and collaborations in embedded systems, firmware development, and industrial automation —
+          especially projects that involve real-time control, IoT connectivity, and system reliability.
+          Whether you’re hiring, exploring a project, or just want to discuss ideas, feel free to reach out.
+        </p>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="section-header mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span class="text-tech-blue">03.</span> Experience</h2>
-                <div class="h-1 w-20 bg-tech-purple rounded"></div>
-            </div>
-
-            <div class="space-y-12" id="experience-container">
-                <!-- Experience will be injected by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="section-header mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span class="text-tech-blue">04.</span> Featured
-                    Projects</h2>
-                <div class="h-1 w-20 bg-tech-purple rounded"></div>
-            </div>
-
-            <div class="space-y-20" id="projects-container">
-                <!-- Projects will be injected by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 relative overflow-hidden">
-        <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-tech-blue/10 rounded-full blur-[100px]">
+        <div class="flex justify-center space-x-6 mb-12">
+          <a href="https://github.com/Narensraj" target="_blank"
+            class="p-4 glass rounded-full hover:text-tech-blue hover:border-tech-blue transition-all transform hover:-translate-y-1">
+            <i data-lucide="github" class="w-6 h-6"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/narensraj/" target="_blank"
+            class="p-4 glass rounded-full hover:text-tech-blue hover:border-tech-blue transition-all transform hover:-translate-y-1">
+            <i data-lucide="linkedin" class="w-6 h-6"></i>
+          </a>
+          <a href="mailto:narensraj21@gmail.com"
+            class="p-4 glass rounded-full hover:text-tech-blue hover:border-tech-blue transition-all transform hover:-translate-y-1">
+            <i data-lucide="mail" class="w-6 h-6"></i>
+          </a>
         </div>
 
-        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <div class="contact-content">
-                <h2 class="text-tech-blue font-medium tracking-wider mb-4">05. WHAT'S NEXT?</h2>
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
-                <p class="text-gray-400 text-lg mb-10 leading-relaxed">
-                    I'm currently looking for new opportunities. Whether you have a question or just want to say hi,
-                    I'll try my best to get back to you!
-                </p>
+        <!-- TODO: replace narensraj21@gmail.com with your real email -->
+        <a href="mailto:narensraj21@gmail.com"
+          class="px-10 py-4 bg-transparent border border-tech-blue text-tech-blue font-semibold rounded-md hover:bg-tech-blue/10 transition-colors inline-flex items-center gap-2 justify-center">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          Say Hello
+        </a>
+      </div>
+    </div>
+  </section>
 
-                <div class="flex justify-center space-x-6 mb-12">
-                    <a href="https://github.com/Narensraj" target="_blank"
-                        class="p-4 glass rounded-full hover:text-tech-blue hover:border-tech-blue transition-all transform hover:-translate-y-1">
-                        <i data-lucide="github" class="w-6 h-6"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/narensraj/" target="_blank"
-                        class="p-4 glass rounded-full hover:text-tech-blue hover:border-tech-blue transition-all transform hover:-translate-y-1">
-                        <i data-lucide="linkedin" class="w-6 h-6"></i>
-                    </a>
-                    <a href="mailto:naren@example.com"
-                        class="p-4 glass rounded-full hover:text-tech-blue hover:border-tech-blue transition-all transform hover:-translate-y-1">
-                        <i data-lucide="mail" class="w-6 h-6"></i>
-                    </a>
-                </div>
+  <footer class="py-8 text-center text-gray-500 text-sm border-t border-white/5">
+    <p>Designed &amp; Built by Naren Subburaj</p>
+  </footer>
 
-                <a href="mailto:naren@example.com"
-                    class="px-10 py-4 bg-transparent border border-tech-blue text-tech-blue font-semibold rounded-md hover:bg-tech-blue/10 transition-colors">
-                    Say Hello
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-8 text-center text-gray-500 text-sm">
-        <p>Designed & Built by Naren Subburaj</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
