@@ -173,14 +173,14 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <ul class="space-y-2">
             ${job.description
-              .map(
-                (line) => `
+          .map(
+            (line) => `
               <li class="flex items-start text-gray-400">
                 <span class="text-tech-blue mr-2 mt-1.5">▹</span>
                 <span>${line}</span>
               </li>`
-              )
-              .join("")}
+          )
+          .join("")}
           </ul>
         </div>
       `;
@@ -193,9 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (projectsContainer) {
     projects.forEach((project, index) => {
       const projectEl = document.createElement("div");
-      projectEl.className = `grid md:grid-cols-12 gap-8 items-center project-card ${
-        index % 2 === 1 ? "md:text-right" : ""
-      }`;
+      projectEl.className = `grid md:grid-cols-12 gap-8 items-center project-card`;
 
       const contentClass =
         index % 2 === 1
@@ -235,14 +233,12 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="glass p-6 rounded-xl text-gray-400 mb-6 shadow-xl">
             ${project.description}
           </div>
-          <ul class="flex flex-wrap gap-4 text-sm text-gray-400 font-mono mb-8 ${
-            index % 2 === 1 ? "md:justify-end" : ""
-          }">
+          <ul class="flex flex-wrap gap-4 text-sm text-gray-400 font-mono mb-8 ${index % 2 === 1 ? "md:justify-end" : ""
+        }">
             ${project.tech.map((t) => `<li>${t}</li>`).join("")}
           </ul>
-          <div class="flex gap-4 ${
-            index % 2 === 1 ? "md:justify-end" : ""
-          }">
+          <div class="flex gap-4 ${index % 2 === 1 ? "md:justify-end" : ""
+        }">
             ${githubIcon}
             ${liveIcon}
           </div>
