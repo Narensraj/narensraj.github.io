@@ -615,5 +615,4 @@ if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     y: 30,
     duration: 0.8,
   });
-}
 });
