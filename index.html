@@ -61,6 +61,8 @@
 
   <!-- Background Effects -->
   <canvas id="network-bg" class="fixed inset-0 pointer-events-none z-0 bg-black"></canvas>
+  <!-- Blur/Dim Overlay -->
+  <div class="fixed inset-0 pointer-events-none z-0 backdrop-blur-[1px] bg-black/60"></div>
 
 
   <!-- Navigation -->
@@ -102,14 +104,22 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-black/95 border-b border-ctos-cyan/30 absolute w-full">
-      <div class="px-6 py-6 space-y-4 flex flex-col text-lg uppercase">
-        <a href="#about" class="mobile-link text-gray-400 hover:text-ctos-cyan">About</a>
-        <a href="#skills" class="mobile-link text-gray-400 hover:text-ctos-cyan">Skills</a>
-        <a href="#experience" class="mobile-link text-gray-400 hover:text-ctos-cyan">Experience</a>
-        <a href="#projects" class="mobile-link text-gray-400 hover:text-ctos-cyan">Projects</a>
-        <a href="#certifications" class="mobile-link text-gray-400 hover:text-ctos-cyan">Certifications</a>
-        <a href="#contact" class="mobile-link text-gray-400 hover:text-ctos-cyan">Contact</a>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="hidden md:hidden bg-black/95 backdrop-blur-xl border-b border-ctos-cyan/30 absolute w-full top-full left-0 shadow-[0_10px_30px_rgba(0,240,255,0.2)]">
+      <div class="px-6 py-8 space-y-6 flex flex-col items-center text-xl uppercase font-bold tracking-widest">
+        <a href="#about"
+          class="mobile-link text-gray-400 hover:text-ctos-cyan transition-colors transform hover:scale-110 duration-200">About</a>
+        <a href="#skills"
+          class="mobile-link text-gray-400 hover:text-ctos-cyan transition-colors transform hover:scale-110 duration-200">Skills</a>
+        <a href="#experience"
+          class="mobile-link text-gray-400 hover:text-ctos-cyan transition-colors transform hover:scale-110 duration-200">Experience</a>
+        <a href="#projects"
+          class="mobile-link text-gray-400 hover:text-ctos-cyan transition-colors transform hover:scale-110 duration-200">Projects</a>
+        <a href="#certifications"
+          class="mobile-link text-gray-400 hover:text-ctos-cyan transition-colors transform hover:scale-110 duration-200">Certifications</a>
+        <a href="#contact"
+          class="mobile-link text-ctos-cyan border border-ctos-cyan px-6 py-2 hover:bg-ctos-cyan hover:text-black transition-all">Contact_Me</a>
       </div>
     </div>
   </nav>
@@ -140,7 +150,8 @@
         System_Status: Online
       </p>
 
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tighter uppercase glitch-text"
+      <h1
+        class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tighter uppercase glitch-text"
         data-text="NAREN SUBBURAJ">
         NAREN SUBBURAJ<span class="blink-cursor">_</span>
       </h1>
@@ -176,7 +187,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-20 relative z-10 bg-black/80">
+  <section id="about" class="py-12 md:py-20 relative z-10 bg-black/80">
     <div class="max-w-7xl mx-auto px-6">
       <div class="section-header mb-16 border-l-4 border-ctos-cyan pl-6">
         <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-widest">
@@ -234,7 +245,7 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-20 relative z-10">
+  <section id="skills" class="py-12 md:py-20 relative z-10">
     <div class="max-w-7xl mx-auto px-6">
       <div class="section-header mb-16 border-l-4 border-ctos-cyan pl-6">
         <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-widest">
@@ -313,7 +324,7 @@
   </section>
 
   <!-- Publications Section -->
-  <section id="publications" class="py-20 relative z-10">
+  <section id="publications" class="py-12 md:py-20 relative z-10">
     <div class="max-w-7xl mx-auto px-6">
       <div class="section-header mb-16 border-l-4 border-ctos-cyan pl-6">
         <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-widest">
@@ -328,7 +339,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20 relative overflow-hidden z-10">
+  <section id="contact" class="py-12 md:py-20 relative overflow-hidden z-10">
     <div
       class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-ctos-cyan/5 rounded-full blur-[100px] animate-pulse">
     </div>

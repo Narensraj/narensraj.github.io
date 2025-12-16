@@ -34,11 +34,14 @@ body {
 
 /* ctOS Card Style */
 .ctos-card {
-  background: rgba(10, 10, 10, 0.9);
+  background: rgba(10, 10, 10, 0.85);
+  /* Slightly more transparent */
   border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(5px);
+  /* Added blur for depth */
 }
 
 .ctos-card::before {
@@ -55,15 +58,19 @@ body {
 }
 
 .ctos-card:hover {
-  border-color: rgba(0, 240, 255, 0.3);
-  box-shadow: 0 5px 20px rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.5);
+  /* Brighter border on hover */
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+  /* Stronger glow */
+  transform: translateY(-2px);
+  /* Subtle lift */
 }
 
 .ctos-card:hover::before {
   transform: scaleX(1);
 }
 
-/* Scanlines Effect */
+/* Scanlines/Overlay - handled in HTML now, but keeping clean class just in case */
 .bg-scanlines {
   background: linear-gradient(to bottom,
       rgba(255, 255, 255, 0),
@@ -73,215 +80,19 @@ body {
   background-size: 100% 4px;
 }
 
-/* Glitch Text Effect
-.glitch-text {
-  position: relative;
-}
-
-.glitch-text::before,
-.glitch-text::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-}
-
-.glitch-text::before {
-  left: 2px;
-  text-shadow: -1px 0 #ff00c1;
-  clip: rect(44px, 450px, 56px, 0);
-  animation: glitch-anim 5s infinite linear alternate-reverse;
-}
-
-.glitch-text::after {
-  left: -2px;
-  text-shadow: -1px 0 #00f0ff;
-  clip: rect(44px, 450px, 56px, 0);
-  animation: glitch-anim2 5s infinite linear alternate-reverse;
-} 
-*/
-
-@keyframes glitch-anim {
-  0% {
-    clip: rect(70px, 9999px, 81px, 0);
-  }
-
-  5% {
-    clip: rect(65px, 9999px, 19px, 0);
-  }
-
-  10% {
-    clip: rect(51px, 9999px, 58px, 0);
-  }
-
-  15% {
-    clip: rect(11px, 9999px, 7px, 0);
-  }
-
-  20% {
-    clip: rect(100px, 9999px, 10px, 0);
-  }
-
-  25% {
-    clip: rect(15px, 9999px, 60px, 0);
-  }
-
-  30% {
-    clip: rect(9px, 9999px, 32px, 0);
-  }
-
-  35% {
-    clip: rect(56px, 9999px, 78px, 0);
-  }
-
-  40% {
-    clip: rect(18px, 9999px, 42px, 0);
-  }
-
-  45% {
-    clip: rect(31px, 9999px, 95px, 0);
-  }
-
-  50% {
-    clip: rect(80px, 9999px, 2px, 0);
-  }
-
-  55% {
-    clip: rect(9px, 9999px, 34px, 0);
-  }
-
-  60% {
-    clip: rect(89px, 9999px, 86px, 0);
-  }
-
-  65% {
-    clip: rect(14px, 9999px, 66px, 0);
-  }
-
-  70% {
-    clip: rect(22px, 9999px, 23px, 0);
-  }
-
-  75% {
-    clip: rect(66px, 9999px, 32px, 0);
-  }
-
-  80% {
-    clip: rect(5px, 9999px, 71px, 0);
-  }
-
-  85% {
-    clip: rect(98px, 9999px, 64px, 0);
-  }
-
-  90% {
-    clip: rect(40px, 9999px, 75px, 0);
-  }
-
-  95% {
-    clip: rect(14px, 9999px, 79px, 0);
-  }
-
-  100% {
-    clip: rect(33px, 9999px, 54px, 0);
-  }
-}
-
-@keyframes glitch-anim2 {
-  0% {
-    clip: rect(29px, 9999px, 86px, 0);
-  }
-
-  5% {
-    clip: rect(29px, 9999px, 23px, 0);
-  }
-
-  10% {
-    clip: rect(93px, 9999px, 34px, 0);
-  }
-
-  15% {
-    clip: rect(14px, 9999px, 57px, 0);
-  }
-
-  20% {
-    clip: rect(2px, 9999px, 58px, 0);
-  }
-
-  25% {
-    clip: rect(95px, 9999px, 98px, 0);
-  }
-
-  30% {
-    clip: rect(13px, 9999px, 63px, 0);
-  }
-
-  35% {
-    clip: rect(75px, 9999px, 36px, 0);
-  }
-
-  40% {
-    clip: rect(38px, 9999px, 70px, 0);
-  }
-
-  45% {
-    clip: rect(63px, 9999px, 7px, 0);
-  }
-
-  50% {
-    clip: rect(4px, 9999px, 49px, 0);
-  }
-
-  55% {
-    clip: rect(13px, 9999px, 26px, 0);
-  }
-
-  60% {
-    clip: rect(70px, 9999px, 22px, 0);
-  }
-
-  65% {
-    clip: rect(28px, 9999px, 37px, 0);
-  }
-
-  70% {
-    clip: rect(36px, 9999px, 57px, 0);
-  }
-
-  75% {
-    clip: rect(67px, 9999px, 91px, 0);
-  }
-
-  80% {
-    clip: rect(38px, 9999px, 64px, 0);
-  }
-
-  85% {
-    clip: rect(9px, 9999px, 14px, 0);
-  }
-
-  90% {
-    clip: rect(24px, 9999px, 61px, 0);
-  }
-
-  95% {
-    clip: rect(4px, 9999px, 91px, 0);
-  }
-
-  100% {
-    clip: rect(20px, 9999px, 19px, 0);
-  }
-}
-
 /* Navbar Scrolled State */
 .nav-scrolled {
   background: rgba(0, 0, 0, 0.95);
   border-bottom: 1px solid var(--ctos-cyan);
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important;
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-open {
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ctos-cyan);
 }
 
 /* Utilities */
@@ -305,5 +116,22 @@ body {
 
   50% {
     opacity: 0;
+  }
+}
+
+/* Custom Animation Classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }

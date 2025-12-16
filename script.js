@@ -627,15 +627,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("network-bg");
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
-    let width, height;
-    let particles = [];
-    const particleCount = window.innerWidth < 768 ? 50 : 100;
-    const connectionDistance = 150;
-    const mouseValues = { x: null, y: null, radius: 200 };
+    const width = canvas.width = window.innerWidth;
+    const height = canvas.height = window.innerHeight;
+    const isMobile = width < 768;
+    const particleCount = isMobile ? 35 : 100; // Reduced for mobile
+    const connectionDistance = isMobile ? 100 : 150; // Shorter lines on mobile
+    const mouseValues = { x: null, y: null, radius: isMobile ? 100 : 200 };
 
     const resize = () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     };
     window.addEventListener("resize", resize);
     resize();
