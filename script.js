@@ -284,10 +284,10 @@ document.addEventListener("DOMContentLoaded", () => {
         )
         .join("");
       card.innerHTML = `
-          <h3 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2 uppercase tracking-wide">
+          <h3 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2 uppercase tracking-wide text-center">
             ${group.category}<span class="blink-cursor">_</span>
           </h3>
-          <div class="flex flex-wrap">
+          <div class="flex flex-wrap justify-center">
             ${itemsHtml}
           </div>
         `;
@@ -301,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const groupEl = document.createElement("div");
       groupEl.className = "mb-12";
       groupEl.innerHTML = `
-          <h2 class="text-2xl font-bold text-ctos-cyan mb-6 tracking-wider uppercase flex items-center">
+          <h2 class="text-2xl font-bold text-ctos-cyan mb-6 tracking-wider uppercase flex items-center justify-center md:justify-start">
             <span class="w-3 h-3 bg-ctos-cyan mr-3 animate-pulse"></span>
             ${group.group}<span class="blink-cursor">_</span>
           </h2>
@@ -315,12 +315,12 @@ document.addEventListener("DOMContentLoaded", () => {
         jobEl.innerHTML = `
             <div class="absolute -left-[37px] top-1 w-4 h-4 bg-black border-2 border-ctos-cyan rounded-none"></div>
             <div class="ctos-card p-8 bg-white/5 hover:bg-white/10 transition-colors">
-              <div class="flex flex-col md:flex-row md:justify-between mb-4">
+              <div class="flex flex-col md:flex-row md:justify-between mb-4 text-center md:text-left">
                 <div>
                   <h3 class="text-xl font-bold text-white uppercase">${job.role}</h3>
                   <p class="text-ctos-cyan font-mono tracking-wide">${job.company}</p>
                 </div>
-                <div class="text-left md:text-right mt-2 md:mt-0">
+                <div class="text-center md:text-right mt-2 md:mt-0">
                   <p class="text-gray-400 text-sm font-mono">[ ${job.period} ]</p>
                   <p class="text-gray-500 text-sm uppercase">${job.location}</p>
                 </div>
@@ -356,8 +356,8 @@ document.addEventListener("DOMContentLoaded", () => {
         : "";
 
       projectEl.innerHTML = `
-          <div class="${contentClass} relative z-10">
-            <div class="flex flex-col items-start mb-2">
+          <div class="${contentClass} relative z-10 w-full">
+            <div class="flex flex-col items-center md:items-start mb-2">
               <div class="flex justify-between w-full mb-1">
                  <p class="text-ctos-cyan font-mono text-xs uppercase tracking-widest">${project.featured ? "FEATURED_DEPLOYMENT" : "DEPLOYMENT"}</p>
                  <p class="text-gray-500 text-xs font-mono text-right uppercase">[ ${project.period || "UNKNOWN_DATE"} ]</p>
@@ -369,10 +369,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="ctos-card p-6 text-gray-400 mb-6 bg-black/80 backdrop-blur-md">
               <p class="leading-relaxed font-light">${project.description || ""}</p>
             </div>
-            <ul class="flex flex-wrap gap-3 text-xs text-gray-500 font-mono mb-8 uppercase ${index % 2 === 1 ? "md:justify-end" : ""}">
+            <ul class="flex flex-wrap gap-3 text-xs text-gray-500 font-mono mb-8 uppercase justify-center ${index % 2 === 1 ? "md:justify-end" : "md:justify-start"}">
               ${(project.tech || []).map((t) => `<li><span class="text-ctos-cyan">#</span>${t}</li>`).join("")}
             </ul>
-            <div class="flex gap-4 items-center ${index % 2 === 1 ? "md:justify-end" : ""}">
+            <div class="flex gap-4 items-center justify-center ${index % 2 === 1 ? "md:justify-end" : "md:justify-start"}">
               ${showProjectBtn}
             </div>
           </div>
