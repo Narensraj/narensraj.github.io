@@ -284,10 +284,10 @@ document.addEventListener("DOMContentLoaded", () => {
         )
         .join("");
       card.innerHTML = `
-          <h3 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2 uppercase tracking-wide">
+          <h3 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2 uppercase tracking-wide text-left">
             ${group.category}<span class="blink-cursor">_</span>
           </h3>
-          <div class="flex flex-wrap">
+          <div class="flex flex-wrap justify-start">
             ${itemsHtml}
           </div>
         `;
@@ -301,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const groupEl = document.createElement("div");
       groupEl.className = "mb-12";
       groupEl.innerHTML = `
-          <h2 class="text-2xl font-bold text-ctos-cyan mb-6 tracking-wider uppercase flex items-center">
+          <h2 class="text-2xl font-bold text-ctos-cyan mb-6 tracking-wider uppercase flex items-center justify-start">
             <span class="w-3 h-3 bg-ctos-cyan mr-3 animate-pulse"></span>
             ${group.group}<span class="blink-cursor">_</span>
           </h2>
