@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --tech-blue: #00f0ff;
-  --tech-purple: #7000ff;
+  --tech-blue: #D4AF37;
+  --tech-purple: #333333;
 }
 
 body {

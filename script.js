@@ -5,115 +5,152 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const skills = [
     {
-      category: "Firmware & Embedded",
-      items: ["C/C++", "Embedded C", "Rust (beginner)", "Python (tooling)"],
+      category: "Firmware & Languages",
+      items: ["C/C++", "Embedded C", "OptoScript", "Python", "Assembly", "Verilog", "VHDL", "C#", "Matlab", "Node-RED"],
     },
     {
-      category: "MCUs & Platforms",
-      items: ["ESP32 / ESP-IDF", "STM32 (HAL/LL)", "ARM Cortex-M", "PIC", "Arduino"],
+      category: "Hardware & MCUs",
+      items: ["STM32H7/F4/L4", "ESP8266", "ATmega328/88", "Raspberry Pi 4", "Opto22 Groov Epic/Rio", "Snap Pac R1"],
     },
     {
-      category: "RTOS & OS",
-      items: ["FreeRTOS", "Bare Metal", "Zephyr (exploring)", "Embedded Linux"],
+      category: "Protocols",
+      items: ["TCP/IP", "UDP", "Modbus TCP/IP", "UART", "I2C", "SPI", "MQTT", "REST APIs", "WebSockets"],
     },
     {
-      category: "Industrial Communication",
-      items: ["RS-485", "Modbus RTU/TCP", "CAN", "I2C", "SPI", "UART"],
+      category: "Tools & IDEs",
+      items: ["Pac Project", "Groov View", "LabVIEW", "STM32CubeMX", "Keil uVision", "Altium Designer", "ModelSim", "Atmel Studio", "Android Studio", "Unity 3D"],
     },
     {
-      category: "Wireless & IoT",
-      items: ["Wi-Fi", "BLE", "MQTT", "WebSockets", "REST APIs"],
-    },
-    {
-      category: "Tools, PCB & DevOps",
-      items: ["KiCad", "Altium (basic)", "Git", "VS Code", "PlatformIO", "Node-RED", "Docker (basic)"],
+      category: "Software & OS",
+      items: ["Grafana", "Linux", "Windows", "Git", "Docker", "Matlab Simulink", "VS Code"],
     },
   ];
 
   const experience = [
     {
-      company: "Envirotech Ag Systems Ltd",
-      role: "Embedded Systems Engineer",
-      period: "2024 – Present",
+      company: "Envirotech Ag Systems Limited (Nebula Group)",
+      role: "Embedded System Engineer",
+      period: "Oct 2025 - Present",
       location: "Winnipeg, Manitoba, Canada",
       description: [
-        "Designing and maintaining embedded controllers for livestock barns and agricultural automation.",
-        "Building ESP32/FreeRTOS-based controllers with RS-485 gateways, WebSocket monitoring, and SD logging.",
-        "Implementing secure OTA update paths and fault-tolerant restart strategies for 24/7 uptime.",
-        "Collaborating with controls, software, and operations teams to roll out systems across North America.",
+        "Developing frontend and backend features for sow feeding dashboards and device monitoring tools.",
+        "Building and optimizing REST APIs, WebSocket services, and real-time communication layers.",
+        "Analyzing embedded device traffic (UDP, TCP/IP, Modbus) to improve stability and troubleshooting.",
+        "Designing databases (MariaDB, MySQL, MSSQL) and managing schema updates and migration plans.",
+        "Reverse-engineering legacy Windows apps to modernize production logic and feeding algorithms.",
+        "Collaborating with firmware and hardware teams to integrate feeders, water systems, and sensors.",
       ],
     },
     {
-      company: "Climate Control / Greenhouse Automation (Confidential)",
-      role: "Embedded & Automation Developer",
-      period: "Previous",
+      company: "Climate Control Systems Inc",
+      role: "Controls/Software Developer",
+      period: "Jan 2024 - Oct 2025",
       location: "Leamington, Ontario, Canada",
       description: [
-        "Developed firmware and logic for commercial greenhouse controllers for fertigation and climate systems.",
-        "Integrated pH/EC dosing, nanobubble injection, dissolved oxygen, and hydrostatic level sensing.",
-        "Worked with Opto22, Node-RED, and custom dashboards for real-time monitoring and alarm management.",
-        "Optimized multi-zone irrigation scheduling and fail-safe routines for critical agricultural processes.",
+        "Oversaw advanced controls software projects, including the ClimateEpic product line deployment.",
+        "Enhanced Modbus TCP functionality in Groov Epic for seamless SCADA integration.",
+        "Developed sensor data acquisition systems using Node-RED and visualized data in Grafana.",
+        "Managed the full SDLC: analysis, design, coding, testing, deployment, and maintenance.",
+        "Provided international customer support (Canada, USA, Singapore, Sweden, Mexico, Australia).",
       ],
     },
     {
-      company: "Industrial Automation & Water Treatment (Confidential)",
-      role: "Embedded Firmware Engineer",
-      period: "Earlier",
+      company: "Climate Control Systems Inc",
+      role: "Junior Electronics and Controls Programmer",
+      period: "Jan 2023 - Jan 2024",
+      location: "Leamington, Ontario, Canada",
+      description: [
+        "Designed HMI/SCADA interfaces for Windows and web platforms using Opto 22 controllers.",
+        "Collaborated on software development for Fertigation Manager and Ozone Pro.",
+        "Implemented Modbus TCP/RTU and OPC UA protocols for sensor integration.",
+        "Built a custom library to convert wireless weather station data into serial communication.",
+      ],
+    },
+    {
+      company: "Promech Industries Pvt Ltd",
+      role: "Junior Embedded System Developer",
+      period: "Mar 2020 - Mar 2021",
+      location: "Coimbatore, Tamil Nadu, India",
+      description: [
+        "Designed custom board layouts based on project specifications.",
+        "Developed sensor/device drivers using bare-metal Embedded C.",
+        "Implemented I2C, UART, and SPI protocols for inter-device communication.",
+        "Debugged circuits using logic analyzers and digital oscilloscopes.",
+      ],
+    },
+     {
+      company: "Big Data Labs",
+      role: "Mobile Application Development Intern",
+      period: "Feb 2019",
       location: "India",
       description: [
-        "Developed firmware for industrial water-treatment controllers using Modbus and CAN networks.",
-        "Designed multi-zone irrigation and fertigation systems with SCADA-style UIs and data logging.",
-        "Implemented low-power sensor networks and remote monitoring for distributed field installations.",
+        "Learned application development for mobile, desktop, and web platforms.",
       ],
     },
   ];
 
   const projects = [
     {
-      title: "Nebula Dashboard – Livestock Analytics Platform",
+      title: "Nebula Dashboard – Livestock Analytics",
       description:
-        "A full-stack analytics dashboard for electronic sow feeders and barn management. Provides health, feeding, and behavior analytics with advanced filtering, barn visualizations, and event timelines.",
-      tech: ["React", "Node.js", "MySQL", "Material UI", "REST APIs"],
+        "Full-stack analytics dashboard for electronic sow feeders. Features health monitoring, real-time feeding data, and behavior analytics using React, Node.js, and SQL.",
+      tech: ["React", "Node.js", "MySQL", "REST APIs", "WebSockets"],
       githubUrl: "https://github.com/Narensraj",
       liveUrl: "",
       featured: true,
     },
     {
-      title: "Real-Time Automation Controller for Greenhouses",
+      title: "Farm Monitoring via WoT",
       description:
-        "ESP32 + FreeRTOS-based controller for commercial greenhouses handling irrigation, fertigation, and environmental control. Features watchdog-driven fail-safe, SD card data logging, and RS-485 sensor networks.",
-      tech: ["ESP32", "FreeRTOS", "RS-485", "C++"],
+        "Feeder System for Monitoring the Farm Using Web of Things (WoT). Created a network of smart feeders connected to a central monitoring system for efficient farm management.",
+      tech: ["IoT", "Embedded C", "Web of Things", "Sensors"],
       githubUrl: "",
       liveUrl: "",
       featured: true,
     },
     {
-      title: "Secure OTA & Firmware Update Pipeline",
+      title: "Interactive AR ATM Model",
       description:
-        "Encrypted OTA update system for ESP32 devices using ZIP packaging and AES-256-CBC. Includes versioning, rollback support, and integrity checks for safe remote updates over Wi-Fi.",
-      tech: ["ESP32", "AES-256", "OTA", "C++"],
+        "A Systematic AR-based ATM model to enhance security and safety. Utilized Augmented Reality to overlay digital security information on physical ATM interfaces.",
+      tech: ["Augmented Reality", "Unity", "Security"],
       githubUrl: "",
       liveUrl: "",
       featured: false,
     },
     {
-      title: "Modbus RTU Framework for Industrial Sensors",
+      title: "Intuitive and Impulsive Pet (IIP)",
       description:
-        "A modular Modbus RTU master/slave framework that simplifies integration of multiple industrial sensors on RS-485 networks with robust timeout handling and diagnostics.",
-      tech: ["Modbus", "RS-485", "Industrial Automation"],
+        "An innovative project focusing on human-pet interaction using embedded sensors and behavioral analysis algorithms.",
+      tech: ["Embedded Systems", "Sensors", "Behavior Analysis"],
       githubUrl: "",
       liveUrl: "",
       featured: false,
     },
-    {
-      title: "Personal Portfolio & Branding",
-      description:
-        "A minimal, tech-inspired personal site and brand system showcasing embedded projects, field photos, and a concise story across GitHub, LinkedIn, and Wix.",
-      tech: ["HTML", "Tailwind CSS", "GSAP"],
-      githubUrl: "https://github.com/Narensraj/narensraj.github.io",
-      liveUrl: "https://narensraj21.wixsite.com/myself",
-      featured: false,
-    },
+  ];
+
+  const certifications = [
+    "Cyber security essential",
+    "Embedded Systems Bare-Metal Programming Ground Up™ (STM32)",
+    "Deep learning Onramp",
+    "IT Academy: Software Defined Storage Concepts",
+    "Learning Complete PCB Design: From an Idea to a Product",
+  ];
+
+  const awards = [
+    "Best project of the year",
+  ];
+
+  const publications = [
+    "Intuitive and Impulsive Pet (IIP)",
+    "Feeder System for Monitoring the Farm Using WoT",
+    "A Systematic AR based ATM model to Enhance Security and Safety",
+  ];
+
+  const languages = [
+    { name: "English", level: "Full Professional" },
+    { name: "Kannada", level: "Native or Bilingual" },
+    { name: "Tamil", level: "Native or Bilingual" },
+    { name: "Telugu", level: "Elementary" },
   ];
 
   // ---------- DOM ELEMENTS ----------
@@ -121,6 +158,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const skillsGrid = document.getElementById("skills-grid");
   const experienceContainer = document.getElementById("experience-container");
   const projectsContainer = document.getElementById("projects-container");
+  const certificationsList = document.getElementById("certifications-list");
+  const awardsList = document.getElementById("awards-list");
+  const publicationsContainer = document.getElementById("publications-container");
+  const languagesGrid = document.getElementById("languages-grid");
+
   const navbar = document.getElementById("navbar");
   const mobileBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -130,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (skillsGrid) {
     skills.forEach((group) => {
       const card = document.createElement("div");
-      card.className = "glass-card p-6 rounded-2xl skill-card";
+      card.className = "glass-card p-6 rounded-2xl skill-card h-full";
 
       const itemsHtml = group.items
         .map(
@@ -151,6 +193,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ---------- POPULATE LANGUAGES ----------
+
+  if (languagesGrid) {
+    languages.forEach(lang => {
+        const item = document.createElement("div");
+        item.className = "glass p-4 rounded-xl text-center hover:border-tech-blue/30 transition-colors";
+        item.innerHTML = `
+            <h4 class="text-white font-bold mb-1">${lang.name}</h4>
+            <p class="text-xs text-gray-400">${lang.level}</p>
+        `;
+        languagesGrid.appendChild(item);
+    });
+  }
+
   // ---------- POPULATE EXPERIENCE ----------
 
   if (experienceContainer) {
@@ -159,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
       jobEl.className = "relative pl-8 border-l border-white/10 experience-card";
 
       jobEl.innerHTML = `
-        <div class="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-tech-blue shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
+        <div class="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-tech-blue shadow-[0_0_10px_rgba(212,175,55,0.5)]"></div>
         <div class="glass p-8 rounded-2xl hover:border-tech-blue/30 transition-colors">
           <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
             <div>
@@ -207,8 +263,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const bgGradient =
         index % 2 === 0
-          ? "from-tech-blue/20 to-purple-500/20"
-          : "from-purple-500/20 to-tech-blue/20";
+          ? "from-tech-blue/20 to-tech-purple/40"
+          : "from-tech-purple/40 to-tech-blue/20";
 
       const githubIcon = project.githubUrl
         ? `<a href="${project.githubUrl}" target="_blank" class="text-gray-300 hover:text-tech-blue transition-colors" aria-label="GitHub link">
@@ -245,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
         <div class="${imageClass} relative group">
-          <div class="absolute inset-0 bg-tech-blue/20 rounded-xl group-hover:bg-transparent transition-colors duration-300 z-10"></div>
+          <div class="absolute inset-0 bg-tech-blue/10 rounded-xl group-hover:bg-transparent transition-colors duration-300 z-10"></div>
           <div class="w-full h-64 md:h-80 bg-gradient-to-br ${bgGradient} rounded-xl border border-white/10 group-hover:border-tech-blue/50 transition-all duration-300 overflow-hidden flex items-center justify-center">
             <i data-lucide="cpu" class="w-24 h-24 text-white/20 group-hover:text-tech-blue/50 transition-colors duration-300 transform group-hover:scale-110"></i>
           </div>
@@ -253,6 +309,48 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       projectsContainer.appendChild(projectEl);
     });
+  }
+
+  // ---------- POPULATE CERTIFICATIONS & AWARDS ----------
+
+  if (certificationsList) {
+    certifications.forEach(cert => {
+        const item = document.createElement("div");
+        item.className = "flex items-start text-gray-300";
+        item.innerHTML = `
+            <i data-lucide="check-circle" class="w-5 h-5 text-tech-blue mr-3 mt-1 flex-shrink-0"></i>
+            <span>${cert}</span>
+        `;
+        certificationsList.appendChild(item);
+    });
+  }
+
+  if (awardsList) {
+    awards.forEach(award => {
+        const item = document.createElement("div");
+        item.className = "glass p-4 rounded-xl border-l-4 border-tech-blue";
+        item.innerHTML = `<span class="text-white font-medium">${award}</span>`;
+        awardsList.appendChild(item);
+    });
+  }
+
+  // ---------- POPULATE PUBLICATIONS ----------
+
+  if (publicationsContainer) {
+      publications.forEach(pub => {
+          const item = document.createElement("div");
+          item.className = "glass p-6 rounded-2xl hover:border-tech-blue/50 transition-colors flex items-start";
+          item.innerHTML = `
+             <div class="bg-tech-blue/10 p-3 rounded-full mr-4 text-tech-blue">
+                <i data-lucide="book-open" class="w-6 h-6"></i>
+             </div>
+             <div>
+                <h3 class="text-xl font-bold text-white mb-2">${pub}</h3>
+                <p class="text-gray-400 text-sm">Published Work</p>
+             </div>
+          `;
+          publicationsContainer.appendChild(item);
+      });
   }
 
   // ---------- ICONS ----------
@@ -406,6 +504,42 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 0.8,
         delay: 0.1,
       });
+    });
+
+    // Certifications & Awards
+    gsap.from("#certifications-list", {
+        scrollTrigger: {
+          trigger: "#certifications",
+          start: "top 75%"
+        },
+        opacity: 0,
+        x: -20,
+        duration: 0.8
+    });
+
+    gsap.from("#awards-list", {
+        scrollTrigger: {
+          trigger: "#certifications",
+          start: "top 75%"
+        },
+        opacity: 0,
+        x: 20,
+        duration: 0.8,
+        delay: 0.2
+    });
+
+    // Publications
+    gsap.utils.toArray("#publications-container > div").forEach((pub, i) => {
+        gsap.from(pub, {
+            scrollTrigger: {
+                trigger: "#publications",
+                start: "top 80%"
+            },
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            delay: i * 0.1
+        });
     });
 
     // Contact
