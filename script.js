@@ -577,15 +577,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Skills
-    gsap.from(".skill-card", {
-      scrollTrigger: {
-        trigger: "#skills",
-        start: "top 80%",
-      },
-      opacity: 0,
-      y: 30,
-      duration: 0.5,
-      stagger: 0.1,
+    gsap.utils.toArray(".skill-card").forEach((card, i) => {
+      gsap.from(card, {
+        scrollTrigger: { trigger: card, start: "top 85%" },
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+        delay: (i % 3) * 0.1, // Simple stagger based on 3-column grid
+      });
     });
 
     // Experience
