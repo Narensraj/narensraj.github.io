@@ -214,22 +214,73 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const certifications = [
-    { name: "The Fundamentals of Digital Marketing", issuer: "Google Digital Unlocked" },
-    { name: "Google Cloud Platform Fundamentals: Core Infrastructure", issuer: "Google Cloud" },
-    { name: "Introduction to Augmented Reality and ARCore", issuer: "Google AR & VR" },
-    { name: "Technical Support Fundamentals", issuer: "Google" },
-    { name: "Oil & Gas Industry Operations and Markets", issuer: "Duke University" },
-    { name: "Introduction to Packet Tracer - Mobile", issuer: "Cisco Networking Academy" },
-    { name: "Cyber security essential", issuer: "Cisco Networking Academy" },
-    { name: "Embedded Systems Bare-Metal Programming Ground Up™ (STM32)", issuer: "Udemy" },
-    { name: "Deep learning Onramp", issuer: "MathWorks" },
-    { name: "IT Academy: Software Defined Storage Concepts", issuer: "VMware IT Academy" },
-    { name: "Learning Complete PCB Design: From an Idea to a Product", issuer: "Udemy" },
-    { name: "Digital Footprint", issuer: "The University of Edinburgh" },
-    { name: "Wireless Communications for Everybody", issuer: "Yonsei University" },
-    { name: "Introduction to GIS Mapping", issuer: "University of Toronto" },
-    { name: "Converting Challenges into Opportunities", issuer: "UC San Diego" },
-    { name: "Big Data Modeling and Management Systems", issuer: "UC San Diego" },
+    {
+      category: "A. Academic Courses & Certifications",
+      items: [
+        { name: "Aircraft Maintenance", issuer: "NPTEL (SWAYAM) | IIT Kanpur", date: "Jan–Feb 2020" },
+      ],
+    },
+    {
+      category: "B. Coursera Certifications",
+      items: [
+        { name: "Technical Support Fundamentals", issuer: "Google", date: "Apr 2020" },
+        { name: "Oil & Gas Industry Operations and Markets", issuer: "Duke University", date: "May 2020" },
+        { name: "Introduction to Augmented Reality and ARCore", issuer: "Google AR & VR", date: "Apr 2020" },
+        { name: "Google Cloud Platform Fundamentals: Core Infrastructure", issuer: "Google Cloud", date: "Apr 2020" },
+        { name: "Digital Footprint", issuer: "University of Edinburgh", date: "Apr 2020" },
+        { name: "Wireless Communications for Everybody", issuer: "Yonsei University", date: "Apr 2020" },
+        { name: "Introduction to GIS Mapping", issuer: "University of Toronto", date: "May 2020" },
+        { name: "Converting Challenges into Opportunities", issuer: "UC San Diego", date: "Apr 2020" },
+        { name: "Big Data Modeling and Management Systems", issuer: "UC San Diego", date: "Apr 2020" },
+        { name: "Embedded Hardware and Operating Systems", issuer: "EIT Digital | University of Turku", date: "Jul 2020" },
+        { name: "AWS Fundamentals: Going Cloud-Native", issuer: "Amazon Web Services", date: "Apr 2020" },
+        { name: "Open Source Software Development Methods", issuer: "The Linux Foundation", date: "Apr 2020" },
+        { name: "AI For Everyone", issuer: "deeplearning.ai", date: "Apr 2020" },
+        { name: "Introduction to the Internet of Things and Embedded Systems", issuer: "UC Irvine", date: "Apr 2020" },
+      ],
+    },
+    {
+      category: "C. Coursera Specialization",
+      items: [
+        { name: "Open Source Software Development, Linux and Git", issuer: "The Linux Foundation", date: "Jul 2020" },
+      ],
+    },
+    {
+      category: "D. Google / Industry Certifications",
+      items: [
+        { name: "Fundamentals of Digital Marketing", issuer: "Google Digital Unlocked", date: "Jun 2020" },
+      ],
+    },
+    {
+      category: "E. GUVI / RPA Certification",
+      items: [
+        { name: "Step into Robotic Process Automation", issuer: "GUVI | UiPath Academic Alliance", date: "Jun 2020" },
+      ],
+    },
+    {
+      category: "F. MathWorks Certifications",
+      items: [
+        { name: "Deep Learning Onramp", issuer: "MathWorks Training Services", date: "May 2020" },
+        { name: "Machine Learning Onramp", issuer: "MathWorks Training Services", date: "May 2020" },
+      ],
+    },
+    {
+      category: "G. Cisco Networking Academy",
+      items: [
+        { name: "Cybersecurity Essentials", issuer: "Cisco Networking Academy", date: "May 2020" },
+        { name: "Entrepreneurship", issuer: "Cisco Networking Academy", date: "May 2020" },
+        { name: "Introduction to Packet Tracer", issuer: "Cisco Networking Academy", date: "May 2020" },
+        { name: "Introduction to Packet Tracer – Mobile", issuer: "Cisco Networking Academy", date: "May 2020" },
+        { name: "Introduction to IoT", issuer: "Cisco Networking Academy", date: "May 2020" },
+      ],
+    },
+    {
+      category: "H. Conferences, Presentations & Publications",
+      items: [
+        { name: "Intuitive and Impulsive PET (IIP) Feeder System", issuer: "ICSES 2020 (Springer)", date: "Sep 2020" },
+        { name: "A Systematic AR-based ATM Model", issuer: "ICCCEBS 2021 (IEEE Xplore)", date: "2021" },
+      ],
+    },
   ];
 
   const awards = ["Best project of the year"];
@@ -443,17 +494,65 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---------- POPULATE CERTIFICATIONS & AWARDS ----------
 
   if (certificationsList) {
-    certifications.forEach((cert) => {
-      const item = document.createElement("div");
-      item.className = "flex items-start text-gray-300";
-      item.innerHTML = `
-        <i data-lucide="check-circle" class="w-5 h-5 text-tech-blue mr-3 mt-1 flex-shrink-0"></i>
-        <div>
-          <span class="block text-white font-medium">${cert.name}</span>
-          ${cert.issuer ? `<span class="text-sm text-gray-500">${cert.issuer}</span>` : ""}
-        </div>
+    // Clear existing content if any (though typically empty)
+    certificationsList.innerHTML = "";
+
+    certifications.forEach((group, index) => {
+      // Create Accordion Item
+      const accordionItem = document.createElement("div");
+      accordionItem.className = "glass rounded-2xl overflow-hidden transition-all duration-300";
+
+      // Header
+      const header = document.createElement("button");
+      header.className = "w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors focus:outline-none";
+      header.innerHTML = `
+        <span class="text-lg font-bold text-white">${group.category}</span>
+        <i data-lucide="chevron-down" class="w-5 h-5 text-tech-blue transition-transform duration-300" id="chevron-${index}"></i>
       `;
-      certificationsList.appendChild(item);
+
+      // Content
+      const content = document.createElement("div");
+      content.id = `content-${index}`;
+      content.className = "max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-black/20";
+
+      const contentInner = document.createElement("div");
+      contentInner.className = "p-6 pt-0 grid gap-4";
+
+      group.items.forEach((cert) => {
+        const certEl = document.createElement("div");
+        certEl.className = "flex items-start text-gray-300 border-l-2 border-white/10 pl-4 py-1 hover:border-tech-blue transition-colors";
+        certEl.innerHTML = `
+          <div>
+            <span class="block text-white font-medium">${cert.name}</span>
+            <div class="flex flex-wrap gap-2 text-sm text-gray-500 mt-1">
+              <span>${cert.issuer}</span>
+              <span class="hidden sm:inline text-gray-700">•</span>
+              <span class="font-mono text-xs pt-0.5">${cert.date}</span>
+            </div>
+          </div>
+        `;
+        contentInner.appendChild(certEl);
+      });
+
+      content.appendChild(contentInner);
+
+      // Toggle Logic
+      header.addEventListener("click", () => {
+        const chevron = header.querySelector("i");
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+
+        if (isOpen) {
+          content.style.maxHeight = "0px";
+          chevron.style.transform = "rotate(0deg)";
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          chevron.style.transform = "rotate(180deg)";
+        }
+      });
+
+      accordionItem.appendChild(header);
+      accordionItem.appendChild(content);
+      certificationsList.appendChild(accordionItem);
     });
   }
 
