@@ -331,7 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h3 class="text-xl font-bold text-white">${job.role}</h3>
                 <p class="text-tech-blue font-medium">${job.company}</p>
               </div>
-              <div class="text-right mt-2 md:mt-0">
+              <div class="text-left md:text-right mt-2 md:mt-0">
                 <p class="text-gray-400 text-sm font-mono">${job.period}</p>
                 <p class="text-gray-500 text-sm">${job.location}</p>
               </div>
@@ -457,7 +457,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (publicationsContainer) {
     publications.forEach((pub) => {
       const item = document.createElement("div");
-      item.className = "glass p-6 rounded-2xl hover:border-tech-blue/50 transition-colors flex items-start gap-4"; // added gap-4
+      item.className = "glass p-6 rounded-2xl hover:border-tech-blue/50 transition-colors flex flex-col sm:flex-row items-start gap-4"; // added gap-4
       item.innerHTML = `
         <div class="flex-shrink-0">
             ${pub.thumbnail ?
