@@ -495,7 +495,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Mobile Menu
   let isMenuOpen = false;
   const closeMobileMenu = () => {
-    if (!mobileMenu || !isMenuOpen) return;
+    if (!mobileMenu) return;
     isMenuOpen = false;
     if (typeof gsap !== "undefined") {
       gsap.to(mobileMenu, { height: 0, opacity: 0, duration: 0.2, ease: "power2.in", onComplete: () => mobileMenu.classList.add("hidden") });
