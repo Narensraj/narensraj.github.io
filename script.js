@@ -225,6 +225,11 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Deep learning Onramp", issuer: "MathWorks" },
     { name: "IT Academy: Software Defined Storage Concepts", issuer: "VMware IT Academy" },
     { name: "Learning Complete PCB Design: From an Idea to a Product", issuer: "Udemy" },
+    { name: "Digital Footprint", issuer: "The University of Edinburgh" },
+    { name: "Wireless Communications for Everybody", issuer: "Yonsei University" },
+    { name: "Introduction to GIS Mapping", issuer: "University of Toronto" },
+    { name: "Converting Challenges into Opportunities", issuer: "UC San Diego" },
+    { name: "Big Data Modeling and Management Systems", issuer: "UC San Diego" },
   ];
 
   const awards = ["Best project of the year"];
