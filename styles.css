@@ -70,15 +70,7 @@ body {
   transform: scaleX(1);
 }
 
-/* Scanlines/Overlay - handled in HTML now, but keeping clean class just in case */
-.bg-scanlines {
-  background: linear-gradient(to bottom,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0) 50%,
-      rgba(0, 0, 0, 0.2) 50%,
-      rgba(0, 0, 0, 0.2));
-  background-size: 100% 4px;
-}
+
 
 /* Navbar Scrolled State */
 .nav-scrolled {

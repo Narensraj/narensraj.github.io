@@ -544,16 +544,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.from("#certifications-list", { scrollTrigger: { trigger: "#certifications", start: "top 85%" }, opacity: 0, x: -20 });
     gsap.from("#awards-list", { scrollTrigger: { trigger: "#certifications", start: "top 85%" }, opacity: 0, x: 20, delay: 0.2 });
 
-    // Publications GSAP - Commented out to ensure visibility
-    // const pubs = document.querySelectorAll("#publications-container > div");
-    // if (pubs.length > 0) {
-    //   gsap.from(pubs, {
-    //     scrollTrigger: { trigger: "#publications", start: "top 90%" },
-    //     opacity: 0,
-    //     y: 20,
-    //     stagger: 0.1
-    //   });
-    // }
+
 
     gsap.from(".contact-content", { scrollTrigger: { trigger: "#contact", start: "top 80%" }, opacity: 0, scale: 0.95, duration: 0.8 });
   }
