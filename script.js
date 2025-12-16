@@ -1,20 +1,57 @@
 // script.js
-
 document.addEventListener("DOMContentLoaded", () => {
   // ---------- DATA ----------
 
   const skills = [
     {
       category: "Programming Languages",
-      items: ["C", "C++", "Embedded C", "Python", "JavaScript", "TypeScript", "SQL", "OptoScript", "Verilog", "VHDL", "MATLAB", "Assembly", "C#"],
+      items: [
+        "C",
+        "C++",
+        "Embedded C",
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "SQL",
+        "OptoScript",
+        "Verilog",
+        "VHDL",
+        "MATLAB",
+        "Assembly",
+        "C#",
+      ],
     },
     {
       category: "Embedded & Hardware",
-      items: ["STM32", "ESP32", "ESP8266", "Atmel AVR", "Raspberry Pi", "Microcontrollers", "PCB Design (Altium, KiCad, EasyEDA)", "NI Multisim", "Xilinx/FPGA", "Control Panels", "HMI/SCADA"],
+      items: [
+        "STM32",
+        "ESP32",
+        "ESP8266",
+        "Atmel AVR",
+        "Raspberry Pi",
+        "Microcontrollers",
+        "PCB Design (Altium, KiCad, EasyEDA)",
+        "NI Multisim",
+        "Xilinx/FPGA",
+        "Control Panels",
+        "HMI/SCADA",
+      ],
     },
     {
       category: "Protocols & Industrial",
-      items: ["TCP/IP", "UDP", "Modbus (RTU/TCP)", "OPC", "MQTT", "I2C", "SPI", "UART", "RS-485", "Industrial Automation", "Precision Agriculture"],
+      items: [
+        "TCP/IP",
+        "UDP",
+        "Modbus (RTU/TCP)",
+        "OPC",
+        "MQTT",
+        "I2C",
+        "SPI",
+        "UART",
+        "RS-485",
+        "Industrial Automation",
+        "Precision Agriculture",
+      ],
     },
     {
       category: "Web, Database & Cloud",
@@ -87,148 +124,139 @@ document.addEventListener("DOMContentLoaded", () => {
       role: "Mobile Application Development Intern",
       period: "Feb 2019",
       location: "India",
-      description: [
-        "Learned application development for mobile, desktop, and web platforms.",
-      ],
+      description: ["Learned application development for mobile, desktop, and web platforms."],
     },
   ];
 
   const projects = [
     {
-      title: "Nebula Dashboard – Livestock Analytics",
+      title: "Ingenious UOI based Augmented Reality using SIFT for ATM",
+      period: "Aug 2020 - Mar 2021",
+      association: "Associated with SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
       description:
-  const projects = [
-        {
-          title: "Ingenious UOI based Augmented Reality using SIFT for ATM",
-          period: "Aug 2020 - Mar 2021",
-          association: "Associated with SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
-          description:
-            "This project uses Augmented Reality which imposes virtual keypad on digital image at real time. There is no need for any additional hardware or camera to be installed. The operation is powered by AR phone application.",
-          tech: ["Vuforia SDK", "Unity 3D", "Arduino IDE", "ESP8266"],
-          githubUrl: "",
-          liveUrl: "https://www.hackster.io/Narensraj/diy-touchless-atm-using-augmented-reality-iotar-e621e0",
-          featured: true,
-        },
-        {
-          title: "Pet Feeder using Google assistant v1.1",
-          period: "Oct 2019 - Apr 2020",
-          association: "Associated with SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
-          description:
-            "The Pet Feeder can be coded to complete a variety of tasks, for instance, you could program it to fill the food bowl at certain intervals or by saying 'Ok Google feed my pet' to fill up the bowl.",
-          tech: ["Arduino IDE", "ESP8266"],
-          githubUrl: "",
-          liveUrl: "https://www.hackster.io/Narensraj/diy-pet-feeder-using-google-assistant-d54765",
-          featured: true,
-        },
-        {
-          title: "Voice controlled home automation using MQTT",
-          period: "Aug 2019 - Nov 2019",
-          association: "Associated with SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
-          description:
-            "In this home automation, as the user gives commands to the Google assistant, Home appliances like Bulb, Fan and Motor etc., can be controlled accordingly. The commands decoded and sent to the microcontroller to control connected relays.",
-          tech: ["Arduino IDE", "ESP8266"],
-          githubUrl: "",
-          liveUrl: "",
-          featured: false,
-        },
-        {
-          title: "Automatic Pet care v1.0",
-          period: "Aug 2017 - Mar 2018",
-          association: "Associated with PSG College of Technology",
-          description:
-            "An Arduino based Automatic Pet Feeder which can automatically serve food to your pet timely. It has a DS3231 RTC Module for scheduled feeding.",
-          tech: ["Arduino IDE"],
-          githubUrl: "",
-          liveUrl: "",
-          featured: false,
-        },
-        {
-          title: "Magnetic Drum separator",
-          period: "Sep 2014 - Oct 2014",
-          association: "",
-          description:
-            "Magnetic Drum Separators are of self-cleaning type and provide continuous removal of ferrous/Iron contamination from a wide range of free-flowing bulk and granular materials.",
-          tech: [],
-          githubUrl: "",
-          liveUrl: "",
-          featured: false,
-        },
-        {
-          title: "Light representation of Intestine",
-          period: "Jul 2012 - Aug 2012",
-          association: "",
-          description:
-            "LED light representation of human body organs to identify organ and food flow.",
-          tech: [],
-          githubUrl: "",
-          liveUrl: "",
-          featured: false,
-        },
-      ];
+        "This project uses Augmented Reality which imposes virtual keypad on digital image at real time. There is no need for any additional hardware or camera to be installed. The operation is powered by AR phone application.",
+      tech: ["Vuforia SDK", "Unity 3D", "Arduino IDE", "ESP8266"],
+      githubUrl: "",
+      liveUrl: "https://www.hackster.io/Narensraj/diy-touchless-atm-using-augmented-reality-iotar-e621e0",
+      featured: true,
+    },
+    {
+      title: "Pet Feeder using Google assistant v1.1",
+      period: "Oct 2019 - Apr 2020",
+      association: "Associated with SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
+      description:
+        "The Pet Feeder can be coded to complete a variety of tasks, for instance, you could program it to fill the food bowl at certain intervals or by saying 'Ok Google feed my pet' to fill up the bowl.",
+      tech: ["Arduino IDE", "ESP8266"],
+      githubUrl: "",
+      liveUrl: "https://www.hackster.io/Narensraj/diy-pet-feeder-using-google-assistant-d54765",
+      featured: true,
+    },
+    {
+      title: "Voice controlled home automation using MQTT",
+      period: "Aug 2019 - Nov 2019",
+      association: "Associated with SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
+      description:
+        "In this home automation, as the user gives commands to the Google assistant, Home appliances like Bulb, Fan and Motor etc., can be controlled accordingly. The commands decoded and sent to the microcontroller to control connected relays.",
+      tech: ["Arduino IDE", "ESP8266"],
+      githubUrl: "",
+      liveUrl: "",
+      featured: false,
+    },
+    {
+      title: "Automatic Pet care v1.0",
+      period: "Aug 2017 - Mar 2018",
+      association: "Associated with PSG College of Technology",
+      description:
+        "An Arduino based Automatic Pet Feeder which can automatically serve food to your pet timely. It has a DS3231 RTC Module for scheduled feeding.",
+      tech: ["Arduino IDE"],
+      githubUrl: "",
+      liveUrl: "",
+      featured: false,
+    },
+    {
+      title: "Magnetic Drum separator",
+      period: "Sep 2014 - Oct 2014",
+      association: "",
+      description:
+        "Magnetic Drum Separators are of self-cleaning type and provide continuous removal of ferrous/Iron contamination from a wide range of free-flowing bulk and granular materials.",
+      tech: [],
+      githubUrl: "",
+      liveUrl: "",
+      featured: false,
+    },
+    {
+      title: "Light representation of Intestine",
+      period: "Jul 2012 - Aug 2012",
+      association: "",
+      description: "LED light representation of human body organs to identify organ and food flow.",
+      tech: [],
+      githubUrl: "",
+      liveUrl: "",
+      featured: false,
+    },
+  ];
 
-      const certifications = [
-        "Cyber security essential",
-        "Embedded Systems Bare-Metal Programming Ground Up™ (STM32)",
-        "Deep learning Onramp",
-        "IT Academy: Software Defined Storage Concepts",
-        "Learning Complete PCB Design: From an Idea to a Product",
-      ];
+  const certifications = [
+    "Cyber security essential",
+    "Embedded Systems Bare-Metal Programming Ground Up™ (STM32)",
+    "Deep learning Onramp",
+    "IT Academy: Software Defined Storage Concepts",
+    "Learning Complete PCB Design: From an Idea to a Product",
+  ];
 
-      const awards = [
-        "Best project of the year",
-      ];
+  const awards = ["Best project of the year"];
 
-      const publications = [
-        {
-          title: "Intuitive and Impulsive Pet (IIP) Feeder System for Monitoring the Farm Using WoT",
-          conference: "International Conference on Sustainable Expert Systems (ICSES 2020)",
-          date: "Sep 1, 2020",
-          url: "https://www.springerprofessional.de/en/intuitive-and-impulsive-pet-iip-feeder-system-for-monitoring-the/19021924"
-        },
-        {
-          title: "A Systematic AR based ATM model to Enhance Security and Safety",
-          conference: "International Conference on Computing, Communication, Electrical and Biomedical System (ICCCEBS 2021)",
-          date: "Mar 18, 2021",
-          url: "https://ieeexplore.ieee.org/document/9532897"
-        },
-      ];
+  const publications = [
+    {
+      title: "Intuitive and Impulsive Pet (IIP) Feeder System for Monitoring the Farm Using WoT",
+      conference: "International Conference on Sustainable Expert Systems (ICSES 2020)",
+      date: "Sep 1, 2020",
+      url: "https://www.springerprofessional.de/en/intuitive-and-impulsive-pet-iip-feeder-system-for-monitoring-the/19021924",
+    },
+    {
+      title: "A Systematic AR based ATM model to Enhance Security and Safety",
+      conference: "International Conference on Computing, Communication, Electrical and Biomedical System (ICCCEBS 2021)",
+      date: "Mar 18, 2021",
+      url: "https://ieeexplore.ieee.org/document/9532897",
+    },
+  ];
 
-      const languages = [
-        { name: "English", level: "Full Professional" },
-        { name: "Kannada", level: "Native or Bilingual" },
-        { name: "Tamil", level: "Native or Bilingual" },
-        { name: "Telugu", level: "Elementary" },
-      ];
+  const languages = [
+    { name: "English", level: "Full Professional" },
+    { name: "Kannada", level: "Native or Bilingual" },
+    { name: "Tamil", level: "Native or Bilingual" },
+    { name: "Telugu", level: "Elementary" },
+  ];
 
-      // ---------- DOM ELEMENTS ----------
+  // ---------- DOM ELEMENTS ----------
 
-      const skillsGrid = document.getElementById("skills-grid");
-      const experienceContainer = document.getElementById("experience-container");
-      const projectsContainer = document.getElementById("projects-container");
-      const certificationsList = document.getElementById("certifications-list");
-      const awardsList = document.getElementById("awards-list");
-      const publicationsContainer = document.getElementById("publications-container");
-      const languagesGrid = document.getElementById("languages-grid");
+  const skillsGrid = document.getElementById("skills-grid");
+  const experienceContainer = document.getElementById("experience-container");
+  const projectsContainer = document.getElementById("projects-container");
+  const certificationsList = document.getElementById("certifications-list");
+  const awardsList = document.getElementById("awards-list");
+  const publicationsContainer = document.getElementById("publications-container");
+  const languagesGrid = document.getElementById("languages-grid");
 
-      const navbar = document.getElementById("navbar");
-      const mobileBtn = document.getElementById("mobile-menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
+  const navbar = document.getElementById("navbar");
+  const mobileBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-      // ---------- POPULATE SKILLS ----------
+  // ---------- POPULATE SKILLS ----------
 
-      if(skillsGrid) {
-        skills.forEach((group) => {
-          const card = document.createElement("div");
-          card.className = "glass-card p-6 rounded-2xl skill-card h-full";
+  if (skillsGrid) {
+    skills.forEach((group) => {
+      const card = document.createElement("div");
+      card.className = "glass-card p-6 rounded-2xl skill-card h-full";
 
-          const itemsHtml = group.items
-            .map(
-              (item) =>
-                `<span class="inline-block px-3 py-1 bg-white/5 rounded-full text-sm text-tech-blue mr-2 mb-2 border border-white/5 hover:border-tech-blue/30 transition-colors">${item}</span>`
-            )
-            .join("");
+      const itemsHtml = group.items
+        .map(
+          (item) =>
+            `<span class="inline-block px-3 py-1 bg-white/5 rounded-full text-sm text-tech-blue mr-2 mb-2 border border-white/5 hover:border-tech-blue/30 transition-colors">${item}</span>`
+        )
+        .join("");
 
-          card.innerHTML = `
+      card.innerHTML = `
         <h3 class="text-xl font-bold text-white mb-4 border-b border-white/10 pb-2">
           ${group.category}
         </h3>
@@ -236,32 +264,33 @@ document.addEventListener("DOMContentLoaded", () => {
           ${itemsHtml}
         </div>
       `;
-          skillsGrid.appendChild(card);
-        });
-      }
+
+      skillsGrid.appendChild(card);
+    });
+  }
 
   // ---------- POPULATE LANGUAGES ----------
 
-  if(languagesGrid) {
-        languages.forEach(lang => {
-          const item = document.createElement("div");
-          item.className = "glass p-4 rounded-xl text-center hover:border-tech-blue/30 transition-colors";
-          item.innerHTML = `
-            <h4 class="text-white font-bold mb-1">${lang.name}</h4>
-            <p class="text-xs text-gray-400">${lang.level}</p>
-        `;
-          languagesGrid.appendChild(item);
-        });
-      }
+  if (languagesGrid) {
+    languages.forEach((lang) => {
+      const item = document.createElement("div");
+      item.className = "glass p-4 rounded-xl text-center hover:border-tech-blue/30 transition-colors";
+      item.innerHTML = `
+        <h4 class="text-white font-bold mb-1">${lang.name}</h4>
+        <p class="text-xs text-gray-400">${lang.level}</p>
+      `;
+      languagesGrid.appendChild(item);
+    });
+  }
 
   // ---------- POPULATE EXPERIENCE ----------
 
-  if(experienceContainer) {
-        experience.forEach((job) => {
-          const jobEl = document.createElement("div");
-          jobEl.className = "relative pl-8 border-l border-white/10 experience-card";
+  if (experienceContainer) {
+    experience.forEach((job) => {
+      const jobEl = document.createElement("div");
+      jobEl.className = "relative pl-8 border-l border-white/10 experience-card";
 
-          jobEl.innerHTML = `
+      jobEl.innerHTML = `
         <div class="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-tech-blue shadow-[0_0_10px_rgba(212,175,55,0.5)]"></div>
         <div class="glass p-8 rounded-2xl hover:border-tech-blue/30 transition-colors">
           <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
@@ -276,83 +305,78 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <ul class="space-y-2">
             ${job.description
-              .map(
-                (line) => `
-              <li class="flex items-start text-gray-400">
-                <span class="text-tech-blue mr-2 mt-1.5">▹</span>
-                <span>${line}</span>
-              </li>`
-              )
-              .join("")}
+          .map(
+            (line) => `
+                  <li class="flex items-start text-gray-400">
+                    <span class="text-tech-blue mr-2 mt-1.5">▹</span>
+                    <span>${line}</span>
+                  </li>`
+          )
+          .join("")}
           </ul>
         </div>
       `;
-          experienceContainer.appendChild(jobEl);
-        });
-      }
+      experienceContainer.appendChild(jobEl);
+    });
+  }
 
   // ---------- POPULATE PROJECTS ----------
 
-  if(projectsContainer) {
-        projects.forEach((project, index) => {
-          const projectEl = document.createElement("div");
-          projectEl.className = `grid md:grid-cols-12 gap-8 items-center project-card`;
+  if (projectsContainer) {
+    projects.forEach((project, index) => {
+      const projectEl = document.createElement("div");
+      projectEl.className = "grid md:grid-cols-12 gap-8 items-center project-card";
 
-          const contentClass =
-            index % 2 === 1
-              ? "md:col-start-6 md:col-end-13 order-2 md:order-2"
-              : "md:col-start-1 md:col-end-8 order-2 md:order-1";
+      const contentClass =
+        index % 2 === 1
+          ? "md:col-start-6 md:col-end-13 order-2 md:order-2"
+          : "md:col-start-1 md:col-end-8 order-2 md:order-1";
 
-          const imageClass =
-            index % 2 === 1
-              ? "md:col-start-1 md:col-end-6 order-1 md:order-1"
-              : "md:col-start-8 md:col-end-13 order-1 md:order-2";
+      const imageClass =
+        index % 2 === 1
+          ? "md:col-start-1 md:col-end-6 order-1 md:order-1"
+          : "md:col-start-8 md:col-end-13 order-1 md:order-2";
 
-          const bgGradient =
-            index % 2 === 0
-              ? "from-tech-blue/20 to-tech-purple/40"
-              : "from-tech-purple/40 to-tech-blue/20";
+      const bgGradient = index % 2 === 0 ? "from-tech-blue/20 to-tech-purple/40" : "from-tech-purple/40 to-tech-blue/20";
 
-          const projectUrl = project.liveUrl || project.githubUrl;
-          const titleLink = projectUrl
-            ? `<a href="${projectUrl}" target="_blank" class="hover:text-tech-blue transition-colors flex items-center gap-2 group-hover:text-tech-blue">
-            ${project.title}
-           </a>`
-            : project.title;
+      const projectUrl = project.liveUrl || project.githubUrl;
+      const titleLink = projectUrl
+        ? `<a href="${projectUrl}" target="_blank" rel="noopener noreferrer" class="hover:text-tech-blue transition-colors flex items-center gap-2 group-hover:text-tech-blue">${project.title}</a>`
+        : project.title;
 
-          const showProjectBtn = projectUrl
-            ? `<a href="${projectUrl}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-tech-blue/10 text-tech-blue rounded-full hover:bg-tech-blue/20 transition-colors text-sm font-medium border border-tech-blue/20">
+      const showProjectBtn = projectUrl
+        ? `<a href="${projectUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-tech-blue/10 text-tech-blue rounded-full hover:bg-tech-blue/20 transition-colors text-sm font-medium border border-tech-blue/20">
              Show Project
              <i data-lucide="external-link" class="w-4 h-4"></i>
            </a>`
-            : "";
+        : "";
 
-          projectEl.innerHTML = `
+      projectEl.innerHTML = `
         <div class="${contentClass} relative z-10">
           <div class="flex justify-between items-start mb-2">
-             <p class="text-tech-blue font-mono text-sm">
-                ${project.featured ? "Featured Project" : "Project"}
-             </p>
-             <p class="text-gray-500 text-xs font-mono text-right">
-                ${project.period}
-             </p>
+            <p class="text-tech-blue font-mono text-sm">
+              ${project.featured ? "Featured Project" : "Project"}
+            </p>
+            <p class="text-gray-500 text-xs font-mono text-right">
+              ${project.period || ""}
+            </p>
           </div>
-          
+
           <h3 class="text-3xl font-bold text-white mb-2 cursor-pointer">
             ${titleLink}
           </h3>
 
-           ${project.association ? `<p class="text-gray-400 text-sm mb-4 italic">${project.association}</p>` : ""}
+          ${project.association ? `<p class="text-gray-400 text-sm mb-4 italic">${project.association}</p>` : ""}
 
           <div class="glass p-6 rounded-xl text-gray-400 mb-6 shadow-xl">
-            ${project.description}
+            ${project.description || ""}
           </div>
-          <ul class="flex flex-wrap gap-4 text-sm text-gray-400 font-mono mb-8 ${index % 2 === 1 ? "md:justify-end" : ""
-            }">
-            ${project.tech.map((t) => `<li>${t}</li>`).join("")}
+
+          <ul class="flex flex-wrap gap-4 text-sm text-gray-400 font-mono mb-8 ${index % 2 === 1 ? "md:justify-end" : ""}">
+            ${(project.tech || []).map((t) => `<li>${t}</li>`).join("")}
           </ul>
-          <div class="flex gap-4 items-center ${index % 2 === 1 ? "md:justify-end" : ""
-            }">
+
+          <div class="flex gap-4 items-center ${index % 2 === 1 ? "md:justify-end" : ""}">
             ${showProjectBtn}
           </div>
         </div>
@@ -364,255 +388,221 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       `;
-          projectsContainer.appendChild(projectEl);
-        });
-      }
+
+      projectsContainer.appendChild(projectEl);
+    });
+  }
 
   // ---------- POPULATE CERTIFICATIONS & AWARDS ----------
 
-  if(certificationsList) {
-        certifications.forEach(cert => {
-          const item = document.createElement("div");
-          item.className = "flex items-start text-gray-300";
-          item.innerHTML = `
-            <i data-lucide="check-circle" class="w-5 h-5 text-tech-blue mr-3 mt-1 flex-shrink-0"></i>
-            <span>${cert}</span>
-        `;
-          certificationsList.appendChild(item);
-        });
-      }
+  if (certificationsList) {
+    certifications.forEach((cert) => {
+      const item = document.createElement("div");
+      item.className = "flex items-start text-gray-300";
+      item.innerHTML = `
+        <i data-lucide="check-circle" class="w-5 h-5 text-tech-blue mr-3 mt-1 flex-shrink-0"></i>
+        <span>${cert}</span>
+      `;
+      certificationsList.appendChild(item);
+    });
+  }
 
-  if(awardsList) {
-        awards.forEach(award => {
-          const item = document.createElement("div");
-          item.className = "glass p-4 rounded-xl border-l-4 border-tech-blue";
-          item.innerHTML = `<span class="text-white font-medium">${award}</span>`;
-          awardsList.appendChild(item);
-        });
-      }
+  if (awardsList) {
+    awards.forEach((award) => {
+      const item = document.createElement("div");
+      item.className = "glass p-4 rounded-xl border-l-4 border-tech-blue";
+      item.innerHTML = `<span class="text-white font-medium">${award}</span>`;
+      awardsList.appendChild(item);
+    });
+  }
 
   // ---------- POPULATE PUBLICATIONS ----------
 
-  if(publicationsContainer) {
-        publications.forEach(pub => {
-          const item = document.createElement("div");
-          item.className = "glass p-6 rounded-2xl hover:border-tech-blue/50 transition-colors flex items-start";
-          item.innerHTML = `
-             <div class="bg-tech-blue/10 p-3 rounded-full mr-4 text-tech-blue">
-                <i data-lucide="book-open" class="w-6 h-6"></i>
-             </div>
-             <div>
-                <h3 class="text-xl font-bold text-white mb-2">
-                    <a href="${pub.url}" target="_blank" class="hover:text-tech-blue transition-colors flex items-center gap-2">
-                        ${pub.title}
-                        <i data-lucide="external-link" class="w-4 h-4 text-gray-500"></i>
-                    </a>
-                </h3>
-                <p class="text-gray-400 text-sm mb-1">${pub.conference}</p>
-                <p class="text-gray-500 text-xs font-mono">${pub.date}</p>
-             </div>
-          `;
-          publicationsContainer.appendChild(item);
-        });
-      }
+  if (publicationsContainer) {
+    publications.forEach((pub) => {
+      const item = document.createElement("div");
+      item.className = "glass p-6 rounded-2xl hover:border-tech-blue/50 transition-colors flex items-start";
+      item.innerHTML = `
+        <div class="bg-tech-blue/10 p-3 rounded-full mr-4 text-tech-blue">
+          <i data-lucide="book-open" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white mb-2">
+            <a href="${pub.url}" target="_blank" rel="noopener noreferrer" class="hover:text-tech-blue transition-colors flex items-center gap-2">
+              ${pub.title}
+              <i data-lucide="external-link" class="w-4 h-4 text-gray-500"></i>
+            </a>
+          </h3>
+          <p class="text-gray-400 text-sm mb-1">${pub.conference}</p>
+          <p class="text-gray-500 text-xs font-mono">${pub.date}</p>
+        </div>
+      `;
+      publicationsContainer.appendChild(item);
+    });
+  }
 
   // ---------- ICONS ----------
 
-  if(typeof lucide !== "undefined") {
-  lucide.createIcons();
-}
-
-// ---------- NAVBAR SCROLL EFFECT ----------
-
-if (navbar) {
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add("nav-scrolled");
-    } else {
-      navbar.classList.remove("nav-scrolled");
-    }
-  });
-}
-
-// ---------- MOBILE MENU ----------
-
-let isMenuOpen = false;
-
-const closeMobileMenu = () => {
-  if (!mobileMenu || !isMenuOpen) return;
-  isMenuOpen = false;
-  if (typeof gsap !== "undefined") {
-    gsap.to(mobileMenu, {
-      height: 0,
-      opacity: 0,
-      duration: 0.3,
-      onComplete: () => mobileMenu.classList.add("hidden"),
-    });
-  } else {
-    mobileMenu.classList.add("hidden");
+  if (typeof lucide !== "undefined") {
+    lucide.createIcons();
   }
-};
 
-if (mobileBtn && mobileMenu) {
-  mobileBtn.addEventListener("click", () => {
-    isMenuOpen = !isMenuOpen;
-    if (isMenuOpen) {
-      mobileMenu.classList.remove("hidden");
-      if (typeof gsap !== "undefined") {
-        gsap.fromTo(
-          mobileMenu,
-          { height: 0, opacity: 0 },
-          { height: "auto", opacity: 1, duration: 0.3 }
-        );
-      }
+  // ---------- NAVBAR SCROLL EFFECT ----------
+
+  if (navbar) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) navbar.classList.add("nav-scrolled");
+      else navbar.classList.remove("nav-scrolled");
+    });
+  }
+
+  // ---------- MOBILE MENU ----------
+
+  let isMenuOpen = false;
+
+  const closeMobileMenu = () => {
+    if (!mobileMenu || !isMenuOpen) return;
+    isMenuOpen = false;
+
+    if (typeof gsap !== "undefined") {
+      gsap.to(mobileMenu, {
+        height: 0,
+        opacity: 0,
+        duration: 0.3,
+        onComplete: () => mobileMenu.classList.add("hidden"),
+      });
     } else {
-      closeMobileMenu();
+      mobileMenu.classList.add("hidden");
     }
-  });
+  };
 
-  // Close on menu link click
-  mobileMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeMobileMenu);
-  });
-}
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener("click", () => {
+      isMenuOpen = !isMenuOpen;
 
-// ---------- GSAP ANIMATIONS ----------
+      if (isMenuOpen) {
+        mobileMenu.classList.remove("hidden");
+        if (typeof gsap !== "undefined") {
+          gsap.fromTo(mobileMenu, { height: 0, opacity: 0 }, { height: "auto", opacity: 1, duration: 0.3 });
+        }
+      } else {
+        closeMobileMenu();
+      }
+    });
 
-if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+  }
 
-  // Hero
-  gsap.from(".hero-content", {
-    opacity: 0,
-    y: 20,
-    duration: 1,
-    ease: "power3.out",
-    delay: 0.2,
-  });
+  // ---------- GSAP ANIMATIONS ----------
 
-  // Section headers
-  gsap.utils.toArray(".section-header").forEach((header) => {
-    gsap.from(header, {
-      scrollTrigger: {
-        trigger: header,
-        start: "top 80%",
-      },
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero
+    gsap.from(".hero-content", {
       opacity: 0,
       y: 20,
-      duration: 0.8,
+      duration: 1,
       ease: "power3.out",
+      delay: 0.2,
     });
-  });
 
-  // About
-  gsap.from(".about-text", {
-    scrollTrigger: {
-      trigger: ".about-text",
-      start: "top 80%",
-    },
-    opacity: 0,
-    y: 30,
-    duration: 0.8,
-    delay: 0.2,
-  });
-
-  gsap.from(".about-stats", {
-    scrollTrigger: {
-      trigger: ".about-stats",
-      start: "top 80%",
-    },
-    opacity: 0,
-    y: 30,
-    duration: 0.8,
-    delay: 0.4,
-  });
-
-  // Skills
-  gsap.utils.toArray(".skill-card").forEach((card, i) => {
-    gsap.from(card, {
-      scrollTrigger: {
-        trigger: card,
-        start: "top 85%",
-      },
-      opacity: 0,
-      y: 20,
-      duration: 0.5,
-      delay: i * 0.05,
+    // Section headers
+    gsap.utils.toArray(".section-header").forEach((header) => {
+      gsap.from(header, {
+        scrollTrigger: { trigger: header, start: "top 80%" },
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        ease: "power3.out",
+      });
     });
-  });
 
-  // Experience
-  gsap.utils.toArray(".experience-card").forEach((card) => {
-    gsap.from(card, {
-      scrollTrigger: {
-        trigger: card,
-        start: "top 80%",
-      },
+    // About
+    gsap.from(".about-text", {
+      scrollTrigger: { trigger: ".about-text", start: "top 80%" },
       opacity: 0,
       y: 30,
       duration: 0.8,
-      delay: 0.1,
+      delay: 0.2,
     });
-  });
 
-  // Projects
-  gsap.utils.toArray(".project-card").forEach((card) => {
-    gsap.from(card, {
-      scrollTrigger: {
-        trigger: card,
-        start: "top 80%",
-      },
+    gsap.from(".about-stats", {
+      scrollTrigger: { trigger: ".about-stats", start: "top 80%" },
       opacity: 0,
       y: 30,
       duration: 0.8,
-      delay: 0.1,
+      delay: 0.4,
     });
-  });
 
-  // Certifications & Awards
-  gsap.from("#certifications-list", {
-    scrollTrigger: {
-      trigger: "#certifications",
-      start: "top 75%"
-    },
-    opacity: 0,
-    x: -20,
-    duration: 0.8
-  });
+    // Skills
+    gsap.utils.toArray(".skill-card").forEach((card, i) => {
+      gsap.from(card, {
+        scrollTrigger: { trigger: card, start: "top 85%" },
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+        delay: i * 0.05,
+      });
+    });
 
-  gsap.from("#awards-list", {
-    scrollTrigger: {
-      trigger: "#certifications",
-      start: "top 75%"
-    },
-    opacity: 0,
-    x: 20,
-    duration: 0.8,
-    delay: 0.2
-  });
+    // Experience
+    gsap.utils.toArray(".experience-card").forEach((card) => {
+      gsap.from(card, {
+        scrollTrigger: { trigger: card, start: "top 80%" },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.1,
+      });
+    });
 
-  // Publications
-  gsap.utils.toArray("#publications-container > div").forEach((pub, i) => {
-    gsap.from(pub, {
-      scrollTrigger: {
-        trigger: "#publications",
-        start: "top 80%"
-      },
+    // Projects
+    gsap.utils.toArray(".project-card").forEach((card) => {
+      gsap.from(card, {
+        scrollTrigger: { trigger: card, start: "top 80%" },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.1,
+      });
+    });
+
+    // Certifications & Awards
+    gsap.from("#certifications-list", {
+      scrollTrigger: { trigger: "#certifications", start: "top 75%" },
       opacity: 0,
-      y: 20,
-      duration: 0.6,
-      delay: i * 0.1
+      x: -20,
+      duration: 0.8,
     });
-  });
 
-  // Contact
-  gsap.from(".contact-content", {
-    scrollTrigger: {
-      trigger: "#contact",
-      start: "top 70%",
-    },
-    opacity: 0,
-    y: 30,
-    duration: 0.8,
-  });
+    gsap.from("#awards-list", {
+      scrollTrigger: { trigger: "#certifications", start: "top 75%" },
+      opacity: 0,
+      x: 20,
+      duration: 0.8,
+      delay: 0.2,
+    });
+
+    // Publications
+    gsap.utils.toArray("#publications-container > div").forEach((pub, i) => {
+      gsap.from(pub, {
+        scrollTrigger: { trigger: "#publications", start: "top 80%" },
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+        delay: i * 0.1,
+      });
+    });
+
+    // Contact
+    gsap.from(".contact-content", {
+      scrollTrigger: { trigger: "#contact", start: "top 70%" },
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+    });
+  }
 });
