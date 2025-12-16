@@ -147,17 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const projects = [
     {
-      title: "ESP32 Relay Board",
-      period: "PCB Design & IoT",
-      association: "Independent / Home Automation",
-      description: "A custom ESP32-S3 relay board designed with EasyEDA. Features onboard HLK-PM01 AC-DC converter, 4x ALQ105 relays, CP2102-GMR USB-UART, and WS2812B RGB LED. Includes isolated GPIO control and robust power management.",
-      tech: ["ESP32-S3", "EasyEDA", "PCB Design", "Home Automation", "AC/DC Power"],
-      githubUrl: "",
-      liveUrl: "",
-      featured: true,
-      image: "assets/esp32_relay.jpg",
-    },
-    {
       title: "GController: ESP32-S3 System",
       period: "PCB Design & Embedded System",
       association: "Independent / Industrial",
@@ -167,6 +156,17 @@ document.addEventListener("DOMContentLoaded", () => {
       liveUrl: "",
       featured: true,
       image: "assets/gcontroller.jpg",
+    },
+    {
+      title: "ESP32 Relay Board",
+      period: "PCB Design & IoT",
+      association: "Independent / Home Automation",
+      description: "A custom ESP32-S3 relay board designed with EasyEDA. Features onboard HLK-PM01 AC-DC converter, 4x ALQ105 relays, CP2102-GMR USB-UART, and WS2812B RGB LED. Includes isolated GPIO control and robust power management.",
+      tech: ["ESP32-S3", "EasyEDA", "PCB Design", "Home Automation", "AC/DC Power"],
+      githubUrl: "https://github.com/Narensraj/pcb_designing/tree/main/ESP32_RelayBoard",
+      liveUrl: "",
+      featured: true,
+      image: "assets/esp32_relay.jpg",
     },
     {
       title: "Ingenious UOI based Augmented Reality using SIFT for ATM",
