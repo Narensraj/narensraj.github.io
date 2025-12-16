@@ -424,7 +424,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (projectsContainer) {
     projects.forEach((project, index) => {
       const projectEl = document.createElement("div");
-      projectEl.className = "grid md:grid-cols-12 gap-8 items-center project-card";
+      // Added grid-cols-1 for explicit mobile stacking
+      projectEl.className = "grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center project-card";
 
       const contentClass =
         index % 2 === 1
@@ -515,9 +516,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // Header
       const header = document.createElement("button");
       header.className = "w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors focus:outline-none";
+      // Added flex-1 and pr-4 to span to ensure text wrapping doesn't push chevron or overlap
       header.innerHTML = `
-        <span class="text-lg font-bold text-white">${group.category}</span>
-        <i data-lucide="chevron-down" class="w-5 h-5 text-tech-blue transition-transform duration-300" id="chevron-${index}"></i>
+        <span class="text-lg font-bold text-white flex-1 pr-4">${group.category}</span>
+        <i data-lucide="chevron-down" class="w-5 h-5 text-tech-blue transition-transform duration-300 flex-shrink-0" id="chevron-${index}"></i>
       `;
 
       // Content
