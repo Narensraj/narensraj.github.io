@@ -189,6 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
       githubUrl: "",
       liveUrl: "",
       featured: false,
+      award: "Best Project of the Year",
     },
     {
       title: "Magnetic Drum separator",
@@ -449,15 +450,24 @@ document.addEventListener("DOMContentLoaded", () => {
            </a>`
         : "";
 
+      const awardBadge = project.award
+        ? `<div class="mb-3 inline-flex items-center gap-2 px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full border border-yellow-500/30 text-xs font-bold uppercase tracking-wider">
+             <i data-lucide="trophy" class="w-3 h-3"></i> ${project.award}
+           </div>`
+        : "";
+
       projectEl.innerHTML = `
         <div class="${contentClass} relative z-10">
-          <div class="flex justify-between items-start mb-2">
-            <p class="text-tech-blue font-mono text-sm">
-              ${project.featured ? "Featured Project" : "Project"}
-            </p>
-            <p class="text-gray-500 text-xs font-mono text-right">
-              ${project.period || ""}
-            </p>
+          <div class="flex flex-col items-start mb-2">
+            <div class="flex justify-between w-full mb-1">
+               <p class="text-tech-blue font-mono text-sm">
+                 ${project.featured ? "Featured Project" : "Project"}
+               </p>
+               <p class="text-gray-500 text-xs font-mono text-right">
+                 ${project.period || ""}
+               </p>
+            </div>
+            ${awardBadge}
           </div>
 
           <h3 class="text-3xl font-bold text-white mb-2 cursor-pointer">
