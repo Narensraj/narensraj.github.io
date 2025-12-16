@@ -69,62 +69,79 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const experience = [
     {
-      company: "Envirotech Ag Systems Limited (Nebula Group)",
-      role: "Embedded System Engineer",
-      period: "Oct 2025 - Present",
-      location: "Winnipeg, Manitoba, Canada",
-      description: [
-        "Developing frontend and backend features for sow feeding dashboards and device monitoring tools.",
-        "Building and optimizing REST APIs, WebSocket services, and real-time communication layers.",
-        "Analyzing embedded device traffic (UDP, TCP/IP, Modbus) to improve stability and troubleshooting.",
-        "Designing databases (MariaDB, MySQL, MSSQL) and managing schema updates and migration plans.",
-        "Reverse-engineering legacy Windows apps to modernize production logic and feeding algorithms.",
-        "Collaborating with firmware and hardware teams to integrate feeders, water systems, and sensors.",
+      group: "Nebula Group",
+      roles: [
+        {
+          company: "Envirotech Ag Systems Limited",
+          role: "Embedded System Engineer",
+          period: "Oct 2025 - Present",
+          location: "Winnipeg, Manitoba, Canada",
+          description: [
+            "Developing frontend and backend features for sow feeding dashboards and device monitoring tools.",
+            "Building and optimizing REST APIs, WebSocket services, and real-time communication layers.",
+            "Analyzing embedded device traffic (UDP, TCP/IP, Modbus) to improve stability and troubleshooting.",
+            "Designing databases (MariaDB, MySQL, MSSQL) and managing schema updates and migration plans.",
+            "Reverse-engineering legacy Windows apps to modernize production logic and feeding algorithms.",
+            "Collaborating with firmware and hardware teams to integrate feeders, water systems, and sensors.",
+          ],
+        },
+        {
+          company: "Climate Control Systems Inc",
+          role: "Controls / Software Developer",
+          period: "Jan 2024 - Oct 2025",
+          location: "Leamington, Ontario, Canada",
+          description: [
+            "Oversaw advanced controls software projects, including the ClimateEpic product line deployment.",
+            "Enhanced Modbus TCP functionality in Groov Epic for seamless SCADA integration.",
+            "Developed sensor data acquisition systems using Node-RED and visualized data in Grafana.",
+            "Managed the full SDLC: analysis, design, coding, testing, deployment, and maintenance.",
+            "Provided international customer support (Canada, USA, Singapore, Sweden, Mexico, Australia).",
+          ],
+        },
+        {
+          company: "Climate Control Systems Inc",
+          role: "Junior Electronics and Controls Programmer",
+          period: "Jan 2023 - Jan 2024",
+          location: "Leamington, Ontario, Canada",
+          description: [
+            "Designed HMI/SCADA interfaces for Windows and web platforms using Opto 22 controllers.",
+            "Collaborated on software development for Fertigation Manager and Ozone Pro.",
+            "Implemented Modbus TCP/RTU and OPC UA protocols for sensor integration.",
+            "Built a custom library to convert wireless weather station data into serial communication.",
+          ],
+        },
       ],
     },
     {
-      company: "Climate Control Systems Inc",
-      role: "Controls/Software Developer",
-      period: "Jan 2024 - Oct 2025",
-      location: "Leamington, Ontario, Canada",
-      description: [
-        "Oversaw advanced controls software projects, including the ClimateEpic product line deployment.",
-        "Enhanced Modbus TCP functionality in Groov Epic for seamless SCADA integration.",
-        "Developed sensor data acquisition systems using Node-RED and visualized data in Grafana.",
-        "Managed the full SDLC: analysis, design, coding, testing, deployment, and maintenance.",
-        "Provided international customer support (Canada, USA, Singapore, Sweden, Mexico, Australia).",
+      group: "Promech Industries Pvt Ltd",
+      roles: [
+        {
+          company: "Promech Industries Pvt Ltd",
+          role: "Embedded Systems Intern",
+          period: "Mar 2020 - Mar 2021",
+          location: "Coimbatore, Tamil Nadu, India",
+          description: [
+            "Designed custom board layouts based on project specifications.",
+            "Developed sensor/device drivers using bare-metal Embedded C.",
+            "Implemented I2C, UART, and SPI protocols for inter-device communication.",
+            "Debugged circuits using logic analyzers and digital oscilloscopes.",
+          ],
+        },
       ],
     },
     {
-      company: "Climate Control Systems Inc",
-      role: "Junior Electronics and Controls Programmer",
-      period: "Jan 2023 - Jan 2024",
-      location: "Leamington, Ontario, Canada",
-      description: [
-        "Designed HMI/SCADA interfaces for Windows and web platforms using Opto 22 controllers.",
-        "Collaborated on software development for Fertigation Manager and Ozone Pro.",
-        "Implemented Modbus TCP/RTU and OPC UA protocols for sensor integration.",
-        "Built a custom library to convert wireless weather station data into serial communication.",
+      group: "Big Data Labs",
+      roles: [
+        {
+          company: "Big Data Labs",
+          role: "Mobile Application Development Intern",
+          period: "Feb 2019",
+          location: "India",
+          description: [
+            "Learned application development for mobile, desktop, and web platforms.",
+          ],
+        },
       ],
-    },
-    {
-      company: "Promech Industries Pvt Ltd",
-      role: "Junior Embedded System Developer",
-      period: "Mar 2020 - Mar 2021",
-      location: "Coimbatore, Tamil Nadu, India",
-      description: [
-        "Designed custom board layouts based on project specifications.",
-        "Developed sensor/device drivers using bare-metal Embedded C.",
-        "Implemented I2C, UART, and SPI protocols for inter-device communication.",
-        "Debugged circuits using logic analyzers and digital oscilloscopes.",
-      ],
-    },
-    {
-      company: "Big Data Labs",
-      role: "Mobile Application Development Intern",
-      period: "Feb 2019",
-      location: "India",
-      description: ["Learned application development for mobile, desktop, and web platforms."],
     },
   ];
 
@@ -286,37 +303,54 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---------- POPULATE EXPERIENCE ----------
 
   if (experienceContainer) {
-    experience.forEach((job) => {
-      const jobEl = document.createElement("div");
-      jobEl.className = "relative pl-8 border-l border-white/10 experience-card";
+    experience.forEach((group) => {
+      // Group header (Nebula Group)
+      const groupEl = document.createElement("div");
+      groupEl.className = "mb-12";
 
-      jobEl.innerHTML = `
-        <div class="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-tech-blue shadow-[0_0_10px_rgba(212,175,55,0.5)]"></div>
-        <div class="glass p-8 rounded-2xl hover:border-tech-blue/30 transition-colors">
-          <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-            <div>
-              <h3 class="text-2xl font-bold text-white mb-1">${job.role}</h3>
-              <h4 class="text-tech-blue font-medium text-lg">${job.company}</h4>
-            </div>
-            <div class="text-right mt-2 md:mt-0">
-              <p class="text-gray-400 font-mono text-sm">${job.period}</p>
-              <p class="text-gray-500 text-sm">${job.location}</p>
-            </div>
-          </div>
-          <ul class="space-y-2">
-            ${job.description
-          .map(
-            (line) => `
-                  <li class="flex items-start text-gray-400">
-                    <span class="text-tech-blue mr-2 mt-1.5">▹</span>
-                    <span>${line}</span>
-                  </li>`
-          )
-          .join("")}
-          </ul>
-        </div>
+      groupEl.innerHTML = `
+        <h2 class="text-2xl font-bold text-tech-blue mb-6">
+          ${group.group}
+        </h2>
       `;
-      experienceContainer.appendChild(jobEl);
+
+      const rolesWrapper = document.createElement("div");
+      rolesWrapper.className = "space-y-8 border-l border-white/10 pl-8";
+
+      group.roles.forEach((job) => {
+        const jobEl = document.createElement("div");
+        jobEl.className = "relative experience-card";
+
+        jobEl.innerHTML = `
+          <div class="absolute -left-[13px] top-1 w-2.5 h-2.5 rounded-full bg-tech-blue"></div>
+          <div class="glass p-8 rounded-2xl hover:border-tech-blue/30 transition-colors">
+            <div class="flex flex-col md:flex-row md:justify-between mb-4">
+              <div>
+                <h3 class="text-xl font-bold text-white">${job.role}</h3>
+                <p class="text-tech-blue font-medium">${job.company}</p>
+              </div>
+              <div class="text-right mt-2 md:mt-0">
+                <p class="text-gray-400 text-sm font-mono">${job.period}</p>
+                <p class="text-gray-500 text-sm">${job.location}</p>
+              </div>
+            </div>
+            <ul class="space-y-2">
+              ${job.description
+            .map(
+              (line) => `
+                  <li class="flex text-gray-400">
+                    <span class="text-tech-blue mr-2">▹</span>${line}
+                  </li>`
+            )
+            .join("")}
+            </ul>
+          </div>
+        `;
+        rolesWrapper.appendChild(jobEl);
+      });
+
+      groupEl.appendChild(rolesWrapper);
+      experienceContainer.appendChild(groupEl);
     });
   }
 
