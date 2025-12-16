@@ -551,7 +551,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Section headers
     gsap.utils.toArray(".section-header").forEach((header) => {
       gsap.from(header, {
-        scrollTrigger: { trigger: header, start: "top 80%" },
+        scrollTrigger: { trigger: header, start: "top 85%" },
         opacity: 0,
         y: 20,
         duration: 0.8,
@@ -577,20 +577,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Skills
-    gsap.utils.toArray(".skill-card").forEach((card, i) => {
-      gsap.from(card, {
-        scrollTrigger: { trigger: card, start: "top 85%" },
-        opacity: 0,
-        y: 20,
-        duration: 0.5,
-        delay: i * 0.05,
-      });
+    gsap.from(".skill-card", {
+      scrollTrigger: {
+        trigger: "#skills",
+        start: "top 80%",
+      },
+      opacity: 0,
+      y: 30,
+      duration: 0.5,
+      stagger: 0.1,
     });
 
     // Experience
     gsap.utils.toArray(".experience-card").forEach((card) => {
       gsap.from(card, {
-        scrollTrigger: { trigger: card, start: "top 80%" },
+        scrollTrigger: { trigger: card, start: "top 85%" },
         opacity: 0,
         y: 30,
         duration: 0.8,
@@ -599,46 +600,48 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Projects
-    gsap.utils.toArray(".project-card").forEach((card) => {
-      gsap.from(card, {
-        scrollTrigger: { trigger: card, start: "top 80%" },
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        delay: 0.1,
-      });
+    gsap.from(".project-card", {
+      scrollTrigger: {
+        trigger: "#projects",
+        start: "top 80%",
+      },
+      opacity: 0,
+      y: 40,
+      duration: 0.8,
+      stagger: 0.2,
     });
 
     // Certifications & Awards
     gsap.from("#certifications-list", {
-      scrollTrigger: { trigger: "#certifications", start: "top 75%" },
+      scrollTrigger: { trigger: "#certifications", start: "top 80%" },
       opacity: 0,
-      x: -20,
+      x: -30,
       duration: 0.8,
     });
 
     gsap.from("#awards-list", {
-      scrollTrigger: { trigger: "#certifications", start: "top 75%" },
+      scrollTrigger: { trigger: "#certifications", start: "top 80%" },
       opacity: 0,
-      x: 20,
+      x: 30,
       duration: 0.8,
       delay: 0.2,
     });
 
     // Publications
-    gsap.utils.toArray("#publications-container > div").forEach((pub, i) => {
-      gsap.from(pub, {
-        scrollTrigger: { trigger: "#publications", start: "top 80%" },
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        delay: i * 0.1,
-      });
+    gsap.from("#publications-container > div", {
+      scrollTrigger: {
+        trigger: "#publications",
+        start: "top 85%",
+      },
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      stagger: 0.1,
     });
 
     // Contact
     gsap.from(".contact-content", {
-      scrollTrigger: { trigger: "#contact", start: "top 70%" },
+      scrollTrigger: { trigger: "#contact", start: "top 75%" },
       opacity: 0,
       y: 30,
       duration: 0.8,
