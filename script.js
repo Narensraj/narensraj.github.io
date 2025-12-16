@@ -147,10 +147,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const publications = [
     {
       title: "Intuitive and Impulsive Pet (IIP) Feeder System for Monitoring the Farm Using WoT",
+      conference: "International Conference on Sustainable Expert Systems (ICSES 2020)",
+      date: "Sep 1, 2020",
       url: "https://www.springerprofessional.de/en/intuitive-and-impulsive-pet-iip-feeder-system-for-monitoring-the/19021924"
     },
     {
       title: "A Systematic AR based ATM model to Enhance Security and Safety",
+      conference: "International Conference on Computing, Communication, Electrical and Biomedical System (ICCCEBS 2021)",
+      date: "Mar 18, 2021",
       url: "https://ieeexplore.ieee.org/document/9532897"
     },
   ];
@@ -360,7 +364,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         <i data-lucide="external-link" class="w-4 h-4 text-gray-500"></i>
                     </a>
                 </h3>
-                <p class="text-gray-400 text-sm">Published Work</p>
+                <p class="text-gray-400 text-sm mb-1">${pub.conference}</p>
+                <p class="text-gray-500 text-xs font-mono">${pub.date}</p>
              </div>
           `;
       publicationsContainer.appendChild(item);
