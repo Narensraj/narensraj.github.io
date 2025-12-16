@@ -100,8 +100,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const projects = [
         {
           title: "Ingenious UOI based Augmented Reality using SIFT for ATM",
+          period: "Aug 2020 - Mar 2021",
+          association: "Associated with SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
           description:
-            "This project uses Augmented Reality which imposes virtual keypad on digital image at real time. No need for additional hardware. Powered by AR phone application.",
+            "This project uses Augmented Reality which imposes virtual keypad on digital image at real time. There is no need for any additional hardware or camera to be installed. The operation is powered by AR phone application.",
           tech: ["Vuforia SDK", "Unity 3D", "Arduino IDE", "ESP8266"],
           githubUrl: "",
           liveUrl: "https://www.hackster.io/Narensraj/diy-touchless-atm-using-augmented-reality-iotar-e621e0",
@@ -109,8 +111,10 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           title: "Pet Feeder using Google assistant v1.1",
+          period: "Oct 2019 - Apr 2020",
+          association: "Associated with SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
           description:
-            "Programmed to fill the food bowl at certain intervals or by voice command 'Ok Google feed my pet'.",
+            "The Pet Feeder can be coded to complete a variety of tasks, for instance, you could program it to fill the food bowl at certain intervals or by saying 'Ok Google feed my pet' to fill up the bowl.",
           tech: ["Arduino IDE", "ESP8266"],
           githubUrl: "",
           liveUrl: "https://www.hackster.io/Narensraj/diy-pet-feeder-using-google-assistant-d54765",
@@ -118,8 +122,10 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           title: "Voice controlled home automation using MQTT",
+          period: "Aug 2019 - Nov 2019",
+          association: "Associated with SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
           description:
-            "Home appliances like Bulb, Fan and Motor controlled via Google Assistant commands decoded by microcontroller.",
+            "In this home automation, as the user gives commands to the Google assistant, Home appliances like Bulb, Fan and Motor etc., can be controlled accordingly. The commands decoded and sent to the microcontroller to control connected relays.",
           tech: ["Arduino IDE", "ESP8266"],
           githubUrl: "",
           liveUrl: "",
@@ -127,8 +133,10 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           title: "Automatic Pet care v1.0",
+          period: "Aug 2017 - Mar 2018",
+          association: "Associated with PSG College of Technology",
           description:
-            "Arduino based Automatic Pet Feeder with DS3231 RTC Module for scheduled feeding.",
+            "An Arduino based Automatic Pet Feeder which can automatically serve food to your pet timely. It has a DS3231 RTC Module for scheduled feeding.",
           tech: ["Arduino IDE"],
           githubUrl: "",
           liveUrl: "",
@@ -136,8 +144,10 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           title: "Magnetic Drum separator",
+          period: "Sep 2014 - Oct 2014",
+          association: "",
           description:
-            "Self-cleaning separators for continuous removal of ferrous contamination from free-flowing materials.",
+            "Magnetic Drum Separators are of self-cleaning type and provide continuous removal of ferrous/Iron contamination from a wide range of free-flowing bulk and granular materials.",
           tech: [],
           githubUrl: "",
           liveUrl: "",
@@ -145,6 +155,8 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           title: "Light representation of Intestine",
+          period: "Jul 2012 - Aug 2012",
+          association: "",
           description:
             "LED light representation of human body organs to identify organ and food flow.",
           tech: [],
@@ -315,12 +327,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
           projectEl.innerHTML = `
         <div class="${contentClass} relative z-10">
-          <p class="text-tech-blue font-mono text-sm mb-2">
-            ${project.featured ? "Featured Project" : "Project"}
-          </p>
-          <h3 class="text-3xl font-bold text-white mb-4 hover:text-tech-blue transition-colors cursor-default">
+          <div class="flex justify-between items-start mb-2">
+             <p class="text-tech-blue font-mono text-sm">
+                ${project.featured ? "Featured Project" : "Project"}
+             </p>
+             <p class="text-gray-500 text-xs font-mono text-right">
+                ${project.period}
+             </p>
+          </div>
+          
+          <h3 class="text-3xl font-bold text-white mb-2 hover:text-tech-blue transition-colors cursor-default">
             ${project.title}
           </h3>
+
+           ${project.association ? `<p class="text-gray-400 text-sm mb-4 italic">${project.association}</p>` : ""}
+
           <div class="glass p-6 rounded-xl text-gray-400 mb-6 shadow-xl">
             ${project.description}
           </div>
@@ -334,7 +355,6 @@ document.addEventListener("DOMContentLoaded", () => {
             ${liveIcon}
           </div>
         </div>
-
         <div class="${imageClass} relative group">
           <div class="absolute inset-0 bg-tech-blue/10 rounded-xl group-hover:bg-transparent transition-colors duration-300 z-10"></div>
           <div class="w-full h-64 md:h-80 bg-gradient-to-br ${bgGradient} rounded-xl border border-white/10 group-hover:border-tech-blue/50 transition-all duration-300 overflow-hidden flex items-center justify-center">
