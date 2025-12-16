@@ -214,11 +214,17 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const certifications = [
-    "Cyber security essential",
-    "Embedded Systems Bare-Metal Programming Ground Up™ (STM32)",
-    "Deep learning Onramp",
-    "IT Academy: Software Defined Storage Concepts",
-    "Learning Complete PCB Design: From an Idea to a Product",
+    { name: "The Fundamentals of Digital Marketing", issuer: "Google Digital Unlocked" },
+    { name: "Google Cloud Platform Fundamentals: Core Infrastructure", issuer: "Google Cloud" },
+    { name: "Introduction to Augmented Reality and ARCore", issuer: "Google AR & VR" },
+    { name: "Technical Support Fundamentals", issuer: "Google" },
+    { name: "Oil & Gas Industry Operations and Markets", issuer: "Duke University" },
+    { name: "Introduction to Packet Tracer - Mobile", issuer: "Cisco Networking Academy" },
+    { name: "Cyber security essential", issuer: "Cisco Networking Academy" },
+    { name: "Embedded Systems Bare-Metal Programming Ground Up™ (STM32)", issuer: "Udemy" },
+    { name: "Deep learning Onramp", issuer: "MathWorks" },
+    { name: "IT Academy: Software Defined Storage Concepts", issuer: "VMware IT Academy" },
+    { name: "Learning Complete PCB Design: From an Idea to a Product", issuer: "Udemy" },
   ];
 
   const awards = ["Best project of the year"];
@@ -437,7 +443,10 @@ document.addEventListener("DOMContentLoaded", () => {
       item.className = "flex items-start text-gray-300";
       item.innerHTML = `
         <i data-lucide="check-circle" class="w-5 h-5 text-tech-blue mr-3 mt-1 flex-shrink-0"></i>
-        <span>${cert}</span>
+        <div>
+          <span class="block text-white font-medium">${cert.name}</span>
+          ${cert.issuer ? `<span class="text-sm text-gray-500">${cert.issuer}</span>` : ""}
+        </div>
       `;
       certificationsList.appendChild(item);
     });
