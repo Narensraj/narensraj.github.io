@@ -5,24 +5,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const skills = [
     {
-      category: "Firmware & Languages",
-      items: ["C/C++", "Embedded C", "OptoScript", "Python", "Assembly", "Verilog", "VHDL", "C#", "Matlab", "Node-RED"],
+      category: "Programming Languages",
+      items: ["C", "C++", "Embedded C", "Python", "JavaScript", "TypeScript", "SQL", "OptoScript", "Verilog", "VHDL", "MATLAB", "Assembly", "C#"],
     },
     {
-      category: "Hardware & MCUs",
-      items: ["STM32H7/F4/L4", "ESP8266", "ATmega328/88", "Raspberry Pi 4", "Opto22 Groov Epic/Rio", "Snap Pac R1"],
+      category: "Embedded & Hardware",
+      items: ["STM32", "ESP32", "ESP8266", "Atmel AVR", "Raspberry Pi", "Microcontrollers", "PCB Design (Altium, KiCad, EasyEDA)", "NI Multisim", "Xilinx/FPGA", "Control Panels", "HMI/SCADA"],
     },
     {
-      category: "Protocols",
-      items: ["TCP/IP", "UDP", "Modbus TCP/IP", "UART", "I2C", "SPI", "MQTT", "REST APIs", "WebSockets"],
+      category: "Protocols & Industrial",
+      items: ["TCP/IP", "UDP", "Modbus (RTU/TCP)", "OPC", "MQTT", "I2C", "SPI", "UART", "RS-485", "Industrial Automation", "Precision Agriculture"],
     },
     {
-      category: "Tools & IDEs",
-      items: ["Pac Project", "Groov View", "LabVIEW", "STM32CubeMX", "Keil uVision", "Altium Designer", "ModelSim", "Atmel Studio", "Android Studio", "Unity 3D"],
+      category: "Web, Database & Cloud",
+      items: ["React.js", "Node.js", "Node-RED", "Grafana", "MySQL", "MariaDB", "DBeaver", "REST APIs", "WebSockets"],
     },
     {
-      category: "Software & OS",
-      items: ["Grafana", "Linux", "Windows", "Git", "Docker", "Matlab Simulink", "VS Code"],
+      category: "Tools & Software",
+      items: ["Git", "Docker", "VS Code", "Keil uVision", "STM32CubeMX", "Unity 3D", "Vuforia AR", "Packet Tracer", "Linux", "Windows"],
+    },
+    {
+      category: "Core Competencies",
+      items: ["Embedded Systems", "SDLC", "Debugging", "Troubleshooting", "System Architecture", "Test Procedures", "Problem Solving", "Leadership"],
     },
   ];
 
