@@ -5,53 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const skills = [
     {
       category: "Programming Languages",
-      items: [
-        "C",
-        "C++",
-        "Embedded C",
-        "Python",
-        "JavaScript",
-        "TypeScript",
-        "SQL",
-        "OptoScript",
-        "Verilog",
-        "VHDL",
-        "MATLAB",
-        "Assembly",
-        "C#",
-      ],
+      items: ["C", "C++", "Embedded C", "Python", "JavaScript", "TypeScript", "SQL", "OptoScript", "Verilog", "VHDL", "MATLAB", "Assembly", "C#"],
     },
     {
       category: "Embedded & Hardware",
-      items: [
-        "STM32",
-        "ESP32",
-        "ESP8266",
-        "Atmel AVR",
-        "Raspberry Pi",
-        "Microcontrollers",
-        "PCB Design (Altium, KiCad, EasyEDA)",
-        "NI Multisim",
-        "Xilinx/FPGA",
-        "Control Panels",
-        "HMI/SCADA",
-      ],
+      items: ["STM32", "ESP32", "ESP8266", "Atmel AVR", "Raspberry Pi", "Microcontrollers", "PCB Design (Altium, KiCad, EasyEDA)", "NI Multisim", "Xilinx/FPGA", "Control Panels", "HMI/SCADA"],
     },
     {
       category: "Protocols & Industrial",
-      items: [
-        "TCP/IP",
-        "UDP",
-        "Modbus (RTU/TCP)",
-        "OPC",
-        "MQTT",
-        "I2C",
-        "SPI",
-        "UART",
-        "RS-485",
-        "Industrial Automation",
-        "Precision Agriculture",
-      ],
+      items: ["TCP/IP", "UDP", "Modbus (RTU/TCP)", "OPC", "MQTT", "I2C", "SPI", "UART", "RS-485", "Industrial Automation", "Precision Agriculture"],
     },
     {
       category: "Web, Database & Cloud",
@@ -137,9 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
           role: "Mobile Application Development Intern",
           period: "Feb 2019",
           location: "India",
-          description: [
-            "Learned application development for mobile, desktop, and web platforms.",
-          ],
+          description: ["Learned application development for mobile, desktop, and web platforms."],
         },
       ],
     },
@@ -153,7 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "A feature-rich industrial controller based on ESP32-S3. Includes 4-20mA inputs, 0-10V outputs, RS485/LoRa comms, and 7-inch touch support. Multi-layer PCB design with dedicated power planes and industrial-grade protection.",
       tech: ["ESP32-S3", "PCB Design", "Industrial Automation", "LoRa", "RS485"],
       githubUrl: "https://github.com/Narensraj/pcb_designing/tree/main/Project_G",
-      liveUrl: "",
       featured: true,
       image: "assets/gcontroller.jpg",
     },
@@ -164,7 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "A custom ESP32-S3 relay board designed with EasyEDA. Features onboard HLK-PM01 AC-DC converter, 4x ALQ105 relays, CP2102-GMR USB-UART, and WS2812B RGB LED. Includes isolated GPIO control and robust power management.",
       tech: ["ESP32-S3", "EasyEDA", "PCB Design", "Home Automation", "AC/DC Power"],
       githubUrl: "https://github.com/Narensraj/pcb_designing/tree/main/ESP32_RelayBoard",
-      liveUrl: "",
       featured: true,
       image: "assets/esp32_relay.jpg",
     },
@@ -172,10 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Ingenious UOI based Augmented Reality using SIFT for ATM",
       period: "Aug 2020 - Mar 2021",
       association: "Associated with SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
-      description:
-        "This project uses Augmented Reality which imposes virtual keypad on digital image at real time. There is no need for any additional hardware or camera to be installed. The operation is powered by AR phone application.",
+      description: "This project uses Augmented Reality which imposes virtual keypad on digital image at real time. No additional hardware needed.",
       tech: ["Vuforia SDK", "Unity 3D", "Arduino IDE", "ESP8266"],
-      githubUrl: "",
       liveUrl: "https://www.hackster.io/Narensraj/diy-touchless-atm-using-augmented-reality-iotar-e621e0",
       featured: true,
     },
@@ -183,10 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Pet Feeder using Google assistant v1.1",
       period: "Oct 2019 - Apr 2020",
       association: "Associated with SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
-      description:
-        "The Pet Feeder can be coded to complete a variety of tasks, for instance, you could program it to fill the food bowl at certain intervals or by saying 'Ok Google feed my pet' to fill up the bowl.",
+      description: "Pet Feeder programmable to fill the bowl at intervals or via 'Ok Google feed my pet'.",
       tech: ["Arduino IDE", "ESP8266"],
-      githubUrl: "",
       liveUrl: "https://www.hackster.io/Narensraj/diy-pet-feeder-using-google-assistant-d54765",
       featured: true,
     },
@@ -194,44 +148,31 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Voice controlled home automation using MQTT",
       period: "Aug 2019 - Nov 2019",
       association: "Associated with SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
-      description:
-        "In this home automation, as the user gives commands to the Google assistant, Home appliances like Bulb, Fan and Motor etc., can be controlled accordingly. The commands decoded and sent to the microcontroller to control connected relays.",
+      description: "Home automation controlling appliances via Google Assistant and microcontroller relays.",
       tech: ["Arduino IDE", "ESP8266"],
-      githubUrl: "",
-      liveUrl: "",
       featured: false,
     },
     {
       title: "Automatic Pet care v1.0",
       period: "Aug 2017 - Mar 2018",
       association: "Associated with PSG College of Technology",
-      description:
-        "An Arduino based Automatic Pet Feeder which can automatically serve food to your pet timely. It has a DS3231 RTC Module for scheduled feeding.",
+      description: "Arduino based Automatic Pet Feeder with DS3231 RTC Module for scheduled feeding.",
       tech: ["Arduino IDE"],
-      githubUrl: "",
-      liveUrl: "",
       featured: false,
       award: "Best Project of the Year",
     },
     {
       title: "Magnetic Drum separator",
       period: "Sep 2014 - Oct 2014",
-      association: "",
-      description:
-        "Magnetic Drum Separators are of self-cleaning type and provide continuous removal of ferrous/Iron contamination from a wide range of free-flowing bulk and granular materials.",
+      description: "Self-cleaning Magnetic Drum Separators for removal of ferrous contamination.",
       tech: [],
-      githubUrl: "",
-      liveUrl: "",
       featured: false,
     },
     {
       title: "Light representation of Intestine",
       period: "Jul 2012 - Aug 2012",
-      association: "",
       description: "LED light representation of human body organs to identify organ and food flow.",
       tech: [],
-      githubUrl: "",
-      liveUrl: "",
       featured: false,
     },
   ];
@@ -239,9 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const certifications = [
     {
       category: "A. Academic Courses & Certifications",
-      items: [
-        { name: "Aircraft Maintenance", issuer: "NPTEL (SWAYAM) | IIT Kanpur", date: "Jan–Feb 2020" },
-      ],
+      items: [{ name: "Aircraft Maintenance", issuer: "NPTEL (SWAYAM) | IIT Kanpur", date: "Jan–Feb 2020" }],
     },
     {
       category: "B. Coursera Certifications",
@@ -264,21 +203,15 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       category: "C. Coursera Specialization",
-      items: [
-        { name: "Open Source Software Development, Linux and Git", issuer: "The Linux Foundation", date: "Jul 2020" },
-      ],
+      items: [{ name: "Open Source Software Development, Linux and Git", issuer: "The Linux Foundation", date: "Jul 2020" }],
     },
     {
       category: "D. Google / Industry Certifications",
-      items: [
-        { name: "Fundamentals of Digital Marketing", issuer: "Google Digital Unlocked", date: "Jun 2020" },
-      ],
+      items: [{ name: "Fundamentals of Digital Marketing", issuer: "Google Digital Unlocked", date: "Jun 2020" }],
     },
     {
       category: "E. GUVI / RPA Certification",
-      items: [
-        { name: "Step into Robotic Process Automation", issuer: "GUVI | UiPath Academic Alliance", date: "Jun 2020" },
-      ],
+      items: [{ name: "Step into Robotic Process Automation", issuer: "GUVI | UiPath Academic Alliance", date: "Jun 2020" }],
     },
     {
       category: "F. MathWorks Certifications",
@@ -314,22 +247,15 @@ document.addEventListener("DOMContentLoaded", () => {
       conference: "International Conference on Sustainable Expert Systems (ICSES 2020)",
       date: "Sep 1, 2020",
       url: "https://www.springerprofessional.de/en/intuitive-and-impulsive-pet-iip-feeder-system-for-monitoring-the/19021924",
-      thumbnail: "assets/publication_1.jpg"
+      thumbnail: "assets/publication_1.jpg",
     },
     {
       title: "A Systematic AR based ATM model to Enhance Security and Safety",
       conference: "International Conference on Computing, Communication, Electrical and Biomedical System (ICCCEBS 2021)",
       date: "Mar 18, 2021",
       url: "https://ieeexplore.ieee.org/document/9532897",
-      thumbnail: "assets/publication_2.jpg"
+      thumbnail: "assets/publication_2.jpg",
     },
-  ];
-
-  const languages = [
-    { name: "English", level: "Full Professional" },
-    { name: "Kannada", level: "Native or Bilingual" },
-    { name: "Tamil", level: "Native or Bilingual" },
-    { name: "Telugu", level: "Elementary" },
   ];
 
   // ---------- DOM ELEMENTS ----------
@@ -340,244 +266,168 @@ document.addEventListener("DOMContentLoaded", () => {
   const certificationsList = document.getElementById("certifications-list");
   const awardsList = document.getElementById("awards-list");
   const publicationsContainer = document.getElementById("publications-container");
-  const languagesGrid = document.getElementById("languages-grid");
-
   const navbar = document.getElementById("navbar");
   const mobileBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
 
-  // ---------- POPULATE SKILLS ----------
+  // ---------- POPULATE CONTENT ----------
 
+  // Skills
   if (skillsGrid) {
     skills.forEach((group) => {
       const card = document.createElement("div");
-      card.className = "glass-card p-6 rounded-2xl skill-card h-full";
-
+      card.className = "ctos-card p-6 skill-card h-full bg-white/5";
       const itemsHtml = group.items
         .map(
           (item) =>
-            `<span class="inline-block px-3 py-1 bg-white/5 rounded-full text-sm text-tech-blue mr-2 mb-2 border border-white/5 hover:border-tech-blue/30 transition-colors">${item}</span>`
+            `<span class="inline-block px-3 py-1 bg-ctos-cyan/10 border border-ctos-cyan/30 text-sm text-ctos-cyan mr-2 mb-2 hover:bg-ctos-cyan hover:text-black transition-colors cursor-default">${item}</span>`
         )
         .join("");
-
       card.innerHTML = `
-        <h3 class="text-xl font-bold text-white mb-4 border-b border-white/10 pb-2">
-          ${group.category}
-        </h3>
-        <div class="flex flex-wrap">
-          ${itemsHtml}
-        </div>
-      `;
-
+          <h3 class="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2 uppercase tracking-wide">
+            ${group.category}<span class="blink-cursor">_</span>
+          </h3>
+          <div class="flex flex-wrap">
+            ${itemsHtml}
+          </div>
+        `;
       skillsGrid.appendChild(card);
     });
   }
 
-  // ---------- POPULATE LANGUAGES ----------
-
-  if (languagesGrid) {
-    languages.forEach((lang) => {
-      const item = document.createElement("div");
-      item.className = "glass p-4 rounded-xl text-center hover:border-tech-blue/30 transition-colors";
-      item.innerHTML = `
-        <h4 class="text-white font-bold mb-1">${lang.name}</h4>
-        <p class="text-xs text-gray-400">${lang.level}</p>
-      `;
-      languagesGrid.appendChild(item);
-    });
-  }
-
-  // ---------- POPULATE EXPERIENCE ----------
-
+  // Experience
   if (experienceContainer) {
     experience.forEach((group) => {
-      // Group header (Nebula Group)
       const groupEl = document.createElement("div");
       groupEl.className = "mb-12";
-
       groupEl.innerHTML = `
-        <h2 class="text-2xl font-bold text-tech-blue mb-6">
-          ${group.group}
-        </h2>
-      `;
-
+          <h2 class="text-2xl font-bold text-ctos-cyan mb-6 tracking-wider uppercase flex items-center">
+            <span class="w-3 h-3 bg-ctos-cyan mr-3 animate-pulse"></span>
+            ${group.group}<span class="blink-cursor">_</span>
+          </h2>
+        `;
       const rolesWrapper = document.createElement("div");
-      rolesWrapper.className = "space-y-8 border-l border-white/10 pl-8";
+      rolesWrapper.className = "space-y-8 border-l border-ctos-cyan/30 pl-8 ml-3";
 
       group.roles.forEach((job) => {
         const jobEl = document.createElement("div");
         jobEl.className = "relative experience-card";
-
         jobEl.innerHTML = `
-          <div class="absolute -left-[13px] top-1 w-2.5 h-2.5 rounded-full bg-tech-blue"></div>
-          <div class="glass p-8 rounded-2xl hover:border-tech-blue/30 transition-colors">
-            <div class="flex flex-col md:flex-row md:justify-between mb-4">
-              <div>
-                <h3 class="text-xl font-bold text-white">${job.role}</h3>
-                <p class="text-tech-blue font-medium">${job.company}</p>
+            <div class="absolute -left-[37px] top-1 w-4 h-4 bg-black border-2 border-ctos-cyan rounded-none"></div>
+            <div class="ctos-card p-8 bg-white/5 hover:bg-white/10 transition-colors">
+              <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-white uppercase">${job.role}</h3>
+                  <p class="text-ctos-cyan font-mono tracking-wide">${job.company}</p>
+                </div>
+                <div class="text-left md:text-right mt-2 md:mt-0">
+                  <p class="text-gray-400 text-sm font-mono">[ ${job.period} ]</p>
+                  <p class="text-gray-500 text-sm uppercase">${job.location}</p>
+                </div>
               </div>
-              <div class="text-left md:text-right mt-2 md:mt-0">
-                <p class="text-gray-400 text-sm font-mono">${job.period}</p>
-                <p class="text-gray-500 text-sm">${job.location}</p>
-              </div>
+              <ul class="space-y-2 font-mono text-sm leading-relaxed">
+                ${job.description.map((line) => `<li class="flex text-gray-400"><span class="text-ctos-cyan mr-3">></span>${line}</li>`).join("")}
+              </ul>
             </div>
-            <ul class="space-y-2">
-              ${job.description
-            .map(
-              (line) => `
-                  <li class="flex text-gray-400">
-                    <span class="text-tech-blue mr-2">▹</span>${line}
-                  </li>`
-            )
-            .join("")}
-            </ul>
-          </div>
-        `;
+          `;
         rolesWrapper.appendChild(jobEl);
       });
-
       groupEl.appendChild(rolesWrapper);
       experienceContainer.appendChild(groupEl);
     });
   }
 
-  // ---------- POPULATE PROJECTS ----------
-
+  // Projects
   if (projectsContainer) {
     projects.forEach((project, index) => {
       const projectEl = document.createElement("div");
-      // Added grid-cols-1 for explicit mobile stacking
-      projectEl.className = "grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center project-card";
-
-      const contentClass =
-        index % 2 === 1
-          ? "md:col-start-6 md:col-end-13 order-2 md:order-2"
-          : "md:col-start-1 md:col-end-8 order-2 md:order-1";
-
-      const imageClass =
-        index % 2 === 1
-          ? "md:col-start-1 md:col-end-6 order-1 md:order-1"
-          : "md:col-start-8 md:col-end-13 order-1 md:order-2";
-
-      const bgGradient = index % 2 === 0 ? "from-tech-blue/20 to-tech-purple/40" : "from-tech-purple/40 to-tech-blue/20";
-
+      projectEl.className = "grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center project-card mb-12 last:mb-0";
+      const contentClass = index % 2 === 1 ? "md:col-start-6 md:col-end-13 order-2 md:order-2" : "md:col-start-1 md:col-end-8 order-2 md:order-1";
+      const imageClass = index % 2 === 1 ? "md:col-start-1 md:col-end-6 order-1 md:order-1" : "md:col-start-8 md:col-end-13 order-1 md:order-2";
       const projectUrl = project.liveUrl || project.githubUrl;
       const titleLink = projectUrl
-        ? `<a href="${projectUrl}" target="_blank" rel="noopener noreferrer" class="hover:text-tech-blue transition-colors flex items-center gap-2 group-hover:text-tech-blue">${project.title}</a>`
+        ? `<a href="${projectUrl}" target="_blank" rel="noopener noreferrer" class="hover:text-ctos-cyan transition-colors flex items-center gap-2 group-hover:text-ctos-cyan glitch-text" data-text="${project.title}">${project.title}</a>`
         : project.title;
-
       const showProjectBtn = projectUrl
-        ? `<a href="${projectUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-tech-blue/10 text-tech-blue rounded-full hover:bg-tech-blue/20 transition-colors text-sm font-medium border border-tech-blue/20">
-             Show Project
-             <i data-lucide="external-link" class="w-4 h-4"></i>
-           </a>`
+        ? `<a href="${projectUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 border border-ctos-cyan text-ctos-cyan hover:bg-ctos-cyan hover:text-black transition-colors text-sm font-bold uppercase tracking-wider">INIT_VIEW <i data-lucide="external-link" class="w-4 h-4"></i></a>`
         : "";
-
       const awardBadge = project.award
-        ? `<div class="mb-3 inline-flex items-center gap-2 px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full border border-yellow-500/30 text-xs font-bold uppercase tracking-wider">
-             <i data-lucide="trophy" class="w-3 h-3"></i> ${project.award}
-           </div>`
+        ? `<div class="mb-3 inline-flex items-center gap-2 px-3 py-1 bg-yellow-900/40 text-yellow-400 border border-yellow-500/50 text-xs font-bold uppercase tracking-wider"><i data-lucide="trophy" class="w-3 h-3"></i> ${project.award}</div>`
         : "";
 
       projectEl.innerHTML = `
-        <div class="${contentClass} relative z-10">
-          <div class="flex flex-col items-start mb-2">
-            <div class="flex justify-between w-full mb-1">
-               <p class="text-tech-blue font-mono text-sm">
-                 ${project.featured ? "Featured Project" : "Project"}
-               </p>
-               <p class="text-gray-500 text-xs font-mono text-right">
-                 ${project.period || ""}
-               </p>
+          <div class="${contentClass} relative z-10">
+            <div class="flex flex-col items-start mb-2">
+              <div class="flex justify-between w-full mb-1">
+                 <p class="text-ctos-cyan font-mono text-xs uppercase tracking-widest">${project.featured ? "FEATURED_DEPLOYMENT" : "DEPLOYMENT"}</p>
+                 <p class="text-gray-500 text-xs font-mono text-right uppercase">[ ${project.period || "UNKNOWN_DATE"} ]</p>
+              </div>
+              ${awardBadge}
             </div>
-            ${awardBadge}
+            <h3 class="text-3xl font-bold text-white mb-4 cursor-pointer uppercase">${titleLink}</h3>
+            ${project.association ? `<p class="text-gray-500 text-sm mb-4 font-mono uppercase border-l-2 border-gray-700 pl-3">${project.association}</p>` : ""}
+            <div class="ctos-card p-6 text-gray-400 mb-6 bg-black/80 backdrop-blur-md">
+              <p class="leading-relaxed font-light">${project.description || ""}</p>
+            </div>
+            <ul class="flex flex-wrap gap-3 text-xs text-gray-500 font-mono mb-8 uppercase ${index % 2 === 1 ? "md:justify-end" : ""}">
+              ${(project.tech || []).map((t) => `<li><span class="text-ctos-cyan">#</span>${t}</li>`).join("")}
+            </ul>
+            <div class="flex gap-4 items-center ${index % 2 === 1 ? "md:justify-end" : ""}">
+              ${showProjectBtn}
+            </div>
           </div>
-
-          <h3 class="text-3xl font-bold text-white mb-2 cursor-pointer">
-            ${titleLink}
-          </h3>
-
-          ${project.association ? `<p class="text-gray-400 text-sm mb-4 italic">${project.association}</p>` : ""}
-
-          <div class="glass p-6 rounded-xl text-gray-400 mb-6 shadow-xl">
-            ${project.description || ""}
+          <div class="${imageClass} relative group">
+            <div class="absolute inset-0 bg-ctos-cyan/20 z-10 pointer-events-none group-hover:bg-transparent transition-colors duration-300"></div>
+            <div class="absolute inset-0 border border-ctos-cyan/30 z-20 pointer-events-none"></div>
+            <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-ctos-cyan z-30"></div>
+            <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-ctos-cyan z-30"></div>
+            <div class="w-full h-64 md:h-80 bg-black overflow-hidden relative flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(0,240,255,0.2)]">
+              ${project.image ? `<img src="${project.image}" alt="${project.title}" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-300">` : `<i data-lucide="cpu" class="w-24 h-24 text-gray-800 group-hover:text-ctos-cyan transition-colors duration-300"></i>`}
+            </div>
           </div>
-
-          <ul class="flex flex-wrap gap-4 text-sm text-gray-400 font-mono mb-8 ${index % 2 === 1 ? "md:justify-end" : ""}">
-            ${(project.tech || []).map((t) => `<li>${t}</li>`).join("")}
-          </ul>
-
-          <div class="flex gap-4 items-center ${index % 2 === 1 ? "md:justify-end" : ""}">
-            ${showProjectBtn}
-          </div>
-        </div>
-
-        <div class="${imageClass} relative group">
-          <div class="absolute inset-0 bg-tech-blue/10 rounded-xl group-hover:bg-transparent transition-colors duration-300 z-10"></div>
-          <div class="w-full h-64 md:h-80 bg-gradient-to-br ${bgGradient} rounded-xl border border-white/10 group-hover:border-tech-blue/50 transition-all duration-300 overflow-hidden flex items-center justify-center relative">
-            ${project.image
-          ? `<img src="${project.image}" alt="${project.title}" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-105">`
-          : `<i data-lucide="cpu" class="w-24 h-24 text-white/20 group-hover:text-tech-blue/50 transition-colors duration-300 transform group-hover:scale-110"></i>`
-        }
-          </div>
-        </div>
-      `;
-
+        `;
       projectsContainer.appendChild(projectEl);
     });
   }
 
-  // ---------- POPULATE CERTIFICATIONS & AWARDS ----------
-
+  // Certifications
   if (certificationsList) {
-    // Clear existing content if any (though typically empty)
     certificationsList.innerHTML = "";
-
     certifications.forEach((group, index) => {
-      // Create Accordion Item
       const accordionItem = document.createElement("div");
-      accordionItem.className = "glass rounded-2xl overflow-hidden transition-all duration-300";
-
-      // Header
+      accordionItem.className = "ctos-card mb-4 bg-white/5";
       const header = document.createElement("button");
-      header.className = "w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors focus:outline-none";
-      // Added flex-1 and pr-4 to span to ensure text wrapping doesn't push chevron or overlap
+      header.className = "w-full flex items-center justify-between p-4 text-left hover:bg-ctos-cyan/10 transition-colors focus:outline-none";
       header.innerHTML = `
-        <span class="text-lg font-bold text-white flex-1 pr-4">${group.category}</span>
-        <i data-lucide="chevron-down" class="w-5 h-5 text-tech-blue transition-transform duration-300 flex-shrink-0" id="chevron-${index}"></i>
-      `;
-
-      // Content
+          <span class="text-lg font-bold text-white flex-1 pr-4 uppercase tracking-wide flex items-center">
+             <span class="text-ctos-cyan mr-2">></span> ${group.category}
+          </span>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-ctos-cyan transition-transform duration-300 flex-shrink-0"></i>
+        `;
       const content = document.createElement("div");
-      content.id = `content-${index}`;
-      content.className = "max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-black/20";
-
+      content.className = "max-h-0 overflow-hidden transition-all duration-300 ease-out bg-black/50 border-t border-transparent";
+      content.style.borderColor = "rgba(0, 240, 255, 0.1)";
       const contentInner = document.createElement("div");
-      contentInner.className = "p-6 pt-0 grid gap-4";
+      contentInner.className = "p-6 grid gap-4";
 
       group.items.forEach((cert) => {
         const certEl = document.createElement("div");
-        certEl.className = "flex items-start text-gray-300 border-l-2 border-white/10 pl-4 py-1 hover:border-tech-blue transition-colors";
+        certEl.className = "flex items-start text-gray-400 border-l border-gray-700 pl-4 py-1 hover:border-ctos-cyan hover:text-white transition-colors cursor-default";
         certEl.innerHTML = `
-          <div>
-            <span class="block text-white font-medium">${cert.name}</span>
-            <div class="flex flex-wrap gap-2 text-sm text-gray-500 mt-1">
-              <span>${cert.issuer}</span>
-              <span class="hidden sm:inline text-gray-700">•</span>
-              <span class="font-mono text-xs pt-0.5">${cert.date}</span>
+            <div>
+              <span class="block text-gray-200 font-bold uppercase text-sm mb-1">${cert.name}</span>
+              <div class="flex flex-wrap gap-2 text-xs text-gray-500 font-mono">
+                <span class="text-ctos-cyan">${cert.issuer}</span><span class="hidden sm:inline text-gray-700">|</span><span>${cert.date}</span>
+              </div>
             </div>
-          </div>
-        `;
+          `;
         contentInner.appendChild(certEl);
       });
-
       content.appendChild(contentInner);
 
-      // Toggle Logic
       header.addEventListener("click", () => {
         const chevron = header.querySelector("i");
         const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
-
         if (isOpen) {
           content.style.maxHeight = "0px";
           chevron.style.transform = "rotate(0deg)";
@@ -586,58 +436,55 @@ document.addEventListener("DOMContentLoaded", () => {
           chevron.style.transform = "rotate(180deg)";
         }
       });
-
       accordionItem.appendChild(header);
       accordionItem.appendChild(content);
       certificationsList.appendChild(accordionItem);
     });
   }
 
+  // Awards
   if (awardsList) {
     awards.forEach((award) => {
       const item = document.createElement("div");
-      item.className = "glass p-4 rounded-xl border-l-4 border-tech-blue";
-      item.innerHTML = `<span class="text-white font-medium">${award}</span>`;
+      item.className = "ctos-card p-4 border-l-4 border-l-yellow-500 flex items-center gap-3";
+      item.innerHTML = `<i data-lucide="trophy" class="w-5 h-5 text-yellow-500"></i><span class="text-white font-bold uppercase tracking-wider">${award}</span>`;
       awardsList.appendChild(item);
     });
   }
 
-  // ---------- POPULATE PUBLICATIONS ----------
-
+  // Publications
   if (publicationsContainer) {
     publications.forEach((pub) => {
       const item = document.createElement("div");
-      item.className = "glass p-6 rounded-2xl hover:border-tech-blue/50 transition-colors flex flex-col sm:flex-row items-start gap-4"; // added gap-4
+      item.className = "ctos-card p-6 flex flex-col sm:flex-row items-start gap-4 hover:border-ctos-cyan/50";
       item.innerHTML = `
-        <div class="flex-shrink-0">
-            ${pub.thumbnail ?
-          `<img src="${pub.thumbnail}" alt="${pub.title}" class="w-24 h-16 object-cover rounded-lg border border-white/10" />` :
-          `<div class="bg-tech-blue/10 p-3 rounded-full text-tech-blue"><i data-lucide="book-open" class="w-6 h-6"></i></div>`
+          <div class="flex-shrink-0">
+              ${pub.thumbnail
+          ? `<img src="${pub.thumbnail}" alt="${pub.title}" class="w-24 h-16 object-cover border border-gray-700 grayscale hover:grayscale-0 transition-all" />`
+          : `<div class="bg-ctos-cyan/10 p-3 text-ctos-cyan border border-ctos-cyan/30"><i data-lucide="book-open" class="w-6 h-6"></i></div>`
         }
-        </div>
-        <div>
-          <h3 class="text-xl font-bold text-white mb-2">
-            <a href="${pub.url}" target="_blank" rel="noopener noreferrer" class="hover:text-tech-blue transition-colors flex items-center gap-2">
-              ${pub.title}
-              <i data-lucide="external-link" class="w-4 h-4 text-gray-500"></i>
-            </a>
-          </h3>
-          <p class="text-gray-400 text-sm mb-1">${pub.conference}</p>
-          <p class="text-gray-500 text-xs font-mono">${pub.date}</p>
-        </div>
-      `;
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-2 uppercase">
+              <a href="${pub.url}" target="_blank" rel="noopener noreferrer" class="hover:text-ctos-cyan transition-colors flex items-center gap-2">
+                ${pub.title}
+                <i data-lucide="external-link" class="w-4 h-4 text-gray-500"></i>
+              </a>
+            </h3>
+            <p class="text-ctos-cyan text-xs font-mono mb-1 uppercase tracking-wider">${pub.conference}</p>
+            <p class="text-gray-500 text-xs font-mono">[ ${pub.date} ]</p>
+          </div>
+        `;
       publicationsContainer.appendChild(item);
     });
   }
 
-  // ---------- ICONS ----------
-
+  // Icons
   if (typeof lucide !== "undefined") {
     lucide.createIcons();
   }
 
-  // ---------- NAVBAR SCROLL EFFECT ----------
-
+  // Navbar
   if (navbar) {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) navbar.classList.add("nav-scrolled");
@@ -645,155 +492,234 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ---------- MOBILE MENU ----------
-
+  // Mobile Menu
   let isMenuOpen = false;
-
   const closeMobileMenu = () => {
     if (!mobileMenu || !isMenuOpen) return;
     isMenuOpen = false;
-
     if (typeof gsap !== "undefined") {
-      gsap.to(mobileMenu, {
-        height: 0,
-        opacity: 0,
-        duration: 0.3,
-        onComplete: () => mobileMenu.classList.add("hidden"),
-      });
+      gsap.to(mobileMenu, { height: 0, opacity: 0, duration: 0.2, ease: "power2.in", onComplete: () => mobileMenu.classList.add("hidden") });
     } else {
       mobileMenu.classList.add("hidden");
     }
   };
-
   if (mobileBtn && mobileMenu) {
     mobileBtn.addEventListener("click", () => {
       isMenuOpen = !isMenuOpen;
-
       if (isMenuOpen) {
         mobileMenu.classList.remove("hidden");
-        if (typeof gsap !== "undefined") {
-          gsap.fromTo(mobileMenu, { height: 0, opacity: 0 }, { height: "auto", opacity: 1, duration: 0.3 });
-        }
+        if (typeof gsap !== "undefined") gsap.fromTo(mobileMenu, { height: 0, opacity: 0 }, { height: "auto", opacity: 1, duration: 0.2, ease: "power2.out" });
       } else {
         closeMobileMenu();
       }
     });
-
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeMobileMenu);
-    });
+    mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMobileMenu));
   }
 
-  // ---------- GSAP ANIMATIONS ----------
-
+  // GSAP
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
+    gsap.defaults({ ease: "power4.out", duration: 0.6 });
 
-    // Hero
-    gsap.from(".hero-content", {
-      opacity: 0,
-      y: 20,
-      duration: 1,
-      ease: "power3.out",
-      delay: 0.2,
-    });
+    gsap.from(".hero-content", { opacity: 0, y: 20, duration: 0.8, stagger: 0.1 });
 
-    // Section headers
     gsap.utils.toArray(".section-header").forEach((header) => {
-      gsap.from(header, {
-        scrollTrigger: { trigger: header, start: "top 85%" },
-        opacity: 0,
-        y: 20,
-        duration: 0.8,
-        ease: "power3.out",
-      });
+      gsap.from(header, { scrollTrigger: { trigger: header, start: "top 90%" }, opacity: 0, x: -50, duration: 0.5 });
     });
 
-    // About
-    gsap.from(".about-text", {
-      scrollTrigger: { trigger: ".about-text", start: "top 80%" },
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      delay: 0.2,
-    });
+    gsap.from(".about-text", { scrollTrigger: { trigger: ".about-text", start: "top 85%" }, opacity: 0, x: -30, delay: 0.1 });
 
-    gsap.from(".about-stats", {
-      scrollTrigger: { trigger: ".about-stats", start: "top 80%" },
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      delay: 0.4,
-    });
+    gsap.from(".about-stats .ctos-card", { scrollTrigger: { trigger: ".about-stats", start: "top 85%" }, opacity: 0, scale: 0.9, stagger: 0.1, duration: 0.4 });
 
-    // Skills
     gsap.utils.toArray(".skill-card").forEach((card, i) => {
-      gsap.from(card, {
-        scrollTrigger: { trigger: card, start: "top 85%" },
-        opacity: 0,
-        y: 20,
-        duration: 0.5,
-        delay: (i % 3) * 0.1, // Simple stagger based on 3-column grid
-      });
+      gsap.from(card, { scrollTrigger: { trigger: card, start: "top 90%" }, opacity: 0, y: 20, duration: 0.4, delay: (i % 3) * 0.1 });
     });
 
-    // Experience
     gsap.utils.toArray(".experience-card").forEach((card) => {
-      gsap.from(card, {
-        scrollTrigger: { trigger: card, start: "top 85%" },
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        delay: 0.1,
-      });
+      gsap.from(card, { scrollTrigger: { trigger: card, start: "top 85%" }, opacity: 0, x: 20, duration: 0.5 });
     });
 
-    // Projects
-    gsap.from(".project-card", {
-      scrollTrigger: {
-        trigger: "#projects",
-        start: "top 80%",
-      },
-      opacity: 0,
-      y: 40,
-      duration: 0.8,
-      stagger: 0.2,
-    });
+    gsap.from(".project-card", { scrollTrigger: { trigger: "#projects", start: "top 80%" }, opacity: 0, y: 30, stagger: 0.2 });
 
-    // Certifications & Awards
-    gsap.from("#certifications-list", {
-      scrollTrigger: { trigger: "#certifications", start: "top 80%" },
-      opacity: 0,
-      x: -30,
-      duration: 0.8,
-    });
+    gsap.from("#certifications-list", { scrollTrigger: { trigger: "#certifications", start: "top 85%" }, opacity: 0, x: -20 });
+    gsap.from("#awards-list", { scrollTrigger: { trigger: "#certifications", start: "top 85%" }, opacity: 0, x: 20, delay: 0.2 });
 
-    gsap.from("#awards-list", {
-      scrollTrigger: { trigger: "#certifications", start: "top 80%" },
-      opacity: 0,
-      x: 30,
-      duration: 0.8,
-      delay: 0.2,
-    });
+    // Publications GSAP - Commented out to ensure visibility
+    // const pubs = document.querySelectorAll("#publications-container > div");
+    // if (pubs.length > 0) {
+    //   gsap.from(pubs, {
+    //     scrollTrigger: { trigger: "#publications", start: "top 90%" },
+    //     opacity: 0,
+    //     y: 20,
+    //     stagger: 0.1
+    //   });
+    // }
 
-    // Publications
-    gsap.from("#publications-container > div", {
-      scrollTrigger: {
-        trigger: "#publications",
-        start: "top 85%",
-      },
-      opacity: 0,
-      y: 20,
-      duration: 0.6,
-      stagger: 0.1,
-    });
-
-    // Contact
-    gsap.from(".contact-content", {
-      scrollTrigger: { trigger: "#contact", start: "top 75%" },
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-    });
+    gsap.from(".contact-content", { scrollTrigger: { trigger: "#contact", start: "top 80%" }, opacity: 0, scale: 0.95, duration: 0.8 });
   }
+
+  // ---------- HACKER TEXT SCRAMBLER ----------
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_!@#$%^&*";
+  const scrambleText = (element) => {
+    // Basic safety check
+    if (!element) return;
+
+    if (!element.dataset.originalText) {
+      let text = element.innerText;
+      // Clean up cursor from text
+      if (element.querySelector('.blink-cursor')) {
+        text = text.replace('_', '');
+      }
+      element.dataset.originalText = text.trim();
+    }
+
+    const simpleText = element.dataset.originalText;
+    let iteration = 0;
+    clearInterval(element.interval);
+
+    element.interval = setInterval(() => {
+      let newText = "";
+      simpleText.split("").forEach((letter, index) => {
+        if (index < iteration) newText += simpleText[index];
+        else newText += chars[Math.floor(Math.random() * chars.length)];
+      });
+
+      // Re-append cursor
+      if (element.querySelector('.blink-cursor') || element.dataset.hasCursor === 'true') {
+        element.innerHTML = newText + '<span class="blink-cursor">_</span>';
+        element.dataset.hasCursor = 'true';
+      } else {
+        element.innerText = newText;
+      }
+
+      if (iteration >= simpleText.length) {
+        clearInterval(element.interval);
+        if (element.dataset.hasCursor === 'true') {
+          element.innerHTML = simpleText + '<span class="blink-cursor">_</span>';
+        } else {
+          element.innerText = simpleText;
+        }
+      }
+      iteration += 1 / 2;
+    }, 30);
+  };
+
+  // Target ONLY Main Name (H1)
+  const targets = document.querySelectorAll("h1");
+
+  targets.forEach(el => {
+    el.addEventListener('mouseenter', () => scrambleText(el));
+    // Initial trigger for H1 (Name)
+    if (el.tagName === 'H1') setTimeout(() => scrambleText(el), 500);
+  });
+
+  // Re-trigger H1 when scrolling to top
+  window.addEventListener("scroll", () => {
+    if (window.scrollY === 0) {
+      targets.forEach(el => {
+        scrambleText(el);
+      });
+    }
+  });
+
+  // ---------- NETWORK BACKGROUND ----------
+  const initNetworkBackground = () => {
+    const canvas = document.getElementById("network-bg");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    let width, height;
+    let particles = [];
+    const particleCount = window.innerWidth < 768 ? 50 : 100;
+    const connectionDistance = 150;
+    const mouseValues = { x: null, y: null, radius: 200 };
+
+    const resize = () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    };
+    window.addEventListener("resize", resize);
+    resize();
+
+    window.addEventListener("mousemove", (e) => {
+      mouseValues.x = e.x;
+      mouseValues.y = e.y;
+    });
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.size = Math.random() * 2 + 1;
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+
+        // Mouse interaction
+        if (mouseValues.x != null) {
+          let dx = mouseValues.x - this.x;
+          let dy = mouseValues.y - this.y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < mouseValues.radius) {
+            const forceDirectionX = dx / distance;
+            const forceDirectionY = dy / distance;
+            const force = (mouseValues.radius - distance) / mouseValues.radius;
+            const directionX = forceDirectionX * force * this.size;
+            const directionY = forceDirectionY * force * this.size;
+            this.x -= directionX;
+            this.y -= directionY;
+          }
+        }
+      }
+      draw() {
+        ctx.fillStyle = "rgba(0, 240, 255, 0.5)"; // ctos-cyan
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Optional: Draw square node for extra tech feel
+        ctx.strokeStyle = "rgba(0, 240, 255, 0.3)";
+        ctx.strokeRect(this.x - this.size * 2, this.y - this.size * 2, this.size * 4, this.size * 4);
+      }
+    }
+
+    const initParticles = () => {
+      particles = [];
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+    };
+    initParticles();
+
+    const animate = () => {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+
+        for (let j = i; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < connectionDistance) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(0, 240, 255, ${1 - distance / connectionDistance})`;
+            ctx.lineWidth = 1;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animate);
+    };
+    animate();
+  };
+
+  initNetworkBackground();
+
 });
