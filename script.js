@@ -97,104 +97,126 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       title: "Nebula Dashboard – Livestock Analytics",
       description:
-        "Full-stack analytics dashboard for electronic sow feeders. Features health monitoring, real-time feeding data, and behavior analytics using React, Node.js, and SQL.",
-      tech: ["React", "Node.js", "MySQL", "REST APIs", "WebSockets"],
-      githubUrl: "https://github.com/Narensraj",
-      liveUrl: "",
-      featured: true,
-    },
-    {
-      title: "Farm Monitoring via WoT",
-      description:
-        "Feeder System for Monitoring the Farm Using Web of Things (WoT). Created a network of smart feeders connected to a central monitoring system for efficient farm management.",
-      tech: ["IoT", "Embedded C", "Web of Things", "Sensors"],
-      githubUrl: "",
-      liveUrl: "",
-      featured: true,
-    },
-    {
-      title: "Interactive AR ATM Model",
-      description:
-        "A Systematic AR-based ATM model to enhance security and safety. Utilized Augmented Reality to overlay digital security information on physical ATM interfaces.",
-      tech: ["Augmented Reality", "Unity", "Security"],
-      githubUrl: "",
-      liveUrl: "",
-      featured: false,
-    },
-    {
-      title: "Intuitive and Impulsive Pet (IIP)",
-      description:
-        "An innovative project focusing on human-pet interaction using embedded sensors and behavioral analysis algorithms.",
-      tech: ["Embedded Systems", "Sensors", "Behavior Analysis"],
-      githubUrl: "",
-      liveUrl: "",
-      featured: false,
-    },
-  ];
+  const projects = [
+        {
+          title: "Ingenious UOI based Augmented Reality using SIFT for ATM",
+          description:
+            "This project uses Augmented Reality which imposes virtual keypad on digital image at real time. No need for additional hardware. Powered by AR phone application.",
+          tech: ["Vuforia SDK", "Unity 3D", "Arduino IDE", "ESP8266"],
+          githubUrl: "",
+          liveUrl: "https://www.hackster.io/Narensraj/diy-touchless-atm-using-augmented-reality-iotar-e621e0",
+          featured: true,
+        },
+        {
+          title: "Pet Feeder using Google assistant v1.1",
+          description:
+            "Programmed to fill the food bowl at certain intervals or by voice command 'Ok Google feed my pet'.",
+          tech: ["Arduino IDE", "ESP8266"],
+          githubUrl: "",
+          liveUrl: "https://www.hackster.io/Narensraj/diy-pet-feeder-using-google-assistant-d54765",
+          featured: true,
+        },
+        {
+          title: "Voice controlled home automation using MQTT",
+          description:
+            "Home appliances like Bulb, Fan and Motor controlled via Google Assistant commands decoded by microcontroller.",
+          tech: ["Arduino IDE", "ESP8266"],
+          githubUrl: "",
+          liveUrl: "",
+          featured: false,
+        },
+        {
+          title: "Automatic Pet care v1.0",
+          description:
+            "Arduino based Automatic Pet Feeder with DS3231 RTC Module for scheduled feeding.",
+          tech: ["Arduino IDE"],
+          githubUrl: "",
+          liveUrl: "",
+          featured: false,
+        },
+        {
+          title: "Magnetic Drum separator",
+          description:
+            "Self-cleaning separators for continuous removal of ferrous contamination from free-flowing materials.",
+          tech: [],
+          githubUrl: "",
+          liveUrl: "",
+          featured: false,
+        },
+        {
+          title: "Light representation of Intestine",
+          description:
+            "LED light representation of human body organs to identify organ and food flow.",
+          tech: [],
+          githubUrl: "",
+          liveUrl: "",
+          featured: false,
+        },
+      ];
 
-  const certifications = [
-    "Cyber security essential",
-    "Embedded Systems Bare-Metal Programming Ground Up™ (STM32)",
-    "Deep learning Onramp",
-    "IT Academy: Software Defined Storage Concepts",
-    "Learning Complete PCB Design: From an Idea to a Product",
-  ];
+      const certifications = [
+        "Cyber security essential",
+        "Embedded Systems Bare-Metal Programming Ground Up™ (STM32)",
+        "Deep learning Onramp",
+        "IT Academy: Software Defined Storage Concepts",
+        "Learning Complete PCB Design: From an Idea to a Product",
+      ];
 
-  const awards = [
-    "Best project of the year",
-  ];
+      const awards = [
+        "Best project of the year",
+      ];
 
-  const publications = [
-    {
-      title: "Intuitive and Impulsive Pet (IIP) Feeder System for Monitoring the Farm Using WoT",
-      conference: "International Conference on Sustainable Expert Systems (ICSES 2020)",
-      date: "Sep 1, 2020",
-      url: "https://www.springerprofessional.de/en/intuitive-and-impulsive-pet-iip-feeder-system-for-monitoring-the/19021924"
-    },
-    {
-      title: "A Systematic AR based ATM model to Enhance Security and Safety",
-      conference: "International Conference on Computing, Communication, Electrical and Biomedical System (ICCCEBS 2021)",
-      date: "Mar 18, 2021",
-      url: "https://ieeexplore.ieee.org/document/9532897"
-    },
-  ];
+      const publications = [
+        {
+          title: "Intuitive and Impulsive Pet (IIP) Feeder System for Monitoring the Farm Using WoT",
+          conference: "International Conference on Sustainable Expert Systems (ICSES 2020)",
+          date: "Sep 1, 2020",
+          url: "https://www.springerprofessional.de/en/intuitive-and-impulsive-pet-iip-feeder-system-for-monitoring-the/19021924"
+        },
+        {
+          title: "A Systematic AR based ATM model to Enhance Security and Safety",
+          conference: "International Conference on Computing, Communication, Electrical and Biomedical System (ICCCEBS 2021)",
+          date: "Mar 18, 2021",
+          url: "https://ieeexplore.ieee.org/document/9532897"
+        },
+      ];
 
-  const languages = [
-    { name: "English", level: "Full Professional" },
-    { name: "Kannada", level: "Native or Bilingual" },
-    { name: "Tamil", level: "Native or Bilingual" },
-    { name: "Telugu", level: "Elementary" },
-  ];
+      const languages = [
+        { name: "English", level: "Full Professional" },
+        { name: "Kannada", level: "Native or Bilingual" },
+        { name: "Tamil", level: "Native or Bilingual" },
+        { name: "Telugu", level: "Elementary" },
+      ];
 
-  // ---------- DOM ELEMENTS ----------
+      // ---------- DOM ELEMENTS ----------
 
-  const skillsGrid = document.getElementById("skills-grid");
-  const experienceContainer = document.getElementById("experience-container");
-  const projectsContainer = document.getElementById("projects-container");
-  const certificationsList = document.getElementById("certifications-list");
-  const awardsList = document.getElementById("awards-list");
-  const publicationsContainer = document.getElementById("publications-container");
-  const languagesGrid = document.getElementById("languages-grid");
+      const skillsGrid = document.getElementById("skills-grid");
+      const experienceContainer = document.getElementById("experience-container");
+      const projectsContainer = document.getElementById("projects-container");
+      const certificationsList = document.getElementById("certifications-list");
+      const awardsList = document.getElementById("awards-list");
+      const publicationsContainer = document.getElementById("publications-container");
+      const languagesGrid = document.getElementById("languages-grid");
 
-  const navbar = document.getElementById("navbar");
-  const mobileBtn = document.getElementById("mobile-menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
+      const navbar = document.getElementById("navbar");
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-  // ---------- POPULATE SKILLS ----------
+      // ---------- POPULATE SKILLS ----------
 
-  if (skillsGrid) {
-    skills.forEach((group) => {
-      const card = document.createElement("div");
-      card.className = "glass-card p-6 rounded-2xl skill-card h-full";
+      if(skillsGrid) {
+        skills.forEach((group) => {
+          const card = document.createElement("div");
+          card.className = "glass-card p-6 rounded-2xl skill-card h-full";
 
-      const itemsHtml = group.items
-        .map(
-          (item) =>
-            `<span class="inline-block px-3 py-1 bg-white/5 rounded-full text-sm text-tech-blue mr-2 mb-2 border border-white/5 hover:border-tech-blue/30 transition-colors">${item}</span>`
-        )
-        .join("");
+          const itemsHtml = group.items
+            .map(
+              (item) =>
+                `<span class="inline-block px-3 py-1 bg-white/5 rounded-full text-sm text-tech-blue mr-2 mb-2 border border-white/5 hover:border-tech-blue/30 transition-colors">${item}</span>`
+            )
+            .join("");
 
-      card.innerHTML = `
+          card.innerHTML = `
         <h3 class="text-xl font-bold text-white mb-4 border-b border-white/10 pb-2">
           ${group.category}
         </h3>
@@ -202,32 +224,32 @@ document.addEventListener("DOMContentLoaded", () => {
           ${itemsHtml}
         </div>
       `;
-      skillsGrid.appendChild(card);
-    });
-  }
+          skillsGrid.appendChild(card);
+        });
+      }
 
   // ---------- POPULATE LANGUAGES ----------
 
-  if (languagesGrid) {
-    languages.forEach(lang => {
-      const item = document.createElement("div");
-      item.className = "glass p-4 rounded-xl text-center hover:border-tech-blue/30 transition-colors";
-      item.innerHTML = `
+  if(languagesGrid) {
+        languages.forEach(lang => {
+          const item = document.createElement("div");
+          item.className = "glass p-4 rounded-xl text-center hover:border-tech-blue/30 transition-colors";
+          item.innerHTML = `
             <h4 class="text-white font-bold mb-1">${lang.name}</h4>
             <p class="text-xs text-gray-400">${lang.level}</p>
         `;
-      languagesGrid.appendChild(item);
-    });
-  }
+          languagesGrid.appendChild(item);
+        });
+      }
 
   // ---------- POPULATE EXPERIENCE ----------
 
-  if (experienceContainer) {
-    experience.forEach((job) => {
-      const jobEl = document.createElement("div");
-      jobEl.className = "relative pl-8 border-l border-white/10 experience-card";
+  if(experienceContainer) {
+        experience.forEach((job) => {
+          const jobEl = document.createElement("div");
+          jobEl.className = "relative pl-8 border-l border-white/10 experience-card";
 
-      jobEl.innerHTML = `
+          jobEl.innerHTML = `
         <div class="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-tech-blue shadow-[0_0_10px_rgba(212,175,55,0.5)]"></div>
         <div class="glass p-8 rounded-2xl hover:border-tech-blue/30 transition-colors">
           <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
@@ -242,56 +264,56 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <ul class="space-y-2">
             ${job.description
-          .map(
-            (line) => `
+              .map(
+                (line) => `
               <li class="flex items-start text-gray-400">
                 <span class="text-tech-blue mr-2 mt-1.5">▹</span>
                 <span>${line}</span>
               </li>`
-          )
-          .join("")}
+              )
+              .join("")}
           </ul>
         </div>
       `;
-      experienceContainer.appendChild(jobEl);
-    });
-  }
+          experienceContainer.appendChild(jobEl);
+        });
+      }
 
   // ---------- POPULATE PROJECTS ----------
 
-  if (projectsContainer) {
-    projects.forEach((project, index) => {
-      const projectEl = document.createElement("div");
-      projectEl.className = `grid md:grid-cols-12 gap-8 items-center project-card`;
+  if(projectsContainer) {
+        projects.forEach((project, index) => {
+          const projectEl = document.createElement("div");
+          projectEl.className = `grid md:grid-cols-12 gap-8 items-center project-card`;
 
-      const contentClass =
-        index % 2 === 1
-          ? "md:col-start-6 md:col-end-13 order-2 md:order-2"
-          : "md:col-start-1 md:col-end-8 order-2 md:order-1";
+          const contentClass =
+            index % 2 === 1
+              ? "md:col-start-6 md:col-end-13 order-2 md:order-2"
+              : "md:col-start-1 md:col-end-8 order-2 md:order-1";
 
-      const imageClass =
-        index % 2 === 1
-          ? "md:col-start-1 md:col-end-6 order-1 md:order-1"
-          : "md:col-start-8 md:col-end-13 order-1 md:order-2";
+          const imageClass =
+            index % 2 === 1
+              ? "md:col-start-1 md:col-end-6 order-1 md:order-1"
+              : "md:col-start-8 md:col-end-13 order-1 md:order-2";
 
-      const bgGradient =
-        index % 2 === 0
-          ? "from-tech-blue/20 to-tech-purple/40"
-          : "from-tech-purple/40 to-tech-blue/20";
+          const bgGradient =
+            index % 2 === 0
+              ? "from-tech-blue/20 to-tech-purple/40"
+              : "from-tech-purple/40 to-tech-blue/20";
 
-      const githubIcon = project.githubUrl
-        ? `<a href="${project.githubUrl}" target="_blank" class="text-gray-300 hover:text-tech-blue transition-colors" aria-label="GitHub link">
+          const githubIcon = project.githubUrl
+            ? `<a href="${project.githubUrl}" target="_blank" class="text-gray-300 hover:text-tech-blue transition-colors" aria-label="GitHub link">
              <i data-lucide="github" class="w-6 h-6"></i>
            </a>`
-        : "";
+            : "";
 
-      const liveIcon = project.liveUrl
-        ? `<a href="${project.liveUrl}" target="_blank" class="text-gray-300 hover:text-tech-blue transition-colors" aria-label="Live link">
+          const liveIcon = project.liveUrl
+            ? `<a href="${project.liveUrl}" target="_blank" class="text-gray-300 hover:text-tech-blue transition-colors" aria-label="Live link">
              <i data-lucide="external-link" class="w-6 h-6"></i>
            </a>`
-        : "";
+            : "";
 
-      projectEl.innerHTML = `
+          projectEl.innerHTML = `
         <div class="${contentClass} relative z-10">
           <p class="text-tech-blue font-mono text-sm mb-2">
             ${project.featured ? "Featured Project" : "Project"}
@@ -303,11 +325,11 @@ document.addEventListener("DOMContentLoaded", () => {
             ${project.description}
           </div>
           <ul class="flex flex-wrap gap-4 text-sm text-gray-400 font-mono mb-8 ${index % 2 === 1 ? "md:justify-end" : ""
-        }">
+            }">
             ${project.tech.map((t) => `<li>${t}</li>`).join("")}
           </ul>
           <div class="flex gap-4 ${index % 2 === 1 ? "md:justify-end" : ""
-        }">
+            }">
             ${githubIcon}
             ${liveIcon}
           </div>
@@ -320,40 +342,40 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       `;
-      projectsContainer.appendChild(projectEl);
-    });
-  }
+          projectsContainer.appendChild(projectEl);
+        });
+      }
 
   // ---------- POPULATE CERTIFICATIONS & AWARDS ----------
 
-  if (certificationsList) {
-    certifications.forEach(cert => {
-      const item = document.createElement("div");
-      item.className = "flex items-start text-gray-300";
-      item.innerHTML = `
+  if(certificationsList) {
+        certifications.forEach(cert => {
+          const item = document.createElement("div");
+          item.className = "flex items-start text-gray-300";
+          item.innerHTML = `
             <i data-lucide="check-circle" class="w-5 h-5 text-tech-blue mr-3 mt-1 flex-shrink-0"></i>
             <span>${cert}</span>
         `;
-      certificationsList.appendChild(item);
-    });
-  }
+          certificationsList.appendChild(item);
+        });
+      }
 
-  if (awardsList) {
-    awards.forEach(award => {
-      const item = document.createElement("div");
-      item.className = "glass p-4 rounded-xl border-l-4 border-tech-blue";
-      item.innerHTML = `<span class="text-white font-medium">${award}</span>`;
-      awardsList.appendChild(item);
-    });
-  }
+  if(awardsList) {
+        awards.forEach(award => {
+          const item = document.createElement("div");
+          item.className = "glass p-4 rounded-xl border-l-4 border-tech-blue";
+          item.innerHTML = `<span class="text-white font-medium">${award}</span>`;
+          awardsList.appendChild(item);
+        });
+      }
 
   // ---------- POPULATE PUBLICATIONS ----------
 
-  if (publicationsContainer) {
-    publications.forEach(pub => {
-      const item = document.createElement("div");
-      item.className = "glass p-6 rounded-2xl hover:border-tech-blue/50 transition-colors flex items-start";
-      item.innerHTML = `
+  if(publicationsContainer) {
+        publications.forEach(pub => {
+          const item = document.createElement("div");
+          item.className = "glass p-6 rounded-2xl hover:border-tech-blue/50 transition-colors flex items-start";
+          item.innerHTML = `
              <div class="bg-tech-blue/10 p-3 rounded-full mr-4 text-tech-blue">
                 <i data-lucide="book-open" class="w-6 h-6"></i>
              </div>
@@ -368,208 +390,208 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p class="text-gray-500 text-xs font-mono">${pub.date}</p>
              </div>
           `;
-      publicationsContainer.appendChild(item);
-    });
-  }
+          publicationsContainer.appendChild(item);
+        });
+      }
 
   // ---------- ICONS ----------
 
-  if (typeof lucide !== "undefined") {
-    lucide.createIcons();
-  }
+  if(typeof lucide !== "undefined") {
+  lucide.createIcons();
+}
 
-  // ---------- NAVBAR SCROLL EFFECT ----------
+// ---------- NAVBAR SCROLL EFFECT ----------
 
-  if (navbar) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add("nav-scrolled");
-      } else {
-        navbar.classList.remove("nav-scrolled");
-      }
-    });
-  }
-
-  // ---------- MOBILE MENU ----------
-
-  let isMenuOpen = false;
-
-  const closeMobileMenu = () => {
-    if (!mobileMenu || !isMenuOpen) return;
-    isMenuOpen = false;
-    if (typeof gsap !== "undefined") {
-      gsap.to(mobileMenu, {
-        height: 0,
-        opacity: 0,
-        duration: 0.3,
-        onComplete: () => mobileMenu.classList.add("hidden"),
-      });
+if (navbar) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add("nav-scrolled");
     } else {
-      mobileMenu.classList.add("hidden");
+      navbar.classList.remove("nav-scrolled");
     }
-  };
+  });
+}
 
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener("click", () => {
-      isMenuOpen = !isMenuOpen;
-      if (isMenuOpen) {
-        mobileMenu.classList.remove("hidden");
-        if (typeof gsap !== "undefined") {
-          gsap.fromTo(
-            mobileMenu,
-            { height: 0, opacity: 0 },
-            { height: "auto", opacity: 1, duration: 0.3 }
-          );
-        }
-      } else {
-        closeMobileMenu();
-      }
-    });
+// ---------- MOBILE MENU ----------
 
-    // Close on menu link click
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeMobileMenu);
+let isMenuOpen = false;
+
+const closeMobileMenu = () => {
+  if (!mobileMenu || !isMenuOpen) return;
+  isMenuOpen = false;
+  if (typeof gsap !== "undefined") {
+    gsap.to(mobileMenu, {
+      height: 0,
+      opacity: 0,
+      duration: 0.3,
+      onComplete: () => mobileMenu.classList.add("hidden"),
     });
+  } else {
+    mobileMenu.classList.add("hidden");
   }
+};
 
-  // ---------- GSAP ANIMATIONS ----------
+if (mobileBtn && mobileMenu) {
+  mobileBtn.addEventListener("click", () => {
+    isMenuOpen = !isMenuOpen;
+    if (isMenuOpen) {
+      mobileMenu.classList.remove("hidden");
+      if (typeof gsap !== "undefined") {
+        gsap.fromTo(
+          mobileMenu,
+          { height: 0, opacity: 0 },
+          { height: "auto", opacity: 1, duration: 0.3 }
+        );
+      }
+    } else {
+      closeMobileMenu();
+    }
+  });
 
-  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger);
+  // Close on menu link click
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMobileMenu);
+  });
+}
 
-    // Hero
-    gsap.from(".hero-content", {
+// ---------- GSAP ANIMATIONS ----------
+
+if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero
+  gsap.from(".hero-content", {
+    opacity: 0,
+    y: 20,
+    duration: 1,
+    ease: "power3.out",
+    delay: 0.2,
+  });
+
+  // Section headers
+  gsap.utils.toArray(".section-header").forEach((header) => {
+    gsap.from(header, {
+      scrollTrigger: {
+        trigger: header,
+        start: "top 80%",
+      },
       opacity: 0,
       y: 20,
-      duration: 1,
+      duration: 0.8,
       ease: "power3.out",
-      delay: 0.2,
     });
+  });
 
-    // Section headers
-    gsap.utils.toArray(".section-header").forEach((header) => {
-      gsap.from(header, {
-        scrollTrigger: {
-          trigger: header,
-          start: "top 80%",
-        },
-        opacity: 0,
-        y: 20,
-        duration: 0.8,
-        ease: "power3.out",
-      });
-    });
+  // About
+  gsap.from(".about-text", {
+    scrollTrigger: {
+      trigger: ".about-text",
+      start: "top 80%",
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    delay: 0.2,
+  });
 
-    // About
-    gsap.from(".about-text", {
+  gsap.from(".about-stats", {
+    scrollTrigger: {
+      trigger: ".about-stats",
+      start: "top 80%",
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    delay: 0.4,
+  });
+
+  // Skills
+  gsap.utils.toArray(".skill-card").forEach((card, i) => {
+    gsap.from(card, {
       scrollTrigger: {
-        trigger: ".about-text",
+        trigger: card,
+        start: "top 85%",
+      },
+      opacity: 0,
+      y: 20,
+      duration: 0.5,
+      delay: i * 0.05,
+    });
+  });
+
+  // Experience
+  gsap.utils.toArray(".experience-card").forEach((card) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
         start: "top 80%",
       },
       opacity: 0,
       y: 30,
       duration: 0.8,
-      delay: 0.2,
+      delay: 0.1,
     });
+  });
 
-    gsap.from(".about-stats", {
+  // Projects
+  gsap.utils.toArray(".project-card").forEach((card) => {
+    gsap.from(card, {
       scrollTrigger: {
-        trigger: ".about-stats",
+        trigger: card,
         start: "top 80%",
       },
       opacity: 0,
       y: 30,
       duration: 0.8,
-      delay: 0.4,
+      delay: 0.1,
     });
+  });
 
-    // Skills
-    gsap.utils.toArray(".skill-card").forEach((card, i) => {
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%",
-        },
-        opacity: 0,
-        y: 20,
-        duration: 0.5,
-        delay: i * 0.05,
-      });
-    });
+  // Certifications & Awards
+  gsap.from("#certifications-list", {
+    scrollTrigger: {
+      trigger: "#certifications",
+      start: "top 75%"
+    },
+    opacity: 0,
+    x: -20,
+    duration: 0.8
+  });
 
-    // Experience
-    gsap.utils.toArray(".experience-card").forEach((card) => {
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: "top 80%",
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        delay: 0.1,
-      });
-    });
+  gsap.from("#awards-list", {
+    scrollTrigger: {
+      trigger: "#certifications",
+      start: "top 75%"
+    },
+    opacity: 0,
+    x: 20,
+    duration: 0.8,
+    delay: 0.2
+  });
 
-    // Projects
-    gsap.utils.toArray(".project-card").forEach((card) => {
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: "top 80%",
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        delay: 0.1,
-      });
-    });
-
-    // Certifications & Awards
-    gsap.from("#certifications-list", {
+  // Publications
+  gsap.utils.toArray("#publications-container > div").forEach((pub, i) => {
+    gsap.from(pub, {
       scrollTrigger: {
-        trigger: "#certifications",
-        start: "top 75%"
+        trigger: "#publications",
+        start: "top 80%"
       },
       opacity: 0,
-      x: -20,
-      duration: 0.8
+      y: 20,
+      duration: 0.6,
+      delay: i * 0.1
     });
+  });
 
-    gsap.from("#awards-list", {
-      scrollTrigger: {
-        trigger: "#certifications",
-        start: "top 75%"
-      },
-      opacity: 0,
-      x: 20,
-      duration: 0.8,
-      delay: 0.2
-    });
-
-    // Publications
-    gsap.utils.toArray("#publications-container > div").forEach((pub, i) => {
-      gsap.from(pub, {
-        scrollTrigger: {
-          trigger: "#publications",
-          start: "top 80%"
-        },
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        delay: i * 0.1
-      });
-    });
-
-    // Contact
-    gsap.from(".contact-content", {
-      scrollTrigger: {
-        trigger: "#contact",
-        start: "top 70%",
-      },
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-    });
-  }
+  // Contact
+  gsap.from(".contact-content", {
+    scrollTrigger: {
+      trigger: "#contact",
+      start: "top 70%",
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+  });
+}
 });
