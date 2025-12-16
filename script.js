@@ -229,12 +229,14 @@ document.addEventListener("DOMContentLoaded", () => {
       conference: "International Conference on Sustainable Expert Systems (ICSES 2020)",
       date: "Sep 1, 2020",
       url: "https://www.springerprofessional.de/en/intuitive-and-impulsive-pet-iip-feeder-system-for-monitoring-the/19021924",
+      thumbnail: "assets/publication_1.jpg"
     },
     {
       title: "A Systematic AR based ATM model to Enhance Security and Safety",
       conference: "International Conference on Computing, Communication, Electrical and Biomedical System (ICCCEBS 2021)",
       date: "Mar 18, 2021",
       url: "https://ieeexplore.ieee.org/document/9532897",
+      thumbnail: "assets/publication_2.jpg"
     },
   ];
 
@@ -455,10 +457,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (publicationsContainer) {
     publications.forEach((pub) => {
       const item = document.createElement("div");
-      item.className = "glass p-6 rounded-2xl hover:border-tech-blue/50 transition-colors flex items-start";
+      item.className = "glass p-6 rounded-2xl hover:border-tech-blue/50 transition-colors flex items-start gap-4"; // added gap-4
       item.innerHTML = `
-        <div class="bg-tech-blue/10 p-3 rounded-full mr-4 text-tech-blue">
-          <i data-lucide="book-open" class="w-6 h-6"></i>
+        <div class="flex-shrink-0">
+            ${pub.thumbnail ?
+          `<img src="${pub.thumbnail}" alt="${pub.title}" class="w-24 h-16 object-cover rounded-lg border border-white/10" />` :
+          `<div class="bg-tech-blue/10 p-3 rounded-full text-tech-blue"><i data-lucide="book-open" class="w-6 h-6"></i></div>`
+        }
         </div>
         <div>
           <h3 class="text-xl font-bold text-white mb-2">
