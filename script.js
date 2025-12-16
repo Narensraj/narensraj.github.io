@@ -313,15 +313,17 @@ document.addEventListener("DOMContentLoaded", () => {
               ? "from-tech-blue/20 to-tech-purple/40"
               : "from-tech-purple/40 to-tech-blue/20";
 
-          const githubIcon = project.githubUrl
-            ? `<a href="${project.githubUrl}" target="_blank" class="text-gray-300 hover:text-tech-blue transition-colors" aria-label="GitHub link">
-             <i data-lucide="github" class="w-6 h-6"></i>
+          const projectUrl = project.liveUrl || project.githubUrl;
+          const titleLink = projectUrl
+            ? `<a href="${projectUrl}" target="_blank" class="hover:text-tech-blue transition-colors flex items-center gap-2 group-hover:text-tech-blue">
+            ${project.title}
            </a>`
-            : "";
+            : project.title;
 
-          const liveIcon = project.liveUrl
-            ? `<a href="${project.liveUrl}" target="_blank" class="text-gray-300 hover:text-tech-blue transition-colors" aria-label="Live link">
-             <i data-lucide="external-link" class="w-6 h-6"></i>
+          const showProjectBtn = projectUrl
+            ? `<a href="${projectUrl}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-tech-blue/10 text-tech-blue rounded-full hover:bg-tech-blue/20 transition-colors text-sm font-medium border border-tech-blue/20">
+             Show Project
+             <i data-lucide="external-link" class="w-4 h-4"></i>
            </a>`
             : "";
 
@@ -336,8 +338,8 @@ document.addEventListener("DOMContentLoaded", () => {
              </p>
           </div>
           
-          <h3 class="text-3xl font-bold text-white mb-2 hover:text-tech-blue transition-colors cursor-default">
-            ${project.title}
+          <h3 class="text-3xl font-bold text-white mb-2 cursor-pointer">
+            ${titleLink}
           </h3>
 
            ${project.association ? `<p class="text-gray-400 text-sm mb-4 italic">${project.association}</p>` : ""}
@@ -349,12 +351,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }">
             ${project.tech.map((t) => `<li>${t}</li>`).join("")}
           </ul>
-          <div class="flex gap-4 ${index % 2 === 1 ? "md:justify-end" : ""
+          <div class="flex gap-4 items-center ${index % 2 === 1 ? "md:justify-end" : ""
             }">
-            ${githubIcon}
-            ${liveIcon}
+            ${showProjectBtn}
           </div>
         </div>
+
         <div class="${imageClass} relative group">
           <div class="absolute inset-0 bg-tech-blue/10 rounded-xl group-hover:bg-transparent transition-colors duration-300 z-10"></div>
           <div class="w-full h-64 md:h-80 bg-gradient-to-br ${bgGradient} rounded-xl border border-white/10 group-hover:border-tech-blue/50 transition-all duration-300 overflow-hidden flex items-center justify-center">
