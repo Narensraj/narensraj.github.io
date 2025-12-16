@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
       association: "Independent / Industrial",
       description: "A feature-rich industrial controller based on ESP32-S3. Includes 4-20mA inputs, 0-10V outputs, RS485/LoRa comms, and 7-inch touch support. Multi-layer PCB design with dedicated power planes and industrial-grade protection.",
       tech: ["ESP32-S3", "PCB Design", "Industrial Automation", "LoRa", "RS485"],
-      githubUrl: "",
+      githubUrl: "https://github.com/Narensraj/pcb_designing/tree/main/Project_G",
       liveUrl: "",
       featured: true,
       image: "assets/gcontroller.jpg",
