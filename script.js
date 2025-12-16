@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Debugged circuits using logic analyzers and digital oscilloscopes.",
       ],
     },
-     {
+    {
       company: "Big Data Labs",
       role: "Mobile Application Development Intern",
       period: "Feb 2019",
@@ -141,9 +141,14 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const publications = [
-    "Intuitive and Impulsive Pet (IIP)",
-    "Feeder System for Monitoring the Farm Using WoT",
-    "A Systematic AR based ATM model to Enhance Security and Safety",
+    {
+      title: "Intuitive and Impulsive Pet (IIP) Feeder System for Monitoring the Farm Using WoT",
+      url: "https://www.springerprofessional.de/en/intuitive-and-impulsive-pet-iip-feeder-system-for-monitoring-the/19021924"
+    },
+    {
+      title: "A Systematic AR based ATM model to Enhance Security and Safety",
+      url: "https://ieeexplore.ieee.org/document/9532897"
+    },
   ];
 
   const languages = [
@@ -197,13 +202,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (languagesGrid) {
     languages.forEach(lang => {
-        const item = document.createElement("div");
-        item.className = "glass p-4 rounded-xl text-center hover:border-tech-blue/30 transition-colors";
-        item.innerHTML = `
+      const item = document.createElement("div");
+      item.className = "glass p-4 rounded-xl text-center hover:border-tech-blue/30 transition-colors";
+      item.innerHTML = `
             <h4 class="text-white font-bold mb-1">${lang.name}</h4>
             <p class="text-xs text-gray-400">${lang.level}</p>
         `;
-        languagesGrid.appendChild(item);
+      languagesGrid.appendChild(item);
     });
   }
 
@@ -315,42 +320,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (certificationsList) {
     certifications.forEach(cert => {
-        const item = document.createElement("div");
-        item.className = "flex items-start text-gray-300";
-        item.innerHTML = `
+      const item = document.createElement("div");
+      item.className = "flex items-start text-gray-300";
+      item.innerHTML = `
             <i data-lucide="check-circle" class="w-5 h-5 text-tech-blue mr-3 mt-1 flex-shrink-0"></i>
             <span>${cert}</span>
         `;
-        certificationsList.appendChild(item);
+      certificationsList.appendChild(item);
     });
   }
 
   if (awardsList) {
     awards.forEach(award => {
-        const item = document.createElement("div");
-        item.className = "glass p-4 rounded-xl border-l-4 border-tech-blue";
-        item.innerHTML = `<span class="text-white font-medium">${award}</span>`;
-        awardsList.appendChild(item);
+      const item = document.createElement("div");
+      item.className = "glass p-4 rounded-xl border-l-4 border-tech-blue";
+      item.innerHTML = `<span class="text-white font-medium">${award}</span>`;
+      awardsList.appendChild(item);
     });
   }
 
   // ---------- POPULATE PUBLICATIONS ----------
 
   if (publicationsContainer) {
-      publications.forEach(pub => {
-          const item = document.createElement("div");
-          item.className = "glass p-6 rounded-2xl hover:border-tech-blue/50 transition-colors flex items-start";
-          item.innerHTML = `
+    publications.forEach(pub => {
+      const item = document.createElement("div");
+      item.className = "glass p-6 rounded-2xl hover:border-tech-blue/50 transition-colors flex items-start";
+      item.innerHTML = `
              <div class="bg-tech-blue/10 p-3 rounded-full mr-4 text-tech-blue">
                 <i data-lucide="book-open" class="w-6 h-6"></i>
              </div>
              <div>
-                <h3 class="text-xl font-bold text-white mb-2">${pub}</h3>
+                <h3 class="text-xl font-bold text-white mb-2">
+                    <a href="${pub.url}" target="_blank" class="hover:text-tech-blue transition-colors flex items-center gap-2">
+                        ${pub.title}
+                        <i data-lucide="external-link" class="w-4 h-4 text-gray-500"></i>
+                    </a>
+                </h3>
                 <p class="text-gray-400 text-sm">Published Work</p>
              </div>
           `;
-          publicationsContainer.appendChild(item);
-      });
+      publicationsContainer.appendChild(item);
+    });
   }
 
   // ---------- ICONS ----------
@@ -508,38 +518,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Certifications & Awards
     gsap.from("#certifications-list", {
-        scrollTrigger: {
-          trigger: "#certifications",
-          start: "top 75%"
-        },
-        opacity: 0,
-        x: -20,
-        duration: 0.8
+      scrollTrigger: {
+        trigger: "#certifications",
+        start: "top 75%"
+      },
+      opacity: 0,
+      x: -20,
+      duration: 0.8
     });
 
     gsap.from("#awards-list", {
-        scrollTrigger: {
-          trigger: "#certifications",
-          start: "top 75%"
-        },
-        opacity: 0,
-        x: 20,
-        duration: 0.8,
-        delay: 0.2
+      scrollTrigger: {
+        trigger: "#certifications",
+        start: "top 75%"
+      },
+      opacity: 0,
+      x: 20,
+      duration: 0.8,
+      delay: 0.2
     });
 
     // Publications
     gsap.utils.toArray("#publications-container > div").forEach((pub, i) => {
-        gsap.from(pub, {
-            scrollTrigger: {
-                trigger: "#publications",
-                start: "top 80%"
-            },
-            opacity: 0,
-            y: 20,
-            duration: 0.6,
-            delay: i * 0.1
-        });
+      gsap.from(pub, {
+        scrollTrigger: {
+          trigger: "#publications",
+          start: "top 80%"
+        },
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+        delay: i * 0.1
+      });
     });
 
     // Contact
