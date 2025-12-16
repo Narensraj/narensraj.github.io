@@ -147,6 +147,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const projects = [
     {
+      title: "GController: ESP32-S3 System",
+      period: "PCB Design & Embedded System",
+      association: "Independent / Industrial",
+      description: "A feature-rich industrial controller based on ESP32-S3. Includes 4-20mA inputs, 0-10V outputs, RS485/LoRa comms, and 7-inch touch support. Multi-layer PCB design with dedicated power planes and industrial-grade protection.",
+      tech: ["ESP32-S3", "PCB Design", "Industrial Automation", "LoRa", "RS485"],
+      githubUrl: "",
+      liveUrl: "",
+      featured: true,
+      image: "assets/gcontroller.jpg",
+    },
+    {
       title: "Ingenious UOI based Augmented Reality using SIFT for ATM",
       period: "Aug 2020 - Mar 2021",
       association: "Associated with SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
@@ -492,8 +503,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="${imageClass} relative group">
           <div class="absolute inset-0 bg-tech-blue/10 rounded-xl group-hover:bg-transparent transition-colors duration-300 z-10"></div>
-          <div class="w-full h-64 md:h-80 bg-gradient-to-br ${bgGradient} rounded-xl border border-white/10 group-hover:border-tech-blue/50 transition-all duration-300 overflow-hidden flex items-center justify-center">
-            <i data-lucide="cpu" class="w-24 h-24 text-white/20 group-hover:text-tech-blue/50 transition-colors duration-300 transform group-hover:scale-110"></i>
+          <div class="w-full h-64 md:h-80 bg-gradient-to-br ${bgGradient} rounded-xl border border-white/10 group-hover:border-tech-blue/50 transition-all duration-300 overflow-hidden flex items-center justify-center relative">
+            ${project.image
+          ? `<img src="${project.image}" alt="${project.title}" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-105">`
+          : `<i data-lucide="cpu" class="w-24 h-24 text-white/20 group-hover:text-tech-blue/50 transition-colors duration-300 transform group-hover:scale-110"></i>`
+        }
           </div>
         </div>
       `;
