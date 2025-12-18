@@ -41,12 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
           period: "Oct 2025 - Present",
           location: "Winnipeg, Manitoba, Canada",
           description: [
-            "Developing frontend and backend features for sow feeding dashboards and device monitoring tools.",
-            "Building and optimizing REST APIs, WebSocket services, and real-time communication layers.",
-            "Analyzing embedded device traffic (UDP, TCP/IP, Modbus) to improve stability and troubleshooting.",
-            "Designing databases (MariaDB, MySQL, MSSQL) and managing schema updates and migration plans.",
-            "Reverse-engineering legacy Windows apps to modernize production logic and feeding algorithms.",
-            "Collaborating with firmware and hardware teams to integrate feeders, water systems, and sensors.",
+            "Architecting full-stack barn automation dashboards for feed management and real-time device diagnostics.",
+            "Engineering optimized REST APIs and WebSocket services for seamless cloud-to-sensor communication.",
+            "Validating embedded network reliability via deep-packet analysis (UDP/TCP, Custom Protocols) to ensure 99.9% uptime.",
+            "Deploying distributed data-logging and system-health monitoring pipelines across multi-building farms.",
+            "Co-engineering integration strategies with firmware teams for feeders, environmental sensors, and HVAC systems.",
+            "Driving R&D initiatives for next-gen controller prototypes, including field testing and logic modernization.",
           ],
           projects: [
             {
@@ -65,13 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
           period: "Jan 2024 - Oct 2025",
           location: "Leamington, Ontario, Canada",
           description: [
-            "Spearheaded the 'Epic Climate Manager' (v1.7) dashboard using React & WebSocket for real-time zone monitoring.",
-            "Modernized 'Epic Fertigation Manager' (v4.2) interface for precision irrigation and recipe management.",
-            "Designed 'Ozone Pro' HMI (v2.1) for water treatment system monitoring and control.",
-            "Developed 'Multi-Chamber Dashboard' for centralized environmental tracking across isolated zones.",
-            "Implemented 'Customer Data Analysis' visualization tools using Grafana for agronomic insights.",
-            "Enhanced Modbus TCP/RTU integrations for seamless SCADA communication.",
-            "Provided international customer support for these deployed systems (Canada, USA, Singapore, Sweden).",
+            "Designed comprehensive HMI/SCADA interfaces (PAC Display, Groov View) on Opto 22 platforms (Groov Epic/RIO).",
+            "Led software R&D for core product lines including 'Fertigation Manager' and 'Ozone Pro' using PAC Control.",
+            "Managed the complete SDLC: from system requirements and coding to validation, release, and documentation.",
+            "Executed onsite commissioning and technical training for clients across Canada and the USA.",
+            "Integrated complex sensor arrays (pH, ORP, Flow, Ozone) via Modbus RTU/TCP protocols.",
+            "Created detailed electrical wiring diagrams and assembled industrial control panels from scratch.",
+            "Architected site-specific data solutions using Node-RED and MSSQL for secure, reliable storage.",
+            "Provided tier-3 technical support and troubleshooting for deployed automation systems in North America.",
           ],
           projects: [
             {
@@ -145,10 +146,12 @@ document.addEventListener("DOMContentLoaded", () => {
           period: "Mar 2020 - Mar 2021",
           location: "Coimbatore, Tamil Nadu, India",
           description: [
-            "Designed custom board layouts based on project specifications.",
-            "Developed sensor/device drivers using bare-metal Embedded C.",
-            "Implemented I2C, UART, and SPI protocols for inter-device communication.",
-            "Debugged circuits using logic analyzers and digital oscilloscopes.",
+            "Developed bare-metal firmware (Embedded C / Assembly) adhering to strict SDLC phases.",
+            "Managed end-to-end PCB design using KiCad and EasyEDA, from electrical schematics to final fabrication.",
+            "Written optimized sensor/device drivers and libraries for low-level peripheral control.",
+            "Implemented robust communication protocols (I2C, UART, SPI) for inter-module data exchange.",
+            "Conducted hardware validation and debugging using Logic Analyzers and Digital Oscilloscopes.",
+            "Collaborated on touchscreen UI/UX improvements for embedded control panels.",
           ],
         },
       ],
@@ -571,17 +574,21 @@ document.addEventListener("DOMContentLoaded", () => {
     certifications.forEach((group, index) => {
       const accordionItem = document.createElement("div");
       accordionItem.className = "ctos-card mb-4 bg-white/5";
+
       const header = document.createElement("button");
       header.className = "w-full flex items-center justify-between p-4 text-left hover:bg-ctos-cyan/10 transition-colors focus:outline-none";
       header.innerHTML = `
           <span class="text-lg font-bold text-white flex-1 pr-4 uppercase tracking-wide flex items-center">
              <span class="text-ctos-cyan mr-2">></span> ${group.category}
           </span>
-          <i data-lucide="chevron-down" class="w-5 h-5 text-ctos-cyan transition-transform duration-300 flex-shrink-0"></i>
+          <span class="text-ctos-cyan transition-transform duration-300 transform origin-center text-xs chevron-arrow">▼</span>
         `;
+
       const content = document.createElement("div");
-      content.className = "max-h-0 overflow-hidden transition-all duration-300 ease-out bg-black/50 border-t border-transparent";
+      content.className = "overflow-hidden transition-all duration-300 ease-out bg-black/50 border-t border-transparent";
+      content.style.maxHeight = "0px"; // Explicit initial state
       content.style.borderColor = "rgba(0, 240, 255, 0.1)";
+
       const contentInner = document.createElement("div");
       contentInner.className = "p-6 grid gap-4";
 
@@ -601,16 +608,22 @@ document.addEventListener("DOMContentLoaded", () => {
       content.appendChild(contentInner);
 
       header.addEventListener("click", () => {
-        const chevron = header.querySelector("i");
-        const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+        const isOpen = content.style.maxHeight !== "0px";
         if (isOpen) {
           content.style.maxHeight = "0px";
-          chevron.style.transform = "rotate(0deg)";
+          content.classList.remove("border-t", "border-ctos-cyan/30");
         } else {
           content.style.maxHeight = content.scrollHeight + "px";
-          chevron.style.transform = "rotate(180deg)";
+          content.classList.add("border-t", "border-ctos-cyan/30");
+        }
+
+        // Icon rotation
+        const chevron = header.querySelector(".chevron-arrow");
+        if (chevron) {
+          chevron.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
         }
       });
+
       accordionItem.appendChild(header);
       accordionItem.appendChild(content);
       certificationsList.appendChild(accordionItem);
