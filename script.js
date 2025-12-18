@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       roles: [
         {
           company: "Envirotech Ag Systems Limited",
+          logo: "assets/logo_envirotech.png",
           role: "Embedded System Engineer",
           period: "Oct 2025 - Present",
           location: "Winnipeg, Manitoba, Canada",
@@ -57,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           company: "Climate Control Systems Inc",
+          logo: "assets/logo_ccs.jpg",
           role: "Controls / Software Developer",
           period: "Jan 2024 - Oct 2025",
           location: "Leamington, Ontario, Canada",
@@ -116,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           company: "Climate Control Systems Inc",
+          logo: "assets/logo_ccs.jpg",
           role: "Junior Electronics and Controls Programmer",
           period: "Jan 2023 - Jan 2024",
           location: "Leamington, Ontario, Canada",
@@ -133,6 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
       roles: [
         {
           company: "Promech Industries Pvt Ltd",
+          logo: "assets/logo_promech.png",
           role: "Embedded Systems Intern",
           period: "Mar 2020 - Mar 2021",
           location: "Coimbatore, Tamil Nadu, India",
@@ -150,6 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
       roles: [
         {
           company: "Big Data Labs",
+          logo: "assets/logo_bigdatalabs.png",
           role: "Mobile Application Development Intern",
           period: "Feb 2019",
           location: "India",
@@ -164,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const education = [
     {
       institution: "Conestoga College",
-      logo: "assets/conestoga_logo.png", // Placeholder
+      logo: "assets/logo_conestoga.png",
       degree: "Postgraduate Diploma, Embedded systems development",
       period: "Sep 2021 - Dec 2022",
       grade: "3.66 / 91.5%",
@@ -172,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       institution: "SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
-      logo: "assets/skcet_logo.png", // Placeholder
+      logo: "assets/logo_skcet.png",
       degree: "Bachelor of Engineering - BE, Electronics and Communications Engineering",
       period: "2018 - 2021",
       grade: "83.4%",
@@ -180,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       institution: "PSG College of Technology",
-      logo: "assets/psg_logo.png", // Placeholder
+      logo: "assets/logo_psg.png",
       degree: "Diploma, Electronic and Communications Engineering",
       period: "2015 - 2018",
       grade: "80%",
@@ -390,7 +395,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (experienceContainer) {
     experience.forEach((group) => {
       const groupEl = document.createElement("div");
-      groupEl.className = "mb-12";
+      groupEl.className = "mb-20"; // Increased spacing
       groupEl.innerHTML = `
           <h2 class="text-2xl font-bold text-ctos-cyan mb-6 tracking-wider uppercase flex items-center justify-start">
             <span class="w-3 h-3 bg-ctos-cyan mr-3 animate-pulse"></span>
@@ -406,10 +411,13 @@ document.addEventListener("DOMContentLoaded", () => {
         jobEl.innerHTML = `
             <div class="absolute -left-[37px] top-1 w-4 h-4 bg-black border-2 border-ctos-cyan rounded-none"></div>
             <div class="ctos-card p-8 bg-white/5 hover:bg-white/10 transition-colors">
-              <div class="flex flex-col md:flex-row md:justify-between mb-4">
-                <div>
-                  <h3 class="text-xl font-bold text-white uppercase">${job.role}</h3>
-                  <p class="text-ctos-cyan font-mono tracking-wide">${job.company}</p>
+              <div class="flex flex-col md:flex-row md:justify-between mb-4 gap-4">
+                <div class="flex items-start gap-4">
+                   ${job.logo ? `<div class="w-12 h-12 flex-shrink-0 bg-white p-1 rounded-sm"><img src="${job.logo}" alt="${job.company}" class="w-full h-full object-contain"></div>` : ''}
+                   <div>
+                     <h3 class="text-xl font-bold text-white uppercase">${job.role}</h3>
+                     <p class="text-ctos-cyan font-mono tracking-wide">${job.company}</p>
+                   </div>
                 </div>
                 <div class="text-left md:text-right mt-2 md:mt-0">
                   <p class="text-gray-400 text-sm font-mono">[ ${job.period} ]</p>
@@ -425,8 +433,11 @@ document.addEventListener("DOMContentLoaded", () => {
                  <h4 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4 flex items-center"><i data-lucide="folder" class="w-3 h-3 mr-2 text-ctos-cyan"></i> Key Projects</h4>
                  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                    ${job.projects.map(p => `
-                     <div class="p-3 bg-black/20 border border-white/5 rounded hover:border-ctos-cyan/30 transition-colors">
-                       <p class="text-ctos-cyan text-xs font-bold uppercase mb-1">${p.title}</p>
+                     <div class="p-4 border border-white/5 rounded-sm hover:border-ctos-cyan/30 transition-colors">
+                       <p class="text-ctos-cyan text-xs font-bold uppercase mb-1 flex items-center gap-2">
+                         <span class="w-1 h-1 bg-ctos-cyan rounded-full"></span>
+                         ${p.title}
+                       </p>
                        <p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">${p.description}</p>
                        
                        ${p.images && p.images.length > 0 ? `
@@ -462,8 +473,11 @@ document.addEventListener("DOMContentLoaded", () => {
       el.className = "ctos-card p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start";
       el.innerHTML = `
          <div class="flex-shrink-0">
-            <div class="w-16 h-16 md:w-20 md:h-20 bg-white/5 border border-white/10 flex items-center justify-center p-2">
-               <i data-lucide="graduation-cap" class="w-8 h-8 md:w-10 md:h-10 text-ctos-cyan/50"></i>
+            <div class="w-16 h-16 md:w-20 md:h-20 bg-white p-2 border border-white/10 flex items-center justify-center">
+               ${edu.logo
+          ? `<img src="${edu.logo}" alt="${edu.institution}" class="w-full h-full object-contain">`
+          : `<i data-lucide="graduation-cap" class="w-8 h-8 md:w-10 md:h-10 text-ctos-cyan/50"></i>`
+        }
             </div>
          </div>
          <div class="flex-grow">
