@@ -46,6 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
             "Reverse-engineering legacy Windows apps to modernize production logic and feeding algorithms.",
             "Collaborating with firmware and hardware teams to integrate feeders, water systems, and sensors.",
           ],
+          projects: [
+            {
+              title: "Nucleus Swine Management System",
+              description: "Comprehensive dashboard for swine management monitoring daily insights, feed consumption, and pen analytics.",
+              tech: ["React.js", "Embedded Systems", "REST API", "MariaDB"],
+              images: ["assets/nucleus_dashboard.png"],
+            },
+          ]
         },
         {
           company: "Climate Control Systems Inc",
@@ -422,9 +430,9 @@ document.addEventListener("DOMContentLoaded", () => {
                        <p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">${p.description}</p>
                        
                        ${p.images && p.images.length > 0 ? `
-                         <div class="mb-3 flex overflow-x-auto gap-2 pb-1 scrollbar-hide">
+                         <div class="mb-3 flex overflow-x-auto gap-2 pb-1 scrollbar-hide relative z-20">
                            ${p.images.map(img => `
-                             <img src="${img}" onclick="window.openLightbox ? window.openLightbox('${img}') : window.open('${img}', '_blank'); event.stopPropagation();" class="w-16 h-12 flex-shrink-0 object-cover border border-gray-700 hover:border-ctos-cyan transition-colors cursor-pointer bg-black" loading="lazy" />
+                             <img src="${img}" onclick="if(window.openLightbox){window.openLightbox('${img}')}else{window.open('${img}','_blank')} event.stopPropagation();" class="w-16 h-12 flex-shrink-0 object-cover border border-gray-700 hover:border-ctos-cyan transition-colors cursor-pointer bg-black" loading="lazy" />
                            `).join('')}
                          </div>
                        ` : ''}
