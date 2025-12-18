@@ -50,7 +50,7 @@
             "dark-bg": "#000000",
           },
           fontFamily: {
-            sans: ["Share Tech Mono", "monospace"],
+            sans: ["Rajdhani", "sans-serif"],
             mono: ["Share Tech Mono", "monospace"],
           },
           animation: {
@@ -62,7 +62,9 @@
   </script>
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -73,13 +75,19 @@
 
   <!-- Background Effects -->
   <canvas id="network-bg" class="fixed inset-0 pointer-events-none z-0 bg-black"></canvas>
+
+  <!-- Global Environmental Effects -->
+  <div class="fixed inset-0 pointer-events-none z-0 scanlines opacity-50"></div>
+  <div class="fixed inset-0 pointer-events-none z-0 vignette"></div>
+  <div class="fixed inset-0 pointer-events-none z-0 noise opacity-[0.03]"></div>
+
   <!-- Blur/Dim Overlay -->
   <div class="fixed inset-0 pointer-events-none z-0 backdrop-blur-[1px] bg-black/60"></div>
 
 
   <!-- Navigation -->
   <nav id="navbar"
-    class="fixed w-full z-50 transition-all duration-300 py-4 border-b border-ctos-dim bg-black/80 backdrop-blur-md">
+    class="fixed w-full z-50 transition-all duration-300 py-6 border-b border-transparent hover:border-ctos-dim hover:bg-black/50 hover:backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-6 flex justify-end items-center relative">
 
 
@@ -87,6 +95,7 @@
         <a href="#about" class="nav-link text-gray-400 hover:text-ctos-cyan transition-colors">About</a>
         <a href="#skills" class="nav-link text-gray-400 hover:text-ctos-cyan transition-colors">Skills</a>
         <a href="#experience" class="nav-link text-gray-400 hover:text-ctos-cyan transition-colors">Exp</a>
+        <a href="#education" class="nav-link text-gray-400 hover:text-ctos-cyan transition-colors">Edu</a>
         <a href="#projects" class="nav-link text-gray-400 hover:text-ctos-cyan transition-colors">Projects</a>
         <a href="#certifications" class="nav-link text-gray-400 hover:text-ctos-cyan transition-colors">Certs</a>
         <a href="#contact" class="nav-link text-gray-400 hover:text-ctos-cyan transition-colors">Contact</a>
@@ -119,6 +128,8 @@
           class="mobile-link text-gray-400 hover:text-ctos-cyan transition-colors transform hover:scale-110 duration-200">Skills</a>
         <a href="#experience"
           class="mobile-link text-gray-400 hover:text-ctos-cyan transition-colors transform hover:scale-110 duration-200">Experience</a>
+        <a href="#education"
+          class="mobile-link text-gray-400 hover:text-ctos-cyan transition-colors transform hover:scale-110 duration-200">Education</a>
         <a href="#projects"
           class="mobile-link text-gray-400 hover:text-ctos-cyan transition-colors transform hover:scale-110 duration-200">Projects</a>
         <a href="#certifications"
@@ -171,15 +182,16 @@
       </p>
 
       <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-        <a href="#projects"
-          class="px-8 py-3 bg-ctos-cyan text-black font-bold uppercase tracking-wider hover:bg-white hover:shadow-[0_0_15px_rgba(0,240,255,0.8)] transition-all w-full md:w-auto transform hover:-translate-y-1">
-          Initialize_Projects
-        </a>
-        <a href="https://github.com/Narensraj" target="_blank"
-          class="px-8 py-3 border border-ctos-cyan text-ctos-cyan font-bold uppercase tracking-wider hover:bg-ctos-cyan/10 hover:shadow-[0_0_15px_rgba(0,240,255,0.4)] transition-all w-full md:w-auto flex items-center justify-center gap-2 transform hover:-translate-y-1">
-          <i data-lucide="github" class="w-5 h-5"></i>
-          Access_GitHub
-        </a>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+          <a href="#projects" class="ctos-button ctos-button-primary w-full md:w-auto">
+            Initialize_Projects
+          </a>
+          <a href="https://github.com/Narensraj" target="_blank"
+            class="ctos-button ctos-button-outline w-full md:w-auto gap-2">
+            <i data-lucide="github" class="w-5 h-5"></i>
+            Access_GitHub
+          </a>
+        </div>
       </div>
     </div>
 
@@ -189,7 +201,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-12 md:py-20 relative z-10 bg-black/80">
+  <section id="about" class="py-24 md:py-32 relative z-10 bg-black/40">
     <div class="max-w-7xl mx-auto px-6">
       <div
         class="section-header mb-12 md:mb-16 border-b-2 md:border-b-0 md:border-l-4 border-ctos-cyan pb-4 md:pb-0 md:pl-6 text-center md:text-left">
@@ -265,7 +277,7 @@
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="py-20 bg-black/80 relative z-10">
+  <section id="experience" class="py-24 md:py-32 bg-black/40 relative z-10">
     <div class="max-w-7xl mx-auto px-6">
       <div
         class="section-header mb-12 md:mb-16 border-b-2 md:border-b-0 md:border-l-4 border-ctos-cyan pb-4 md:pb-0 md:pl-6 text-center md:text-left">
@@ -280,13 +292,29 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="py-20 relative z-10">
+  <!-- Education Section -->
+  <section id="education" class="py-24 md:py-32 relative z-10">
     <div class="max-w-7xl mx-auto px-6">
       <div
         class="section-header mb-12 md:mb-16 border-b-2 md:border-b-0 md:border-l-4 border-ctos-cyan pb-4 md:pb-0 md:pl-6 text-center md:text-left">
         <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-widest">
-          04 // Deployment_Archive<span class="blink-cursor">_</span>
+          04 // Academic_Records<span class="blink-cursor">_</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8" id="education-container">
+        <!-- JS injects education -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-24 md:py-32 relative z-10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div
+        class="section-header mb-12 md:mb-16 border-b-2 md:border-b-0 md:border-l-4 border-ctos-cyan pb-4 md:pb-0 md:pl-6 text-center md:text-left">
+        <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-widest">
+          05 // Personal_Deployments<span class="blink-cursor">_</span>
         </h2>
       </div>
 
@@ -297,12 +325,12 @@
   </section>
 
   <!-- Certifications & Awards Section -->
-  <section id="certifications" class="py-20 bg-black/80 relative z-10">
+  <section id="certifications" class="py-24 md:py-32 bg-black/40 relative z-10">
     <div class="max-w-7xl mx-auto px-6">
       <div
         class="section-header mb-12 md:mb-16 border-b-2 md:border-b-0 md:border-l-4 border-ctos-cyan pb-4 md:pb-0 md:pl-6 text-center md:text-left">
         <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-widest">
-          05 // Credentials<span class="blink-cursor">_</span>
+          06 // Credentials<span class="blink-cursor">_</span>
         </h2>
       </div>
 
@@ -337,7 +365,7 @@
       <div
         class="section-header mb-12 md:mb-16 border-b-2 md:border-b-0 md:border-l-4 border-ctos-cyan pb-4 md:pb-0 md:pl-6 text-center md:text-left">
         <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-widest">
-          06 // Research_Data<span class="blink-cursor">_</span>
+          07 // Research_Data<span class="blink-cursor">_</span>
         </h2>
       </div>
 
@@ -356,7 +384,7 @@
     <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
       <div class="contact-content p-10 border border-ctos-cyan/20 bg-black/90">
         <h2 class="text-ctos-cyan font-medium tracking-[0.2em] mb-4 uppercase">
-          07 // Initiate_Handshake<span class="blink-cursor">_</span>
+          08 // Initiate_Handshake<span class="blink-cursor">_</span>
         </h2>
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 glitch-text" data-text="Open Connection?">
           Open Connection?<span class="blink-cursor">_</span>
@@ -369,21 +397,20 @@
 
         <div class="flex justify-center space-x-6 mb-12">
           <a href="https://github.com/Narensraj" target="_blank"
-            class="p-4 border border-gray-700 hover:border-ctos-cyan hover:bg-ctos-cyan/10 hover:text-ctos-cyan transition-all transform hover:-translate-y-1 text-gray-400">
-            <i data-lucide="github" class="w-6 h-6"></i>
+            class="p-4 border border-gray-800 bg-white/5 backdrop-blur-md hover:border-ctos-cyan hover:bg-ctos-cyan/10 hover:text-ctos-cyan hover:shadow-[0_0_15px_rgba(0,240,255,0.3)] transition-all transform hover:-translate-y-1 text-gray-400 group">
+            <i data-lucide="github" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
           </a>
           <a href="https://www.linkedin.com/in/narensraj/" target="_blank"
-            class="p-4 border border-gray-700 hover:border-ctos-cyan hover:bg-ctos-cyan/10 hover:text-ctos-cyan transition-all transform hover:-translate-y-1 text-gray-400">
-            <i data-lucide="linkedin" class="w-6 h-6"></i>
+            class="p-4 border border-gray-800 bg-white/5 backdrop-blur-md hover:border-ctos-cyan hover:bg-ctos-cyan/10 hover:text-ctos-cyan hover:shadow-[0_0_15px_rgba(0,240,255,0.3)] transition-all transform hover:-translate-y-1 text-gray-400 group">
+            <i data-lucide="linkedin" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
           </a>
           <a href="mailto:narensraj21@gmail.com"
-            class="p-4 border border-gray-700 hover:border-ctos-cyan hover:bg-ctos-cyan/10 hover:text-ctos-cyan transition-all transform hover:-translate-y-1 text-gray-400">
-            <i data-lucide="mail" class="w-6 h-6"></i>
+            class="p-4 border border-gray-800 bg-white/5 backdrop-blur-md hover:border-ctos-cyan hover:bg-ctos-cyan/10 hover:text-ctos-cyan hover:shadow-[0_0_15px_rgba(0,240,255,0.3)] transition-all transform hover:-translate-y-1 text-gray-400 group">
+            <i data-lucide="mail" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
           </a>
         </div>
 
-        <a href="mailto:narensraj21@gmail.com"
-          class="px-10 py-4 bg-transparent border border-ctos-cyan text-ctos-cyan font-bold uppercase tracking-widest hover:bg-ctos-cyan hover:text-black transition-all inline-flex items-center gap-2 justify-center hover:shadow-[0_0_20px_rgba(0,240,255,0.6)]">
+        <a href="mailto:narensraj21@gmail.com" class="ctos-button ctos-button-outline gap-2">
           <i data-lucide="send" class="w-5 h-5"></i>
           Send_Packet
         </a>
@@ -391,8 +418,12 @@
     </div>
   </section>
 
-  <footer class="py-8 text-center text-gray-600 text-xs font-mono border-t border-gray-900 bg-black relative z-10">
-    <p>SYSTEM_ID: NAREN_V2.0 // DEPLOYED_BY: NAREN_SUBBURAJ</p>
+  <footer class="py-12 text-center text-gray-600 text-xs font-mono border-t border-white/5 bg-black relative z-10">
+    <div class="flex items-center justify-center gap-2 mb-2">
+      <span class="w-2 h-2 bg-ctos-cyan rounded-full animate-pulse"></span>
+      <span class="text-ctos-cyan tracking-widest uppercase">System Online</span>
+    </div>
+    <p class="uppercase tracking-wider opacity-70">SYSTEM_ID: NAREN_V2.5 // DEPLOYED_BY: NAREN_SUBBURAJ</p>
   </footer>
 
   <script src="script.js"></script>

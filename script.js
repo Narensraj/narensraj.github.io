@@ -61,6 +61,50 @@ document.addEventListener("DOMContentLoaded", () => {
             "Enhanced Modbus TCP/RTU integrations for seamless SCADA communication.",
             "Provided international customer support for these deployed systems (Canada, USA, Singapore, Sweden).",
           ],
+          projects: [
+            {
+              title: "Epic Climate Manager",
+              description: "Advanced climate management dashboard for greenhouse automation. Real-time monitoring.",
+              tech: ["React.js", "Modbus TCP", "WebSocket"],
+              images: ["assets/climate_manager.png"],
+            },
+            {
+              title: "Ozone Pro (HMI)",
+              description: "HMI interface for water treatment systems. Real-time monitoring of ORP, Pressure, Flow Rate.",
+              tech: ["HMI/SCADA", "C#", "Modbus RTU"],
+              images: ["assets/ozone_pro.png"],
+            },
+            {
+              title: "Epic Fertigation Manager",
+              description: "Precision fertigation management interface. Controls irrigation recipes and valve sequencing.",
+              tech: ["Industrial Controls", "UI/UX"],
+              images: ["assets/fertigation_manager.png"],
+            },
+            {
+              title: "Multi-Chamber Dashboard",
+              description: "Centralized tracking of environmental status across multiple isolated experimental chambers.",
+              tech: ["Web Dashboard", "IoT"],
+              images: ["assets/chamber_dashboard.png"],
+            },
+            {
+              title: "Industrial IoT Data Pipeline",
+              description: "Node-RED pipeline capturing real-time I/O metrics (Flow, pH, EC) to MSSQL.",
+              tech: ["Node-RED", "MSSQL"],
+              images: ["assets/nodered_pipeline.png"],
+            },
+            {
+              title: "Dynamic I/O Mapping Engine",
+              description: "Customizable I/O mapping system for Opto22 EPIC controllers.",
+              tech: ["Pascal", "Structured Text"],
+              images: ["assets/io_config.png"],
+            },
+            {
+              title: "Epic Scratchpad Modbus Bridge",
+              description: "High-speed memory map bridge exposing internal controller variables.",
+              tech: ["Modbus TCP", "Opto22 MMP"],
+              images: ["assets/modbus_scratchpad.png"],
+            },
+          ]
         },
         {
           company: "Climate Control Systems Inc",
@@ -105,6 +149,35 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+  ];
+
+
+
+  const education = [
+    {
+      institution: "Conestoga College",
+      logo: "assets/conestoga_logo.png", // Placeholder
+      degree: "Postgraduate Diploma, Embedded systems development",
+      period: "Sep 2021 - Dec 2022",
+      grade: "3.66 / 91.5%",
+      skills: ["Wireless Technologies", "Electronic Circuit Design", "STM32", "Microcontrollers", "Windows", "Troubleshooting", "VHDL", "Embedded C", "Altium Designer", "Verilog", "Schematic", "Embedded Software Programming", "PCB Design"]
+    },
+    {
+      institution: "SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
+      logo: "assets/skcet_logo.png", // Placeholder
+      degree: "Bachelor of Engineering - BE, Electronics and Communications Engineering",
+      period: "2018 - 2021",
+      grade: "83.4%",
+      skills: ["Wireless Technologies", "Unity 3D", "Electronic Circuit Design", "Vuforia AR SDK", "MATLAB", "Microcontrollers", "Windows", "VHDL", "Verilog", "Schematic", "Embedded Software Programming"]
+    },
+    {
+      institution: "PSG College of Technology",
+      logo: "assets/psg_logo.png", // Placeholder
+      degree: "Diploma, Electronic and Communications Engineering",
+      period: "2015 - 2018",
+      grade: "80%",
+      skills: ["Wireless Technologies", "Electronic Circuit Design", "MATLAB", "Microcontrollers", "Windows", "Xilinx", "VHDL", "Packet Tracer", "Linux", "Verilog", "Schematic", "NI Multisim", "Embedded Software Programming"]
+    }
   ];
 
   const projects = [
@@ -182,79 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tech: [],
       featured: false,
       images: [],
-    },
-    {
-      title: "Epic Climate Manager",
-      period: "2024 - 2025",
-      association: "Climate Control Systems Inc",
-      description: "Advanced climate management dashboard for greenhouse automation. Features real-time zone monitoring (Temperature, Humidity, VPD, CO2), equipment status visualization, and comprehensive control settings.",
-      tech: ["React.js", "Modbus TCP", "WebSocket", "SCADA"],
-      featured: true,
-      images: ["assets/climate_manager.png"],
-    },
-    {
-      title: "Ozone Pro (HMI)",
-      period: "2024",
-      association: "Climate Control Systems Inc",
-      description: "HMI interface for Ozone water treatment systems. Provides real-time monitoring of ORP, Pressure, Flow Rate, and system status (Tank Levels, O2 Generator, Pumps).",
-      tech: ["HMI/SCADA", "C#", "Modbus RTU", "Industrial Automation"],
-      featured: true,
-      images: ["assets/ozone_pro.png"],
-    },
-    {
-      title: "Epic Fertigation Manager",
-      period: "2025",
-      association: "Climate Control Systems Inc",
-      description: "Modernized interface for precision fertigation management. Controls irrigation recipes, valve sequencing, bacterial injection, and EC/pH monitoring with high-precision flow control.",
-      tech: ["Industrial Controls", "Embedded Systems", "UI/UX Design"],
-      featured: true,
-      images: ["assets/fertigation_manager.png"],
-    },
-    {
-      title: "Multi-Chamber Dashboard",
-      period: "2024",
-      association: "Climate Control Systems Inc",
-      description: "Web-based multi-chamber monitoring system. Allows centralized tracking of Temperature, Humidity, and Light status across multiple isolated experimental chambers.",
-      tech: ["Web Dashboard", "IoT", "Remote Monitoring"],
-      featured: false,
-      images: ["assets/chamber_dashboard.png"],
-    },
-    {
-      title: "Customer Data Analysis",
-      period: "2024",
-      association: "Climate Control Systems Inc",
-      description: "Grafana-based analytics dashboard for visualizing customer data trends. Includes time-series analysis of critical metrics like pH, EC, and sensor inputs for agronomic insights.",
-      tech: ["Grafana", "Time-Series DB", "Data Visualization"],
-      featured: false,
-      images: ["assets/grafana_analysis.png"],
-    },
-    {
-      title: "Industrial IoT Data Pipeline",
-      period: "2024 - 2025",
-      association: "Climate Control Systems Inc",
-      description: "Automated data ingestion pipeline using Node-RED. Captures real-time I/O metrics (Flow, pH, EC, Pressure) from industrial controllers and efficiently routes them to MSSQL for archival and analysis.",
-      tech: ["Node-RED", "MSSQL", "IIoT", "Data Engineering"],
-      featured: false,
-      images: ["assets/nodered_pipeline.png"],
-    },
-    {
-      title: "Dynamic I/O Mapping Engine",
-      period: "2024 - 2025",
-      association: "Climate Control Systems Inc",
-      description: "Engineered a fully customizable I/O mapping system for Opto22 EPIC controllers using Pascal STL and Function Blocks. Allows users to configure channel types, scalings, and offsets directly via HMI without firmware recompilation.",
-      tech: ["Pascal", "Structured Text", "Opto22", "Groov EPIC"],
-      featured: false,
-      images: ["assets/io_config.png", "assets/io_config_details.png"],
-    },
-    {
-      title: "Epic Scratchpad Modbus Bridge",
-      period: "2024",
-      association: "Climate Control Systems Inc",
-      description: "Implemented a high-speed data bridge using the Opto22 EPIC Scratchpad memory map. Configured custom Modbus maps to expose internal controller variables (floating point & integers) to third-party SCADA systems, ensuring universal compatibility.",
-      tech: ["Modbus TCP", "Opto22 MMP", "System Integration", "SCADA"],
-      featured: false,
-      images: ["assets/modbus_scratchpad.png", "assets/modbus_settings.png", "assets/modbus_values.png", "assets/modbus_calc.png"],
-    },
+    }
   ];
 
 
@@ -343,6 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const skillsGrid = document.getElementById("skills-grid");
   const experienceContainer = document.getElementById("experience-container");
+  const educationContainer = document.getElementById("education-container");
   const projectsContainer = document.getElementById("projects-container");
   const certificationsList = document.getElementById("certifications-list");
   const awardsList = document.getElementById("awards-list");
@@ -409,12 +411,70 @@ document.addEventListener("DOMContentLoaded", () => {
               <ul class="space-y-2 font-mono text-sm leading-relaxed">
                 ${job.description.map((line) => `<li class="flex text-gray-400"><span class="text-ctos-cyan mr-3">></span>${line}</li>`).join("")}
               </ul>
+              
+              ${job.projects ? `
+              <div class="mt-8 pt-6 border-t border-ctos-cyan/10">
+                 <h4 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4 flex items-center"><i data-lucide="folder" class="w-3 h-3 mr-2 text-ctos-cyan"></i> Key Projects</h4>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                   ${job.projects.map(p => `
+                     <div class="p-3 bg-black/20 border border-white/5 rounded hover:border-ctos-cyan/30 transition-colors">
+                       <p class="text-ctos-cyan text-xs font-bold uppercase mb-1">${p.title}</p>
+                       <p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">${p.description}</p>
+                       
+                       ${p.images && p.images.length > 0 ? `
+                         <div class="mb-3 flex overflow-x-auto gap-2 pb-1 scrollbar-hide">
+                           ${p.images.map(img => `
+                             <img src="${img}" onclick="window.openLightbox ? window.openLightbox('${img}') : window.open('${img}', '_blank'); event.stopPropagation();" class="w-16 h-12 flex-shrink-0 object-cover border border-gray-700 hover:border-ctos-cyan transition-colors cursor-pointer bg-black" loading="lazy" />
+                           `).join('')}
+                         </div>
+                       ` : ''}
+
+                       <div class="flex flex-wrap gap-1">
+                         ${p.tech.map(t => `<span class="bg-ctos-cyan/5 text-[10px] px-1 text-gray-400">${t}</span>`).join('')}
+                       </div>
+                     </div>
+                   `).join('')}
+                 </div>
+              </div>
+              ` : ''}
+
             </div>
           `;
         rolesWrapper.appendChild(jobEl);
       });
       groupEl.appendChild(rolesWrapper);
       experienceContainer.appendChild(groupEl);
+    });
+  }
+
+  // Education
+  if (educationContainer) {
+    education.forEach(edu => {
+      const el = document.createElement("div");
+      el.className = "ctos-card p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start";
+      el.innerHTML = `
+         <div class="flex-shrink-0">
+            <div class="w-16 h-16 md:w-20 md:h-20 bg-white/5 border border-white/10 flex items-center justify-center p-2">
+               <i data-lucide="graduation-cap" class="w-8 h-8 md:w-10 md:h-10 text-ctos-cyan/50"></i>
+            </div>
+         </div>
+         <div class="flex-grow">
+            <div class="flex flex-col md:flex-row md:justify-between mb-2">
+               <h3 class="text-xl font-bold text-white uppercase">${edu.institution}</h3>
+               <span class="text-ctos-cyan font-mono text-sm">[ ${edu.period} ]</span>
+            </div>
+            <p class="text-ctos-cyan text-base md:text-lg mb-1">${edu.degree}</p>
+            <p class="text-gray-400 text-sm font-mono mb-4">Grade: <span class="text-white">${edu.grade}</span></p>
+            
+            <div class="border-t border-white/5 pt-4">
+              <p class="text-xs text-gray-600 uppercase tracking-widest mb-2">Acquired Skills</p>
+              <div class="flex flex-wrap gap-2">
+                 ${edu.skills.map(s => `<span class="px-2 py-1 bg-ctos-cyan/5 text-ctos-cyan text-xs border border-ctos-cyan/10">${s}</span>`).join('')}
+              </div>
+            </div>
+         </div>
+      `;
+      educationContainer.appendChild(el);
     });
   }
 
@@ -430,7 +490,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ? `<a href="${projectUrl}" target="_blank" rel="noopener noreferrer" class="hover:text-ctos-cyan transition-colors flex items-center gap-2 group-hover:text-ctos-cyan glitch-text" data-text="${project.title}">${project.title}</a>`
         : project.title;
       const showProjectBtn = projectUrl
-        ? `<a href="${projectUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 border border-ctos-cyan text-ctos-cyan hover:bg-ctos-cyan hover:text-black transition-colors text-sm font-bold uppercase tracking-wider">INIT_VIEW <i data-lucide="external-link" class="w-4 h-4"></i></a>`
+        ? `<a href="${projectUrl}" target="_blank" rel="noopener noreferrer" class="ctos-button ctos-button-outline text-xs py-2 px-4 gap-2">INIT_VIEW <i data-lucide="external-link" class="w-3 h-3"></i></a>`
         : "";
       const awardBadge = project.award
         ? `<div class="mb-3 inline-flex items-center gap-2 px-3 py-1 bg-yellow-900/40 text-yellow-400 border border-yellow-500/50 text-xs font-bold uppercase tracking-wider"><i data-lucide="trophy" class="w-3 h-3"></i> ${project.award}</div>`
@@ -560,10 +620,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Icons
-  if (typeof lucide !== "undefined") {
-    lucide.createIcons();
-  }
+
 
   // Navbar
   if (navbar) {
@@ -619,6 +676,8 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.utils.toArray(".experience-card").forEach((card) => {
       gsap.from(card, { scrollTrigger: { trigger: card, start: "top 85%" }, opacity: 0, x: 20, duration: 0.5 });
     });
+
+    gsap.from("#education", { scrollTrigger: { trigger: "#education", start: "top 80%" }, opacity: 0, y: 30 });
 
     gsap.from(".project-card", { scrollTrigger: { trigger: "#projects", start: "top 80%" }, opacity: 0, y: 30, stagger: 0.2 });
 
@@ -884,5 +943,10 @@ document.addEventListener("DOMContentLoaded", () => {
       closeLightbox();
     }
   });
+
+  // Initialize Icons at the VERY END to catch all dynamic elements
+  if (typeof lucide !== "undefined") {
+    lucide.createIcons();
+  }
 
 });

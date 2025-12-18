@@ -25,7 +25,9 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #333;
   border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.1);
   background-clip: content-box;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -34,14 +36,27 @@ body {
 
 /* ctOS Card Style */
 .ctos-card {
-  background: rgba(10, 10, 10, 0.85);
-  /* Slightly more transparent */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(5, 10, 15, 0.7);
+  border: 1px solid rgba(0, 240, 255, 0.15);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(5px);
-  /* Added blur for depth */
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Tech Corners for Cards */
+.ctos-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid rgba(0, 240, 255, 0.3);
+  border-right: 2px solid rgba(0, 240, 255, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0.5;
 }
 
 .ctos-card::before {
@@ -58,12 +73,16 @@ body {
 }
 
 .ctos-card:hover {
-  border-color: rgba(0, 240, 255, 0.5);
-  /* Brighter border on hover */
-  box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
-  /* Stronger glow */
-  transform: translateY(-2px);
-  /* Subtle lift */
+  border-color: rgba(0, 240, 255, 0.6);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.1), inset 0 0 20px rgba(0, 240, 255, 0.05);
+  transform: translateY(-4px) scale(1.01);
+}
+
+.ctos-card:hover::after {
+  border-color: var(--ctos-cyan);
+  width: 100%;
+  height: 100%;
+  opacity: 1;
 }
 
 .ctos-card:hover::before {
@@ -74,10 +93,63 @@ body {
 
 /* Navbar Scrolled State */
 .nav-scrolled {
-  background: rgba(0, 0, 0, 0.95);
-  border-bottom: 1px solid var(--ctos-cyan);
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
+  background: rgba(5, 5, 5, 0.85);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(16px);
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+/* ctOS Button Styles - Clean & Minimal */
+.ctos-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: all 0.2s ease-out;
+  overflow: hidden;
+  border-radius: 2px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Primary Variant */
+.ctos-button-primary {
+  background: var(--ctos-cyan);
+  color: #000;
+  border: 1px solid var(--ctos-cyan);
+}
+
+.ctos-button-primary:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #000;
+  transform: translateY(-2px);
+  text-shadow: none;
+}
+
+/* Outline Variant */
+.ctos-button-outline {
+  background: transparent;
+  color: var(--ctos-cyan);
+  border: 1px solid var(--ctos-cyan);
+}
+
+.ctos-button-outline:hover {
+  background: rgba(0, 240, 255, 0.1);
+  color: #fff;
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Outline Variant (Default style above fits outline, just explicit overrides if needed) */
+.ctos-button-outline {
+  /* Inherits default */
 }
 
 /* Mobile Menu Overlay */
@@ -109,6 +181,34 @@ body {
   50% {
     opacity: 0;
   }
+}
+
+/* Global Effects */
+.scanlines {
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0) 50%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0.2));
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+.vignette {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+  pointer-events: none;
+}
+
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
 }
 
 /* Custom Animation Classes */
