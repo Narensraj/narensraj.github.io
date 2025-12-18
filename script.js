@@ -53,11 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
           period: "Jan 2024 - Oct 2025",
           location: "Leamington, Ontario, Canada",
           description: [
-            "Oversaw advanced controls software projects, including the ClimateEpic product line deployment.",
-            "Enhanced Modbus TCP functionality in Groov Epic for seamless SCADA integration.",
-            "Developed sensor data acquisition systems using Node-RED and visualized data in Grafana.",
-            "Managed the full SDLC: analysis, design, coding, testing, deployment, and maintenance.",
-            "Provided international customer support (Canada, USA, Singapore, Sweden, Mexico, Australia).",
+            "Spearheaded the 'Epic Climate Manager' (v1.7) dashboard using React & WebSocket for real-time zone monitoring.",
+            "Modernized 'Epic Fertigation Manager' (v4.2) interface for precision irrigation and recipe management.",
+            "Designed 'Ozone Pro' HMI (v2.1) for water treatment system monitoring and control.",
+            "Developed 'Multi-Chamber Dashboard' for centralized environmental tracking across isolated zones.",
+            "Implemented 'Customer Data Analysis' visualization tools using Grafana for agronomic insights.",
+            "Enhanced Modbus TCP/RTU integrations for seamless SCADA communication.",
+            "Provided international customer support for these deployed systems (Canada, USA, Singapore, Sweden).",
           ],
         },
         {
@@ -114,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tech: ["ESP32-S3", "PCB Design", "Industrial Automation", "LoRa", "RS485"],
       githubUrl: "https://github.com/Narensraj/pcb_designing/tree/main/Project_G",
       featured: true,
-      image: "assets/gcontroller.jpg",
+      images: ["assets/gcontroller.jpg"],
     },
     {
       title: "ESP32 Relay Board",
@@ -124,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tech: ["ESP32-S3", "EasyEDA", "PCB Design", "Home Automation", "AC/DC Power"],
       githubUrl: "https://github.com/Narensraj/pcb_designing/tree/main/ESP32_RelayBoard",
       featured: true,
-      image: "assets/esp32_relay.jpg",
+      images: ["assets/esp32_relay.jpg"],
     },
     {
       title: "Ingenious UOI based Augmented Reality using SIFT for ATM",
@@ -134,6 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tech: ["Vuforia SDK", "Unity 3D", "Arduino IDE", "ESP8266"],
       liveUrl: "https://www.hackster.io/Narensraj/diy-touchless-atm-using-augmented-reality-iotar-e621e0",
       featured: true,
+      images: ["assets/ar_atm.png"],
     },
     {
       title: "Pet Feeder using Google assistant v1.1",
@@ -143,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tech: ["Arduino IDE", "ESP8266"],
       liveUrl: "https://www.hackster.io/Narensraj/diy-pet-feeder-using-google-assistant-d54765",
       featured: true,
+      images: ["assets/pet_feeder.png"],
     },
     {
       title: "Voice controlled home automation using MQTT",
@@ -151,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "Home automation controlling appliances via Google Assistant and microcontroller relays.",
       tech: ["Arduino IDE", "ESP8266"],
       featured: false,
+      images: [],
     },
     {
       title: "Automatic Pet care v1.0",
@@ -160,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tech: ["Arduino IDE"],
       featured: false,
       award: "Best Project of the Year",
+      images: [],
     },
     {
       title: "Magnetic Drum separator",
@@ -167,6 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "Self-cleaning Magnetic Drum Separators for removal of ferrous contamination.",
       tech: [],
       featured: false,
+      images: [],
     },
     {
       title: "Light representation of Intestine",
@@ -174,8 +181,82 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "LED light representation of human body organs to identify organ and food flow.",
       tech: [],
       featured: false,
+      images: [],
+    },
+    {
+      title: "Epic Climate Manager",
+      period: "2024 - 2025",
+      association: "Climate Control Systems Inc",
+      description: "Advanced climate management dashboard for greenhouse automation. Features real-time zone monitoring (Temperature, Humidity, VPD, CO2), equipment status visualization, and comprehensive control settings.",
+      tech: ["React.js", "Modbus TCP", "WebSocket", "SCADA"],
+      featured: true,
+      images: ["assets/climate_manager.png"],
+    },
+    {
+      title: "Ozone Pro (HMI)",
+      period: "2024",
+      association: "Climate Control Systems Inc",
+      description: "HMI interface for Ozone water treatment systems. Provides real-time monitoring of ORP, Pressure, Flow Rate, and system status (Tank Levels, O2 Generator, Pumps).",
+      tech: ["HMI/SCADA", "C#", "Modbus RTU", "Industrial Automation"],
+      featured: true,
+      images: ["assets/ozone_pro.png"],
+    },
+    {
+      title: "Epic Fertigation Manager",
+      period: "2025",
+      association: "Climate Control Systems Inc",
+      description: "Modernized interface for precision fertigation management. Controls irrigation recipes, valve sequencing, bacterial injection, and EC/pH monitoring with high-precision flow control.",
+      tech: ["Industrial Controls", "Embedded Systems", "UI/UX Design"],
+      featured: true,
+      images: ["assets/fertigation_manager.png"],
+    },
+    {
+      title: "Multi-Chamber Dashboard",
+      period: "2024",
+      association: "Climate Control Systems Inc",
+      description: "Web-based multi-chamber monitoring system. Allows centralized tracking of Temperature, Humidity, and Light status across multiple isolated experimental chambers.",
+      tech: ["Web Dashboard", "IoT", "Remote Monitoring"],
+      featured: false,
+      images: ["assets/chamber_dashboard.png"],
+    },
+    {
+      title: "Customer Data Analysis",
+      period: "2024",
+      association: "Climate Control Systems Inc",
+      description: "Grafana-based analytics dashboard for visualizing customer data trends. Includes time-series analysis of critical metrics like pH, EC, and sensor inputs for agronomic insights.",
+      tech: ["Grafana", "Time-Series DB", "Data Visualization"],
+      featured: false,
+      images: ["assets/grafana_analysis.png"],
+    },
+    {
+      title: "Industrial IoT Data Pipeline",
+      period: "2024 - 2025",
+      association: "Climate Control Systems Inc",
+      description: "Automated data ingestion pipeline using Node-RED. Captures real-time I/O metrics (Flow, pH, EC, Pressure) from industrial controllers and efficiently routes them to MSSQL for archival and analysis.",
+      tech: ["Node-RED", "MSSQL", "IIoT", "Data Engineering"],
+      featured: false,
+      images: ["assets/nodered_pipeline.png"],
+    },
+    {
+      title: "Dynamic I/O Mapping Engine",
+      period: "2024 - 2025",
+      association: "Climate Control Systems Inc",
+      description: "Engineered a fully customizable I/O mapping system for Opto22 EPIC controllers using Pascal STL and Function Blocks. Allows users to configure channel types, scalings, and offsets directly via HMI without firmware recompilation.",
+      tech: ["Pascal", "Structured Text", "Opto22", "Groov EPIC"],
+      featured: false,
+      images: ["assets/io_config.png", "assets/io_config_details.png"],
+    },
+    {
+      title: "Epic Scratchpad Modbus Bridge",
+      period: "2024",
+      association: "Climate Control Systems Inc",
+      description: "Implemented a high-speed data bridge using the Opto22 EPIC Scratchpad memory map. Configured custom Modbus maps to expose internal controller variables (floating point & integers) to third-party SCADA systems, ensuring universal compatibility.",
+      tech: ["Modbus TCP", "Opto22 MMP", "System Integration", "SCADA"],
+      featured: false,
+      images: ["assets/modbus_scratchpad.png", "assets/modbus_settings.png", "assets/modbus_values.png", "assets/modbus_calc.png"],
     },
   ];
+
 
   const certifications = [
     {
@@ -381,8 +462,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="absolute inset-0 border border-ctos-cyan/30 z-20 pointer-events-none"></div>
             <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-ctos-cyan z-30"></div>
             <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-ctos-cyan z-30"></div>
-            <div class="w-full h-64 md:h-80 bg-black overflow-hidden relative flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(0,240,255,0.2)]">
-              ${project.image ? `<img src="${project.image}" alt="${project.title}" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-300">` : `<i data-lucide="cpu" class="w-24 h-24 text-gray-800 group-hover:text-ctos-cyan transition-colors duration-300"></i>`}
+            <div class="w-full h-64 md:h-80 bg-black overflow-hidden relative flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(0,240,255,0.2)]">
+              ${project.images && project.images.length > 0 ? `<img src="${project.images[0]}" alt="${project.title}" data-project-index="${index}" onclick="openLightbox(this.src)" class="project-img-${index} absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-300 cursor-pointer">` : `<i data-lucide="cpu" class="w-24 h-24 text-gray-800 group-hover:text-ctos-cyan transition-colors duration-300"></i>`}
             </div>
           </div>
         `;
@@ -712,6 +793,96 @@ document.addEventListener("DOMContentLoaded", () => {
     animate();
   };
 
+  // ---------- SLIDESHOW ----------
+  const initSlideshows = () => {
+    projects.forEach((project, index) => {
+      if (project.images && project.images.length > 1) {
+        let currentImageIndex = 0;
+        const imgElement = document.querySelector(`.project-img-${index}`);
+
+        if (imgElement) {
+          setInterval(() => {
+            // Fade out
+            imgElement.style.opacity = '0';
+
+            setTimeout(() => {
+              // Swap Image
+              currentImageIndex = (currentImageIndex + 1) % project.images.length;
+              imgElement.src = project.images[currentImageIndex];
+
+              // Fade in (revert to CSS control)
+              imgElement.onload = () => {
+                imgElement.style.opacity = '';
+              };
+            }, 300); // Match transition duration
+
+          }, 4000); // 4 seconds per slide
+        }
+      }
+    });
+  };
+
+  initSlideshows();
+
   initNetworkBackground();
+
+  // ---------- LIGHTBOX ----------
+  const lightbox = document.createElement("div");
+  lightbox.id = "lightbox";
+  lightbox.className = "fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/95 backdrop-blur-md opacity-0 transition-opacity duration-300";
+  lightbox.innerHTML = `
+    <div class="relative max-w-7xl max-h-[90vh] w-full p-4 flex items-center justify-center">
+      <button id="lightbox-close" class="absolute top-4 right-4 text-white hover:text-ctos-cyan transition-colors z-50">
+        <i data-lucide="x" class="w-10 h-10"></i>
+      </button>
+      <img id="lightbox-img" src="" alt="Full Project" class="max-w-full max-h-[85vh] object-contain border-2 border-ctos-cyan/50 shadow-[0_0_50px_rgba(0,240,255,0.3)] rounded-sm transform scale-95 transition-transform duration-300">
+    </div>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxClose = document.getElementById("lightbox-close");
+
+  const openLightbox = (src) => {
+    if (!src) return;
+    lightboxImg.src = src;
+    lightbox.classList.remove("hidden");
+    // Small delay to allow display:block to apply before opacity transition
+    setTimeout(() => {
+      lightbox.classList.remove("opacity-0");
+      lightboxImg.classList.remove("scale-95");
+      lightboxImg.classList.add("scale-100");
+    }, 10);
+    document.body.style.overflow = "hidden"; // Disable scroll
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.add("opacity-0");
+    lightboxImg.classList.remove("scale-100");
+    lightboxImg.classList.add("scale-95");
+    setTimeout(() => {
+      lightbox.classList.add("hidden");
+      lightboxImg.src = "";
+    }, 300);
+    document.body.style.overflow = ""; // Enable scroll
+  };
+
+  lightboxClose.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox || e.target.closest(".relative") === lightbox.firstElementChild) {
+      // Close if clicking outside the image (approximate)
+      if (e.target === lightbox) closeLightbox();
+    }
+  });
+
+  // Expose to global scope for inline onclicks if needed, or attach dynamically
+  window.openLightbox = openLightbox;
+
+  // Keydown to close
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !lightbox.classList.contains("hidden")) {
+      closeLightbox();
+    }
+  });
 
 });
