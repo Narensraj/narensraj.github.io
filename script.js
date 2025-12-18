@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           company: "Climate Control Systems Inc",
-          logo: "assets/logo_ccs.jpg",
+          logo: "assets/logo_ccs.png",
           role: "Controls / Software Developer",
           period: "Jan 2024 - Oct 2025",
           location: "Leamington, Ontario, Canada",
