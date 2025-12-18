@@ -120,7 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           company: "Climate Control Systems Inc",
-          logo: "assets/logo_ccs.jpg",
+          logo: "https://climatecontrol.com/wp-content/uploads/2020/02/Climate-Control-Systems-Logo.png",
+          logoLocal: "assets/logo_ccs.png",
           role: "Junior Electronics and Controls Programmer",
           period: "Jan 2023 - Jan 2024",
           location: "Leamington, Ontario, Canada",
@@ -192,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       institution: "PSG College of Technology",
       logo: "https://upload.wikimedia.org/wikipedia/en/3/36/PSG_College_of_Technology_logo.png",
-      logoLocal: "assets/logo_psg.png", // Corrected variable
+      logoLocal: "assets/logo_psg.png",
       degree: "Diploma, Electronic and Communications Engineering",
       period: "2015 - 2018",
       grade: "80%",
@@ -404,10 +405,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const groupEl = document.createElement("div");
       groupEl.className = "mb-20"; // Increased spacing
       groupEl.innerHTML = `
-          <h2 class="text-2xl font-bold text-ctos-cyan mb-6 tracking-wider uppercase flex items-center justify-start">
-            <span class="w-3 h-3 bg-ctos-cyan mr-3 animate-pulse"></span>
-            ${group.group}<span class="blink-cursor">_</span>
-          </h2>
+          <div class="flex items-center gap-4 mb-8 border-b border-ctos-cyan/30 pb-2">
+            ${group.logo ? `<div class="w-10 h-10 bg-white p-1 rounded-sm flex items-center justify-center"><img src="${group.logo}" alt="${group.group}" class="max-w-full max-h-full object-contain"></div>` : ''}
+            <h2 class="text-2xl font-bold text-ctos-cyan tracking-wider uppercase flex items-center justify-start">
+              ${!group.logo ? '<span class="w-3 h-3 bg-ctos-cyan mr-3 animate-pulse"></span>' : ''}
+              ${group.group}<span class="blink-cursor">_</span>
+            </h2>
+          </div>
         `;
       const rolesWrapper = document.createElement("div");
       rolesWrapper.className = "space-y-8 border-l border-ctos-cyan/30 pl-8 ml-3";
@@ -420,9 +424,9 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="ctos-card p-8 bg-white/5 hover:bg-white/10 transition-colors">
               <div class="flex flex-col md:flex-row md:justify-between mb-4 gap-4">
                 <div class="flex items-start gap-4">
-                   ${job.logo ? `<div class="w-12 h-12 flex-shrink-0 bg-white p-1 rounded-sm"><img src="${job.logo}" onerror="this.onerror=null; this.src='${job.logoLocal}'" alt="${job.company}" class="w-full h-full object-contain"></div>` : ''}
+                   ${job.logo ? `<div class="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 bg-white p-1 rounded-sm flex items-center justify-center"><img src="${job.logo}" onerror="this.onerror=null; this.src='${job.logoLocal}'" alt="${job.company}" class="max-w-full max-h-full object-contain"></div>` : ''}
                    <div>
-                     <h3 class="text-xl font-bold text-white uppercase">${job.role}</h3>
+                     <h3 class="text-lg md:text-xl font-bold text-white uppercase">${job.role}</h3>
                      <p class="text-ctos-cyan font-mono tracking-wide">${job.company}</p>
                    </div>
                 </div>
@@ -552,7 +556,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-ctos-cyan z-30"></div>
             <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-ctos-cyan z-30"></div>
             <div class="w-full h-64 md:h-80 bg-black overflow-hidden relative flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(0,240,255,0.2)]">
-              ${project.images && project.images.length > 0 ? `<img src="${project.images[0]}" alt="${project.title}" data-project-index="${index}" onclick="openLightbox(this.src)" class="project-img-${index} absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-300 cursor-pointer">` : `<i data-lucide="cpu" class="w-24 h-24 text-gray-800 group-hover:text-ctos-cyan transition-colors duration-300"></i>`}
+              ${project.images && project.images.length > 0 ? `<img src="${project.images[0]}" alt="${project.title}" data-project-index="${index}" onclick="if(window.openLightbox){window.openLightbox(this.src)}else{window.open(this.src,'_blank')} event.stopPropagation();" class="project-img-${index} absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-300 cursor-pointer">` : `<i data-lucide="cpu" class="w-24 h-24 text-gray-800 group-hover:text-ctos-cyan transition-colors duration-300"></i>`}
+
             </div>
           </div>
         `;
