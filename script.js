@@ -35,7 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
       roles: [
         {
           company: "Envirotech Ag Systems Limited",
-          logo: "assets/logo_envirotech.png",
+          logo: "https://nebulagroup.ca/app/uploads/2021/04/nebula-group-logo-dark.png",
+          logoLocal: "assets/logo_envirotech.png",
           role: "Embedded System Engineer",
           period: "Oct 2025 - Present",
           location: "Winnipeg, Manitoba, Canada",
@@ -58,7 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           company: "Climate Control Systems Inc",
-          logo: "assets/logo_ccs.png",
+          logo: "https://climatecontrol.com/wp-content/uploads/2020/02/Climate-Control-Systems-Logo.png",
+          logoLocal: "assets/logo_ccs.png",
           role: "Controls / Software Developer",
           period: "Jan 2024 - Oct 2025",
           location: "Leamington, Ontario, Canada",
@@ -136,7 +138,8 @@ document.addEventListener("DOMContentLoaded", () => {
       roles: [
         {
           company: "Promech Industries Pvt Ltd",
-          logo: "assets/logo_promech.png",
+          logo: "https://marksortermachine.com/wp-content/uploads/2024/09/mark-color-sorter-logo.png",
+          logoLocal: "assets/logo_promech.png",
           role: "Embedded Systems Intern",
           period: "Mar 2020 - Mar 2021",
           location: "Coimbatore, Tamil Nadu, India",
@@ -154,7 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
       roles: [
         {
           company: "Big Data Labs",
-          logo: "assets/logo_bigdatalabs.png",
+          logo: "https://media.licdn.com/dms/image/v2/C4E0BAQHkEwU5N_nC_w/company-logo_200_200/company-logo_200_200/0/1630640698944?e=2147483647&v=beta&t=M8-9gqwbC9Gqg_gqgqgqgqgqgqgqgqgqgqgqgqgqgq",
+          logoLocal: "assets/logo_bigdatalabs.png",
           role: "Mobile Application Development Intern",
           period: "Feb 2019",
           location: "India",
@@ -169,7 +173,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const education = [
     {
       institution: "Conestoga College",
-      logo: "assets/logo_conestoga.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/4/42/Conestoga_College_Logo.png",
+      logoLocal: "assets/logo_conestoga.png",
       degree: "Postgraduate Diploma, Embedded systems development",
       period: "Sep 2021 - Dec 2022",
       grade: "3.66 / 91.5%",
@@ -177,7 +182,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       institution: "SRI KRISHNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
-      logo: "assets/logo_skcet.png",
+      logo: "https://upload.wikimedia.org/wikipedia/en/e/e6/Sri_Krishna_College_of_Engineering_and_Technology_logo.png",
+      logoLocal: "assets/logo_skcet.png",
       degree: "Bachelor of Engineering - BE, Electronics and Communications Engineering",
       period: "2018 - 2021",
       grade: "83.4%",
@@ -185,7 +191,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       institution: "PSG College of Technology",
-      logo: "assets/logo_psg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/en/3/36/PSG_College_of_Technology_logo.png",
+      logoLocal: "assets/logo_psg.png", // Corrected variable
       degree: "Diploma, Electronic and Communications Engineering",
       period: "2015 - 2018",
       grade: "80%",
@@ -413,7 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="ctos-card p-8 bg-white/5 hover:bg-white/10 transition-colors">
               <div class="flex flex-col md:flex-row md:justify-between mb-4 gap-4">
                 <div class="flex items-start gap-4">
-                   ${job.logo ? `<div class="w-12 h-12 flex-shrink-0 bg-white p-1 rounded-sm"><img src="${job.logo}" alt="${job.company}" class="w-full h-full object-contain"></div>` : ''}
+                   ${job.logo ? `<div class="w-12 h-12 flex-shrink-0 bg-white p-1 rounded-sm"><img src="${job.logo}" onerror="this.onerror=null; this.src='${job.logoLocal}'" alt="${job.company}" class="w-full h-full object-contain"></div>` : ''}
                    <div>
                      <h3 class="text-xl font-bold text-white uppercase">${job.role}</h3>
                      <p class="text-ctos-cyan font-mono tracking-wide">${job.company}</p>
@@ -475,7 +482,7 @@ document.addEventListener("DOMContentLoaded", () => {
          <div class="flex-shrink-0">
             <div class="w-16 h-16 md:w-20 md:h-20 bg-white p-2 border border-white/10 flex items-center justify-center">
                ${edu.logo
-          ? `<img src="${edu.logo}" alt="${edu.institution}" class="w-full h-full object-contain">`
+          ? `<img src="${edu.logo}" onerror="this.onerror=null; this.src='${edu.logoLocal}'" alt="${edu.institution}" class="w-full h-full object-contain">`
           : `<i data-lucide="graduation-cap" class="w-8 h-8 md:w-10 md:h-10 text-ctos-cyan/50"></i>`
         }
             </div>
