@@ -1102,7 +1102,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Auto-rotate
     globe.controls().autoRotate = true;
     globe.controls().autoRotateSpeed = 0.5;
-    globe.controls().enableZoom = false; // Disable zoom on scroll for UX similar to map
+
+    // PC Controls
+    globe.controls().enableZoom = true;   // Re-enable scroll zoom
+    globe.controls().enablePan = false;   // Keep globe centered
+    globe.controls().minDistance = 200;   // Prevent zooming inside
+    globe.controls().maxDistance = 500;   // Prevent zooming too far out
 
     // Fix height/width to match container
     const resizeObserver = new ResizeObserver(entries => {
