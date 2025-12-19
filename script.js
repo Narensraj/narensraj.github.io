@@ -1060,6 +1060,11 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Envirotech Ag Systems", role: "Embedded System Engineer", lat: 49.8951, lng: -97.1384, type: "work" },
     { name: "Climate Control Systems", role: "Controls / Software Developer", lat: 42.0532, lng: -82.6012, type: "work" },
     { name: "Kryx Controls", role: "Co-Founder", lat: 42.0532, lng: -82.5900, type: "work" },
+    { name: "Client Support (AUS)", role: "Remote Deployment", lat: -33.8688, lng: 151.2093, type: "client" },
+    { name: "Client Support (SWE)", role: "Remote Deployment", lat: 59.3293, lng: 18.0686, type: "client" },
+    { name: "Client Support (NLD)", role: "Remote Deployment", lat: 52.3676, lng: 4.9041, type: "client" }, // Amsterdam
+    { name: "Client Support (SGP)", role: "Remote Deployment", lat: 1.3521, lng: 103.8198, type: "client" },
+    { name: "Client Support (MEX)", role: "Remote Deployment", lat: 19.4326, lng: -99.1332, type: "client" },
     { name: "Amity University", role: "MBA", lat: 28.5355, lng: 77.3910, type: "edu" },
     { name: "Conestoga College", role: "PG Diploma", lat: 43.3915, lng: -80.4072, type: "edu" },
     { name: "Promech Industries", role: "Embedded Intern", lat: 11.0168, lng: 76.9558, type: "work" },
@@ -1078,11 +1083,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Center map to show both Americas and Asia (Pacific view or Zoomed out)
     const map = L.map('locations-map', {
-      center: [30, 0],
+      center: [20, 0], // Adjusted center for global view
       zoom: 2,
       zoomControl: true,
       attributionControl: false,
-      scrollWheelZoom: true // UX: Enabled per user request for zoom options
+      scrollWheelZoom: true
     });
 
     // Dark Matter Tiles
@@ -1093,11 +1098,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }).addTo(map);
 
     locations.forEach(loc => {
-      const color = loc.type === 'work' ? '#00f0ff' : '#ff003c'; // Cyan for work, Red/Pink for Edu
+      let color = '#00f0ff'; // Default Cyan (Work)
+      if (loc.type === 'edu') color = '#ff003c'; // Red (Edu)
+      if (loc.type === 'client') color = '#ffbf00'; // Amber (Client/Remote)
 
       // Pulse marker effect
       const marker = L.circleMarker([loc.lat, loc.lng], {
-        radius: 6,
+        radius: loc.type === 'client' ? 4 : 6,
         fillColor: color,
         color: "#fff",
         weight: 1,
