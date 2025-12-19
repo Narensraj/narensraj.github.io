@@ -319,6 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const certifications = [
     {
+      category: "Professional Training: Opto 22",
       issuer: "Opto 22",
       items: [
         {
