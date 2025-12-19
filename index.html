@@ -18,7 +18,8 @@
   <meta name="author" content="Naren Subburaj" />
 
   <!-- Open Graph -->
-  <!-- Globe.gl replaces Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <meta property="og:title" content="Naren Subburaj | Embedded/Controls System Engineer" />
   <meta property="og:description"
     content="I build production-grade embedded systems for automation, agriculture, and IoT. Check out my portfolio." />
@@ -397,32 +398,6 @@
           </div>
           <div class="opacity-70 mt-1">LAT/LONG: ACQUIRING...</div>
         </div>
-
-        <!-- Zoom Controls -->
-        <div class="absolute bottom-4 right-4 flex flex-col gap-2 z-[900]">
-          <button id="globe-zoom-in"
-            class="bg-black/80 hover:bg-ctos-cyan/20 border border-ctos-cyan/30 text-ctos-cyan w-8 h-8 flex items-center justify-center rounded transition-colors"
-            aria-label="Zoom In">
-            <i data-lucide="plus" class="w-4 h-4"></i>
-          </button>
-          <button id="globe-zoom-out"
-            class="bg-black/80 hover:bg-ctos-cyan/20 border border-ctos-cyan/30 text-ctos-cyan w-8 h-8 flex items-center justify-center rounded transition-colors"
-            aria-label="Zoom Out">
-            <i data-lucide="minus" class="w-4 h-4"></i>
-          </button>
-        </div>
-
-        <!-- Location Info Card (Hidden by default) -->
-        <div id="globe-info-card"
-          class="absolute bottom-4 left-4 max-w-xs w-full bg-black/90 border-l-4 border-ctos-cyan p-4 z-[900] hidden backdrop-blur-sm shadow-[0_0_30px_rgba(0,0,0,0.8)] transform transition-all duration-300 translate-y-4 opacity-0">
-          <button id="close-globe-info" class="absolute top-2 right-2 text-gray-500 hover:text-white"><i data-lucide="x"
-              class="w-4 h-4"></i></button>
-          <h4 id="globe-location-title" class="text-ctos-cyan font-bold uppercase tracking-wide text-sm mb-1">Location
-          </h4>
-          <div id="globe-location-role" class="text-white font-mono text-xs mb-2">Role</div>
-          <div class="h-px w-full bg-gray-800 my-2"></div>
-          <p class="text-gray-400 text-xs">COORDINATES LOCKED. DEPLOYMENT HISTORY VERIFIED.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -478,7 +453,8 @@
     <p class="uppercase tracking-wider opacity-70">SYSTEM_ID: NAREN_V2.5 // DEPLOYED_BY: NAREN_SUBBURAJ</p>
   </footer>
 
-  <script src="//unpkg.com/globe.gl"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="script.js"></script>
 </body>
 

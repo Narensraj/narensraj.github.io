@@ -1059,126 +1059,94 @@ document.addEventListener("DOMContentLoaded", () => {
   const locations = [
     { name: "Envirotech Ag Systems", role: "Embedded System Engineer", lat: 49.8951, lng: -97.1384, type: "work" },
     { name: "Climate Control Systems", role: "Controls / Software Developer", lat: 42.0532, lng: -82.6012, type: "work" },
-    { name: "Kryx Controls", role: "Co-Founder", lat: 42.5000, lng: -82.2000, type: "work" }, // MANUAL OFFSET FOR LABEL VISIBILITY
+    { name: "Kryx Controls", role: "Co-Founder", lat: 42.0532, lng: -82.5900, type: "work" },
     { name: "Amity University", role: "MBA", lat: 28.5355, lng: 77.3910, type: "edu" },
     { name: "Conestoga College", role: "PG Diploma", lat: 43.3915, lng: -80.4072, type: "edu" },
     { name: "Promech Industries", role: "Embedded Intern", lat: 11.0168, lng: 76.9558, type: "work" },
     { name: "Big Data Labs", role: "App Dev Intern", lat: 13.0827, lng: 80.2707, type: "work" },
-    { name: "SKCET", role: "Bachelor of Engineering", lat: 10.5000, lng: 76.5000, type: "edu" }, // MANUAL OFFSET
-    { name: "PSG College", role: "Diploma ECE", lat: 11.5000, lng: 77.5000, type: "edu" }, // MANUAL OFFSET
+    { name: "SKCET", role: "Bachelor of Engineering", lat: 10.9363, lng: 76.9567, type: "edu" },
+    { name: "PSG College", role: "Diploma ECE", lat: 11.0247, lng: 77.0099, type: "edu" },
     { name: "Opto 22 Training", role: "Professional Training", lat: 33.4936, lng: -117.1484, type: "edu" }
   ];
 
-  function initGlobe() {
-    const mapContainer = document.getElementById("locations-map");
-    if (!mapContainer || typeof Globe === 'undefined') return;
+  function initMap() {
+    const mapElement = document.getElementById("locations-map");
+    if (!mapElement || typeof L === 'undefined') return;
 
-    // Clear previous if any (though unlikely on fresh load)
-    mapContainer.innerHTML = '';
+    // Clear previous
+    mapElement.innerHTML = '';
 
-    const globe = Globe()
-      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
-      .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-      .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
-      .pointsData(locations)
-      .pointLat('lat')
-      .pointLng('lng')
-      .pointColor(d => d.type === 'work' ? '#00f0ff' : '#ff003c')
-      .pointAltitude(0.02)
-      .pointRadius(0.5)
-      .pointsMerge(true)
-      .pointLabel(d => `
-        <div style="background: rgba(0,0,0,0.9); border: 1px solid ${d.type === 'work' ? '#00f0ff' : '#ff003c'}; padding: 8px; border-radius: 4px; font-family: 'Share Tech Mono', monospace;">
-          <b style="color: ${d.type === 'work' ? '#00f0ff' : '#ff003c'}">${d.name}</b><br/>
-          <span style="color: #ccc; font-size: 12px;">${d.role}</span>
-        </div>
-      `)
-      // --- LABELS LAYER (Detail on Zoom) ---
-      .labelsData(locations)
-      .labelLat('lat')
-      .labelLng('lng')
-      .labelText('name')
-      .labelSize(d => 1.5)
-      .labelDotRadius(0.5)
-      .labelColor(d => d.type === 'work' ? 'rgba(0, 240, 255, 0.75)' : 'rgba(255, 0, 60, 0.75)')
-      .labelResolution(2)
-      .labelAltitude(0.02)
-      (mapContainer);
-
-    // Auto-rotate
-    globe.controls().autoRotate = true;
-    globe.controls().autoRotateSpeed = 0.5;
-
-    // PC Controls
-    globe.controls().enableZoom = true;
-    globe.controls().enablePan = false;
-    globe.controls().minDistance = 120; // Allow closer zoom (Earth radius is ~100)
-    globe.controls().maxDistance = 600;
-
-    // --- UI INTERACTION LOGIC ---
-    const zoomInBtn = document.getElementById("globe-zoom-in");
-    const zoomOutBtn = document.getElementById("globe-zoom-out");
-
-    // Info Card Elements
-    const infoCard = document.getElementById("globe-info-card");
-    const closeInfoBtn = document.getElementById("close-globe-info");
-    const infoTitle = document.getElementById("globe-location-title");
-    const infoRole = document.getElementById("globe-location-role");
-
-    // Zoom Button Logic
-    if (zoomInBtn && zoomOutBtn) {
-      zoomInBtn.addEventListener("click", () => {
-        const currentDist = globe.camera().position.length();
-        const newDist = Math.max(120, currentDist - 50);
-        globe.camera().position.setLength(newDist);
-        globe.controls().update();
-      });
-      zoomOutBtn.addEventListener("click", () => {
-        const currentDist = globe.camera().position.length();
-        const newDist = Math.min(600, currentDist + 50);
-        globe.camera().position.setLength(newDist);
-        globe.controls().update();
-      });
-    }
-
-    // Handle Closing Card
-    if (closeInfoBtn) {
-      closeInfoBtn.addEventListener("click", () => {
-        infoCard.classList.add("hidden", "translate-y-4", "opacity-0");
-        infoCard.classList.remove("flex", "translate-y-0", "opacity-100");
-        // Resume Rotation
-        globe.controls().autoRotate = true;
-      });
-    }
-
-    // Update Globe to handle click
-    globe.onPointClick(d => {
-      globe.controls().autoRotate = false;
-      globe.pointOfView({ lat: d.lat, lng: d.lng, altitude: 1.5 }, 1500);
-
-      // Show Info
-      if (infoCard) {
-        infoTitle.textContent = d.name;
-        infoRole.textContent = d.role;
-
-        infoCard.classList.remove("hidden", "translate-y-4", "opacity-0");
-        infoCard.classList.add("flex", "flex-col", "translate-y-0", "opacity-100");
-      }
+    // Center map to show both Americas and Asia (Pacific view or Zoomed out)
+    const map = L.map('locations-map', {
+      center: [30, 0],
+      zoom: 2,
+      zoomControl: true,
+      attributionControl: false,
+      scrollWheelZoom: true // UX: Enabled per user request for zoom options
     });
 
-    // Fix height/width to match container
-    const resizeObserver = new ResizeObserver(entries => {
-      for (let entry of entries) {
-        const { width, height } = entry.contentRect;
-        globe.width(width);
-        globe.height(height);
-      }
+    // Dark Matter Tiles
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    locations.forEach(loc => {
+      const color = loc.type === 'work' ? '#00f0ff' : '#ff003c'; // Cyan for work, Red/Pink for Edu
+
+      // Pulse marker effect
+      const marker = L.circleMarker([loc.lat, loc.lng], {
+        radius: 6,
+        fillColor: color,
+        color: "#fff",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.8
+      }).addTo(map);
+
+      const popupContent = `
+            <div style="font-family: 'Share Tech Mono', monospace; text-align: left;">
+                <h4 style="color: ${color}; margin: 0 0 4px 0; font-size: 14px; text-transform: uppercase;">${loc.name}</h4>
+                <p style="margin: 0; font-size: 12px; color: #aaa;">${loc.role}</p>
+            </div>
+        `;
+
+      marker.bindPopup(popupContent, {
+        className: 'ctos-popup'
+      });
+
+      // Add hover effect
+      marker.on('mouseover', function (e) {
+        this.openPopup();
+        this.setStyle({ radius: 8, fillOpacity: 1 });
+      });
+      marker.on('mouseout', function (e) {
+        this.closePopup();
+        this.setStyle({ radius: 6, fillOpacity: 0.8 });
+      });
     });
 
-    resizeObserver.observe(mapContainer);
+    // Custom CSS for Popup to match theme (injecting style if not in CSS)
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .leaflet-popup-content-wrapper {
+            background: rgba(0, 0, 0, 0.9) !important;
+            border: 1px solid #00f0ff !important;
+            border-radius: 4px !important;
+            color: #fff !important;
+        }
+        .leaflet-popup-tip {
+            background: #00f0ff !important;
+        }
+        .leaflet-container {
+            background: #0a0a0a;
+        }
+    `;
+    document.head.appendChild(style);
   }
 
-  // Initialize Globe
-  initGlobe();
+  // Initialize Map
+  initMap();
 
 });
