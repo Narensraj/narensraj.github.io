@@ -1093,6 +1093,16 @@ document.addEventListener("DOMContentLoaded", () => {
           <span style="color: #ccc; font-size: 12px;">${d.role}</span>
         </div>
       `)
+      // --- LABELS LAYER (Detail on Zoom) ---
+      .labelsData(locations)
+      .labelLat('lat')
+      .labelLng('lng')
+      .labelText('name')
+      .labelSize(d => 1.5)
+      .labelDotRadius(0.5)
+      .labelColor(d => d.type === 'work' ? 'rgba(0, 240, 255, 0.75)' : 'rgba(255, 0, 60, 0.75)')
+      .labelResolution(2)
+      .labelAltitude(0.02)
       (mapContainer);
 
     // Auto-rotate
