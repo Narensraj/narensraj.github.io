@@ -1069,78 +1069,54 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Opto 22 Training", role: "Professional Training", lat: 33.4936, lng: -117.1484, type: "edu" }
   ];
 
-  function initMap() {
-    const mapElement = document.getElementById("locations-map");
-    if (!mapElement) return;
+  function initGlobe() {
+    const mapContainer = document.getElementById("locations-map");
+    if (!mapContainer || typeof Globe === 'undefined') return;
 
-    // Center map to show both Americas and Asia (Pacific view or Zoomed out)
-    const map = L.map('locations-map', {
-      center: [30, 0],
-      zoom: 2,
-      zoomControl: true,
-      attributionControl: false,
-      scrollWheelZoom: false // UX Improvement: Prevent scroll-jacking
+    // Clear previous if any (though unlikely on fresh load)
+    mapContainer.innerHTML = '';
+
+    const globe = Globe()
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+      .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+      .pointsData(locations)
+      .pointLat('lat')
+      .pointLng('lng')
+      .pointColor(d => d.type === 'work' ? '#00f0ff' : '#ff003c')
+      .pointAltitude(0.02)
+      .pointRadius(0.5)
+      .pointsMerge(true)
+      .pointLabel(d => `
+        <div style="background: rgba(0,0,0,0.9); border: 1px solid ${d.type === 'work' ? '#00f0ff' : '#ff003c'}; padding: 8px; border-radius: 4px; font-family: 'Share Tech Mono', monospace;">
+          <b style="color: ${d.type === 'work' ? '#00f0ff' : '#ff003c'}">${d.name}</b><br/>
+          <span style="color: #ccc; font-size: 12px;">${d.role}</span>
+        </div>
+      `)
+      .onPointClick(d => {
+        // Optional: click interaction
+        console.log('Clicked', d);
+      })
+      (mapContainer);
+
+    // Auto-rotate
+    globe.controls().autoRotate = true;
+    globe.controls().autoRotateSpeed = 0.5;
+    globe.controls().enableZoom = false; // Disable zoom on scroll for UX similar to map
+
+    // Fix height/width to match container
+    const resizeObserver = new ResizeObserver(entries => {
+      for (let entry of entries) {
+        const { width, height } = entry.contentRect;
+        globe.width(width);
+        globe.height(height);
+      }
     });
 
-    // Dark Matter Tiles
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      subdomains: 'abcd',
-      maxZoom: 19
-    }).addTo(map);
-
-    locations.forEach(loc => {
-      const color = loc.type === 'work' ? '#00f0ff' : '#ff003c'; // Cyan for work, Red/Pink for Edu
-
-      // Pulse marker effect
-      const marker = L.circleMarker([loc.lat, loc.lng], {
-        radius: 6,
-        fillColor: color,
-        color: "#fff",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8
-      }).addTo(map);
-
-      const popupContent = `
-            <div style="font-family: 'Share Tech Mono', monospace; text-align: left;">
-                <h4 style="color: ${color}; margin: 0 0 4px 0; font-size: 14px; text-transform: uppercase;">${loc.name}</h4>
-                <p style="margin: 0; font-size: 12px; color: #aaa;">${loc.role}</p>
-            </div>
-        `;
-
-      marker.bindPopup(popupContent, {
-        className: 'ctos-popup'
-      });
-
-      // Add hover effect
-      marker.on('mouseover', function (e) {
-        this.openPopup();
-        this.setStyle({ radius: 8, fillOpacity: 1 });
-      });
-      marker.on('mouseout', function (e) {
-        this.closePopup();
-        this.setStyle({ radius: 6, fillOpacity: 0.8 });
-      });
-    });
-
-    // Custom CSS for Popup to match theme (injecting style if not in CSS)
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .leaflet-popup-content-wrapper {
-            background: rgba(0, 0, 0, 0.9) !important;
-            border: 1px solid #00f0ff !important;
-            border-radius: 4px !important;
-            color: #fff !important;
-        }
-        .leaflet-popup-tip {
-            background: #00f0ff !important;
-        }
-    `;
-    document.head.appendChild(style);
+    resizeObserver.observe(mapContainer);
   }
 
-  // Initialize Map
-  initMap();
+  // Initialize Globe
+  initGlobe();
 
 });
