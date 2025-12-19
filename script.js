@@ -572,7 +572,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ? `<a href="${projectUrl}" target="_blank" rel="noopener noreferrer" class="hover:text-ctos-cyan transition-colors flex items-center gap-2 group-hover:text-ctos-cyan glitch-text" data-text="${project.title}">${project.title}</a>`
         : project.title;
       const showProjectBtn = projectUrl
-        ? `<a href="${projectUrl}" target="_blank" rel="noopener noreferrer" class="ctos-button ctos-button-outline text-xs py-2 px-4 gap-2">INIT_VIEW <i data-lucide="external-link" class="w-3 h-3"></i></a>`
+        ? `<a href="${projectUrl}" target="_blank" rel="noopener noreferrer" class="ctos-button ctos-button-outline text-xs py-2 px-4 gap-2">View Project <i data-lucide="external-link" class="w-3 h-3"></i></a>`
         : "";
       const awardBadge = project.award
         ? `<div class="mb-3 inline-flex items-center gap-2 px-3 py-1 bg-yellow-900/40 text-yellow-400 border border-yellow-500/50 text-xs font-bold uppercase tracking-wider"><i data-lucide="trophy" class="w-3 h-3"></i> ${project.award}</div>`
@@ -647,7 +647,7 @@ document.addEventListener("DOMContentLoaded", () => {
           imageHtml = `
             <div class="flex-shrink-0 w-full sm:w-32 mt-2 sm:mt-0 cursor-pointer group/img" onclick="if(window.openLightbox){window.openLightbox('${cert.certificateImage}')}else{window.open('${cert.certificateImage}','_blank')} event.stopPropagation();">
                 <img src="${cert.certificateImage}" alt="${cert.title || cert.name}" class="w-full h-auto border border-gray-700 group-hover/img:border-ctos-cyan transition-colors shadow-sm">
-                <div class="text-[10px] text-center mt-1 text-ctos-cyan opacity-0 group-hover/img:opacity-100 transition-opacity">[VIEW CERT]</div>
+                <div class="text-[10px] text-center mt-1 text-ctos-cyan opacity-0 group-hover/img:opacity-100 transition-opacity">[View Certificate]</div>
             </div>`;
         }
 
