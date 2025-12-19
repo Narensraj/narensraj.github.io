@@ -319,6 +319,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const certifications = [
     {
+      issuer: "Opto 22",
+      items: [
+        {
+          title: "Fundamentals of the groov EPIC System",
+          date: "Nov 2024",
+          credentialUrl: "",
+          certificateImage: "assets/opto22_certificate.png",
+          description: "Premium Factory Training on the groov EPIC System (Edge Programmable Industrial Controller)."
+        }
+      ]
+    },
+    {
       category: "A. Academic Courses & Certifications",
       items: [{ name: "Aircraft Maintenance", issuer: "NPTEL (SWAYAM) | IIT Kanpur", date: "Jan–Feb 2020" }],
     },
@@ -628,14 +640,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
       group.items.forEach((cert) => {
         const certEl = document.createElement("div");
-        certEl.className = "flex items-start text-gray-400 border-l border-gray-700 pl-4 py-1 hover:border-ctos-cyan hover:text-white transition-colors cursor-default";
+        certEl.className = "flex flex-col sm:flex-row items-start text-gray-400 border-l border-gray-700 pl-4 py-2 hover:border-ctos-cyan hover:text-white transition-colors cursor-default gap-4";
+
+        let imageHtml = '';
+        if (cert.certificateImage) {
+          imageHtml = `
+            <div class="flex-shrink-0 w-full sm:w-32 mt-2 sm:mt-0 cursor-pointer group/img" onclick="if(window.openLightbox){window.openLightbox('${cert.certificateImage}')}else{window.open('${cert.certificateImage}','_blank')} event.stopPropagation();">
+                <img src="${cert.certificateImage}" alt="${cert.title || cert.name}" class="w-full h-auto border border-gray-700 group-hover/img:border-ctos-cyan transition-colors shadow-sm">
+                <div class="text-[10px] text-center mt-1 text-ctos-cyan opacity-0 group-hover/img:opacity-100 transition-opacity">[VIEW CERT]</div>
+            </div>`;
+        }
+
         certEl.innerHTML = `
-            <div>
-              <span class="block text-gray-200 font-bold uppercase text-sm mb-1">${cert.name}</span>
-              <div class="flex flex-wrap gap-2 text-xs text-gray-500 font-mono">
+            <div class="flex-grow">
+              <span class="block text-gray-200 font-bold uppercase text-sm mb-1">${cert.title || cert.name}</span>
+              <div class="flex flex-wrap gap-2 text-xs text-gray-500 font-mono mb-2">
                 <span class="text-ctos-cyan">${cert.issuer}</span><span class="hidden sm:inline text-gray-700">|</span><span>${cert.date}</span>
               </div>
+              ${cert.description ? `<p class="text-sm text-gray-400 mb-2 leading-relaxed">${cert.description}</p>` : ''}
+              ${cert.credentialUrl ? `<a href="${cert.credentialUrl}" target="_blank" class="text-xs text-ctos-cyan hover:underline decoration-1 underline-offset-2 flex items-center gap-1"><span class="w-1 h-1 bg-ctos-cyan rounded-full"></span> Validate Credential</a>` : ''}
             </div>
+            ${imageHtml}
           `;
         contentInner.appendChild(certEl);
       });
@@ -1029,5 +1054,93 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof lucide !== "undefined") {
     lucide.createIcons();
   }
+
+  // ---------- MAP INTEGRATION ----------
+  const locations = [
+    { name: "Envirotech Ag Systems", role: "Embedded System Engineer", lat: 49.8951, lng: -97.1384, type: "work" },
+    { name: "Climate Control Systems", role: "Controls / Software Developer", lat: 42.0532, lng: -82.6012, type: "work" },
+    { name: "Kryx Controls", role: "Co-Founder", lat: 42.0532, lng: -82.5900, type: "work" }, // Slight offset
+    { name: "Amity University", role: "MBA", lat: 28.5355, lng: 77.3910, type: "edu" },
+    { name: "Conestoga College", role: "PG Diploma", lat: 43.3915, lng: -80.4072, type: "edu" },
+    { name: "Promech Industries", role: "Embedded Intern", lat: 11.0168, lng: 76.9558, type: "work" },
+    { name: "Big Data Labs", role: "App Dev Intern", lat: 13.0827, lng: 80.2707, type: "work" },
+    { name: "SKCET", role: "Bachelor of Engineering", lat: 10.9363, lng: 76.9567, type: "edu" },
+    { name: "PSG College", role: "Diploma ECE", lat: 11.0247, lng: 77.0099, type: "edu" },
+    { name: "Opto 22 Training", role: "Professional Training", lat: 33.4936, lng: -117.1484, type: "edu" }
+  ];
+
+  function initMap() {
+    const mapElement = document.getElementById("locations-map");
+    if (!mapElement) return;
+
+    // Center map to show both Americas and Asia (Pacific view or Zoomed out)
+    const map = L.map('locations-map', {
+      center: [30, 0],
+      zoom: 2,
+      zoomControl: true,
+      attributionControl: false,
+      scrollWheelZoom: false // UX Improvement: Prevent scroll-jacking
+    });
+
+    // Dark Matter Tiles
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    locations.forEach(loc => {
+      const color = loc.type === 'work' ? '#00f0ff' : '#ff003c'; // Cyan for work, Red/Pink for Edu
+
+      // Pulse marker effect
+      const marker = L.circleMarker([loc.lat, loc.lng], {
+        radius: 6,
+        fillColor: color,
+        color: "#fff",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.8
+      }).addTo(map);
+
+      const popupContent = `
+            <div style="font-family: 'Share Tech Mono', monospace; text-align: left;">
+                <h4 style="color: ${color}; margin: 0 0 4px 0; font-size: 14px; text-transform: uppercase;">${loc.name}</h4>
+                <p style="margin: 0; font-size: 12px; color: #aaa;">${loc.role}</p>
+            </div>
+        `;
+
+      marker.bindPopup(popupContent, {
+        className: 'ctos-popup'
+      });
+
+      // Add hover effect
+      marker.on('mouseover', function (e) {
+        this.openPopup();
+        this.setStyle({ radius: 8, fillOpacity: 1 });
+      });
+      marker.on('mouseout', function (e) {
+        this.closePopup();
+        this.setStyle({ radius: 6, fillOpacity: 0.8 });
+      });
+    });
+
+    // Custom CSS for Popup to match theme (injecting style if not in CSS)
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .leaflet-popup-content-wrapper {
+            background: rgba(0, 0, 0, 0.9) !important;
+            border: 1px solid #00f0ff !important;
+            border-radius: 4px !important;
+            color: #fff !important;
+        }
+        .leaflet-popup-tip {
+            background: #00f0ff !important;
+        }
+    `;
+    document.head.appendChild(style);
+  }
+
+  // Initialize Map
+  initMap();
 
 });
