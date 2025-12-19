@@ -100,6 +100,12 @@ document.addEventListener("DOMContentLoaded", () => {
               images: ["assets/chamber_dashboard.png"],
             },
             {
+              title: "Customer Data Analytics",
+              description: "Aggregated agronomic data visualization using Grafana to drive crop yield optimization.",
+              tech: ["Grafana", "SQL", "Data Vis"],
+              images: ["assets/grafana_analysis.png"],
+            },
+            {
               title: "Industrial IoT Data Pipeline",
               description: "Node-RED pipeline capturing real-time I/O metrics (Flow, pH, EC) to MSSQL.",
               tech: ["Node-RED", "MSSQL"],
