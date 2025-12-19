@@ -1093,10 +1093,6 @@ document.addEventListener("DOMContentLoaded", () => {
           <span style="color: #ccc; font-size: 12px;">${d.role}</span>
         </div>
       `)
-      .onPointClick(d => {
-        // Optional: click interaction
-        console.log('Clicked', d);
-      })
       (mapContainer);
 
     // Auto-rotate
@@ -1104,10 +1100,61 @@ document.addEventListener("DOMContentLoaded", () => {
     globe.controls().autoRotateSpeed = 0.5;
 
     // PC Controls
-    globe.controls().enableZoom = true;   // Re-enable scroll zoom
-    globe.controls().enablePan = false;   // Keep globe centered
-    globe.controls().minDistance = 200;   // Prevent zooming inside
-    globe.controls().maxDistance = 500;   // Prevent zooming too far out
+    globe.controls().enableZoom = true;
+    globe.controls().enablePan = false;
+    globe.controls().minDistance = 120; // Allow closer zoom (Earth radius is ~100)
+    globe.controls().maxDistance = 600;
+
+    // --- UI INTERACTION LOGIC ---
+    const zoomInBtn = document.getElementById("globe-zoom-in");
+    const zoomOutBtn = document.getElementById("globe-zoom-out");
+
+    // Info Card Elements
+    const infoCard = document.getElementById("globe-info-card");
+    const closeInfoBtn = document.getElementById("close-globe-info");
+    const infoTitle = document.getElementById("globe-location-title");
+    const infoRole = document.getElementById("globe-location-role");
+
+    // Zoom Button Logic
+    if (zoomInBtn && zoomOutBtn) {
+      zoomInBtn.addEventListener("click", () => {
+        const currentDist = globe.camera().position.length();
+        const newDist = Math.max(120, currentDist - 50);
+        globe.camera().position.setLength(newDist);
+        globe.controls().update();
+      });
+      zoomOutBtn.addEventListener("click", () => {
+        const currentDist = globe.camera().position.length();
+        const newDist = Math.min(600, currentDist + 50);
+        globe.camera().position.setLength(newDist);
+        globe.controls().update();
+      });
+    }
+
+    // Handle Closing Card
+    if (closeInfoBtn) {
+      closeInfoBtn.addEventListener("click", () => {
+        infoCard.classList.add("hidden", "translate-y-4", "opacity-0");
+        infoCard.classList.remove("flex", "translate-y-0", "opacity-100");
+        // Resume Rotation
+        globe.controls().autoRotate = true;
+      });
+    }
+
+    // Update Globe to handle click
+    globe.onPointClick(d => {
+      globe.controls().autoRotate = false;
+      globe.pointOfView({ lat: d.lat, lng: d.lng, altitude: 1.5 }, 1500);
+
+      // Show Info
+      if (infoCard) {
+        infoTitle.textContent = d.name;
+        infoRole.textContent = d.role;
+
+        infoCard.classList.remove("hidden", "translate-y-4", "opacity-0");
+        infoCard.classList.add("flex", "flex-col", "translate-y-0", "opacity-100");
+      }
+    });
 
     // Fix height/width to match container
     const resizeObserver = new ResizeObserver(entries => {

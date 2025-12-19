@@ -390,12 +390,38 @@
 
         <!-- Overlay decoration -->
         <div
-          class="absolute top-4 right-4 bg-black/80 border border-ctos-cyan/30 p-2 text-xs font-mono text-ctos-cyan z-[1000] pointer-events-none">
+          class="absolute top-4 right-4 bg-black/80 border border-ctos-cyan/30 p-2 text-xs font-mono text-ctos-cyan z-[900] pointer-events-none">
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 bg-ctos-cyan rounded-full animate-pulse"></span>
             TRACKING_ACTIVE
           </div>
           <div class="opacity-70 mt-1">LAT/LONG: ACQUIRING...</div>
+        </div>
+
+        <!-- Zoom Controls -->
+        <div class="absolute bottom-4 right-4 flex flex-col gap-2 z-[900]">
+          <button id="globe-zoom-in"
+            class="bg-black/80 hover:bg-ctos-cyan/20 border border-ctos-cyan/30 text-ctos-cyan w-8 h-8 flex items-center justify-center rounded transition-colors"
+            aria-label="Zoom In">
+            <i data-lucide="plus" class="w-4 h-4"></i>
+          </button>
+          <button id="globe-zoom-out"
+            class="bg-black/80 hover:bg-ctos-cyan/20 border border-ctos-cyan/30 text-ctos-cyan w-8 h-8 flex items-center justify-center rounded transition-colors"
+            aria-label="Zoom Out">
+            <i data-lucide="minus" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- Location Info Card (Hidden by default) -->
+        <div id="globe-info-card"
+          class="absolute bottom-4 left-4 max-w-xs w-full bg-black/90 border-l-4 border-ctos-cyan p-4 z-[900] hidden backdrop-blur-sm shadow-[0_0_30px_rgba(0,0,0,0.8)] transform transition-all duration-300 translate-y-4 opacity-0">
+          <button id="close-globe-info" class="absolute top-2 right-2 text-gray-500 hover:text-white"><i data-lucide="x"
+              class="w-4 h-4"></i></button>
+          <h4 id="globe-location-title" class="text-ctos-cyan font-bold uppercase tracking-wide text-sm mb-1">Location
+          </h4>
+          <div id="globe-location-role" class="text-white font-mono text-xs mb-2">Role</div>
+          <div class="h-px w-full bg-gray-800 my-2"></div>
+          <p class="text-gray-400 text-xs">COORDINATES LOCKED. DEPLOYMENT HISTORY VERIFIED.</p>
         </div>
       </div>
     </div>
