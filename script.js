@@ -1149,4 +1149,29 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize Map
   initMap();
 
+  // ---------- CtOS SECURITY PROTOCOL ----------
+  // Prevent Right Click
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+  // Prevent Inspector Shortcuts (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+  document.addEventListener('keydown', function (event) {
+    if (event.keyCode == 123) { // F12
+      event.preventDefault();
+      return false;
+    }
+    if (event.ctrlKey && event.shiftKey && (event.keyCode == 'I'.charCodeAt(0) || event.keyCode == 'J'.charCodeAt(0))) {
+      event.preventDefault();
+      return false;
+    }
+    if (event.ctrlKey && event.keyCode == 'U'.charCodeAt(0)) {
+      event.preventDefault();
+      return false;
+    }
+  });
+
+  // Custom Console Warning
+  console.log("%cSTOP! 🛑", "color: red; font-size: 50px; font-weight: bold; text-shadow: 2px 2px 0px black;");
+  console.log("%cWARNING: UNAUTHORIZED ACCESS DETECTED.", "color: #00f0ff; font-family: 'Courier New'; font-size: 20px; background: black; padding: 10px; border: 2px solid #00f0ff;");
+  console.log("%cThis is a restricted CtOS system. Your IP has been logged. Copying this source code is a violation of the protocol.", "color: #ccc; font-size: 14px;");
+
 });
