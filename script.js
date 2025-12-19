@@ -79,25 +79,25 @@ document.addEventListener("DOMContentLoaded", () => {
               title: "Epic Climate Manager",
               description: "Advanced climate management dashboard for greenhouse automation. Real-time monitoring.",
               tech: ["React.js", "Modbus TCP", "WebSocket"],
-              images: ["assets/climate_manager.png"],
+              images: ["assets/climate_manager_work.jpg", "assets/climate_manager_panel.jpg", "assets/climate_manager.png"],
             },
             {
               title: "Ozone Pro (HMI)",
               description: "HMI interface for water treatment systems. Real-time monitoring of ORP, Pressure, Flow Rate.",
               tech: ["HMI/SCADA", "C#", "Modbus RTU"],
-              images: ["assets/ozone_pro.png"],
+              images: ["assets/ozone_pro_panel.jpg", "assets/ozone_pro.png"],
             },
             {
               title: "Epic Fertigation Manager",
               description: "Precision fertigation management interface. Controls irrigation recipes and valve sequencing.",
               tech: ["Industrial Controls", "UI/UX"],
-              images: ["assets/fertigation_manager.png"],
+              images: ["assets/fertigation_panel.jpg", "assets/fertigation_manager.png"],
             },
             {
               title: "Multi-Chamber Dashboard",
               description: "Centralized tracking of environmental status across multiple isolated experimental chambers.",
               tech: ["Web Dashboard", "IoT"],
-              images: ["assets/chamber_dashboard.png"],
+              images: ["assets/nft_rnd_1.jpg", "assets/nft_rnd_2.jpg", "assets/chamber_dashboard.png"],
             },
             {
               title: "Customer Data Analytics",
@@ -137,6 +137,25 @@ document.addEventListener("DOMContentLoaded", () => {
             "Collaborated on software development for Fertigation Manager and Ozone Pro.",
             "Implemented Modbus TCP/RTU and OPC UA protocols for sensor integration.",
             "Built a custom library to convert wireless weather station data into serial communication.",
+          ],
+        },
+      ],
+    },
+    {
+      group: "Kryx Controls",
+      roles: [
+        {
+          company: "Kryx Controls",
+          role: "Co-Founder",
+          period: "Feb 2024 - Aug 2024",
+          location: "Leamington, Ontario, Canada",
+          description: [
+            "Co-founded Kryx Controls, delivering product- and service-based embedded systems solutions.",
+            "Led end-to-end system architecture design for embedded controllers, covering hardware–software integration.",
+            "Designed and implemented embedded software stacks tailored to custom controller requirements.",
+            "Diagnosed and rectified critical issues in existing embedded products, improving system stability and reliability.",
+            "Took ownership of product bring-up, debugging, and commissioning from prototype to deployment.",
+            "Successfully delivered fully functional, production-ready systems to clients within defined timelines."
           ],
         },
       ],
@@ -182,6 +201,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const education = [
     {
+      institution: "Amity University, Noida",
+      logo: "assets/logo_amity.png",
+      logoLocal: "assets/logo_amity.png",
+      degree: "Master of Business Administration - MBA, Human Resources Management",
+      period: "Jan 2024 - Jan 2026",
+      grade: "Pursuing",
+      skills: ["Human Resources Management", "Business Administration", "Leadership", "Organizational Behavior"]
+    },
+    {
       institution: "Conestoga College",
       logo: "https://upload.wikimedia.org/wikipedia/commons/4/42/Conestoga_College_Logo.png",
       logoLocal: "assets/logo_conestoga.png",
@@ -219,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tech: ["ESP32-S3", "PCB Design", "Industrial Automation", "LoRa", "RS485"],
       githubUrl: "https://github.com/Narensraj/pcb_designing/tree/main/Project_G",
       featured: true,
-      images: ["assets/gcontroller.jpg"],
+      images: ["assets/gcontroller_pcb.jpg", "assets/gcontroller.jpg"],
     },
     {
       title: "ESP32 Relay Board",
