@@ -1059,13 +1059,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const locations = [
     { name: "Envirotech Ag Systems", role: "Embedded System Engineer", lat: 49.8951, lng: -97.1384, type: "work" },
     { name: "Climate Control Systems", role: "Controls / Software Developer", lat: 42.0532, lng: -82.6012, type: "work" },
-    { name: "Kryx Controls", role: "Co-Founder", lat: 42.0532, lng: -82.5900, type: "work" }, // Slight offset
+    { name: "Kryx Controls", role: "Co-Founder", lat: 42.5000, lng: -82.2000, type: "work" }, // MANUAL OFFSET FOR LABEL VISIBILITY
     { name: "Amity University", role: "MBA", lat: 28.5355, lng: 77.3910, type: "edu" },
     { name: "Conestoga College", role: "PG Diploma", lat: 43.3915, lng: -80.4072, type: "edu" },
     { name: "Promech Industries", role: "Embedded Intern", lat: 11.0168, lng: 76.9558, type: "work" },
     { name: "Big Data Labs", role: "App Dev Intern", lat: 13.0827, lng: 80.2707, type: "work" },
-    { name: "SKCET", role: "Bachelor of Engineering", lat: 10.9363, lng: 76.9567, type: "edu" },
-    { name: "PSG College", role: "Diploma ECE", lat: 11.0247, lng: 77.0099, type: "edu" },
+    { name: "SKCET", role: "Bachelor of Engineering", lat: 10.5000, lng: 76.5000, type: "edu" }, // MANUAL OFFSET
+    { name: "PSG College", role: "Diploma ECE", lat: 11.5000, lng: 77.5000, type: "edu" }, // MANUAL OFFSET
     { name: "Opto 22 Training", role: "Professional Training", lat: 33.4936, lng: -117.1484, type: "edu" }
   ];
 
